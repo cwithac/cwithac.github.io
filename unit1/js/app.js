@@ -2,11 +2,15 @@
 //   console.log('oops! I still have to link my jQuery properly!');
 // } else {console.log('I did it! I linked jQuery and this js file!')};
 
+//======================================================================//
+//Window Onload Function
+
 $(function() {
 
 
 }); // closes window onload function
 
+//======================================================================//
 
 //PSEUDOCODE
 
@@ -64,3 +68,74 @@ $(function() {
 //
 // //CSS Stretch
 // Background Music
+
+//======================================================================//
+
+//Player Variables
+var player1 = {
+  name: "Alexander Hamilton",
+  score: 0,
+  answersGiven: []
+};
+
+var player2 = {
+  name: "Aaron Burr",
+  score: 0,
+  answersGiven: []
+};
+
+//Global Trackers
+var questionCounter = [];
+
+
+//======================================================================//
+
+//Questions
+var questions = [
+  { question: "Question 1", // Question 1...
+    choices: ["A1", "A2", "A3"], // Array of possible answers
+    correctAnswer: 0 // Index of correct Answer
+  },
+  { question: "Question 2", // Question 2...
+    choices: ["A1", "A2", "A3"], // Array of possible answers
+    correctAnswer: 0 // Index of correct Answer
+  }
+];
+
+//======================================================================//
+
+//Game Play
+
+//Player Actions
+var alexanderHamilton = function() {
+  console.log("alexanderHamilton function has been called.");
+  //Player 1 Turn
+  // aaronBurr();
+};
+
+var aaronBurr = function() {
+  console.log("aaronBurr function has been called.");
+  //Player 2 Turn
+  // evalWinner();
+};
+
+//Game Actions
+var evalWinner = function() {
+  console.log("evalWinner function has been called.");
+  //if questionCounter.length < questions.length
+  //continue game...
+  //else checkWinner();
+};
+
+var checkWinner = function() {
+  console.log("checkWinner function has been called.");
+  //which score is higher
+  //inform winner
+};
+
+var startGame = function() {
+  console.log("startGame function has been called.");
+  // alexanderHamilton();
+};
+
+startGame(); // Runs at Window Load, Disable to deactivate game
