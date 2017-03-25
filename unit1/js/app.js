@@ -248,6 +248,16 @@ var questions = [
   }
 ];
 
+var loopQuestions = function() {
+  for (var i = 0; i < questions.length; i++) {
+      var question = questions[i].question;
+      console.log(question);
+      var answers = questions[i].choices;
+      console.log(answers);
+      var correctAnswer = questions[i].correctAnswer;
+      console.log("Corect Answer is Index: " + correctAnswer);
+    }
+  };
 
 //======================================================================//
 
@@ -257,9 +267,7 @@ var questions = [
 //Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
-  //Player 1 Turn
-  $player1Question
-  // aaronBurr();
+
 };
 
 //Player 2
