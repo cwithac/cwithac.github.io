@@ -254,13 +254,21 @@ var loopQuestions = function() {
 
 //Question Trackers
     var questionCounter = [];
-    var randomNum23 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index)
+    var randomNumP1 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 1's questions -- reates different Random from P2
+    var randomNumP2 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 2's questions -- Creates different Random from P1
 
 //Question Pulls
-  var randomQuestion = questions[randomNum23].question;
-  var randomChoices = questions[randomNum23].choices;
-  var randomCorrectAnswer = questions[randomNum23].correctAnswer;
-  var randomFromSong = questions[randomNum23].fromSong;
+  //Player 1
+  var randomQuestionP1 = questions[randomNumP1].question;
+  var randomChoicesP1 = questions[randomNumP1].choices;
+  var randomCorrectAnswerP1 = questions[randomNumP1].correctAnswer;
+  var randomFromSongP1 = questions[randomNumP1].fromSong;
+
+  //Player 2
+  var randomQuestionP2 = questions[randomNumP2].question;
+  var randomChoicesP2 = questions[randomNumP2].choices;
+  var randomCorrectAnswerP2 = questions[randomNumP2].correctAnswer;
+  var randomFromSongP2 = questions[randomNumP2].fromSong;
 
 
 //======================================================================//
@@ -271,13 +279,13 @@ var loopQuestions = function() {
 //Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
-  $songTitle = $('<p>').text("Track: " + randomFromSong);
+  $songTitle = $('<p>').text("Track: " + randomFromSongP1);
   $player1Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestion);
+  $questionAsked = $('<h2>').text(randomQuestionP1);
   $player1Question.append($questionAsked);
-  $answerOption1 = $('<li>').text(randomChoices[0]);
-  $answerOption2 = $('<li>').text(randomChoices[1]);
-  $answerOption3 = $('<li>').text(randomChoices[2]);
+  $answerOption1 = $('<li>').text(randomChoicesP1[0]);
+  $answerOption2 = $('<li>').text(randomChoicesP1[1]);
+  $answerOption3 = $('<li>').text(randomChoicesP1[2]);
   $player1Question.append($answerOption1);
   $player1Question.append($answerOption2);
   $player1Question.append($answerOption3);
@@ -287,13 +295,13 @@ var alexanderHamilton = function() {
 //Player 2
 var aaronBurr = function() {
   console.log("aaronBurr function has been called.");
-  $songTitle = $('<p>').text("Track: " + randomFromSong);
+  $songTitle = $('<p>').text("Track: " + randomFromSongP2);
   $player2Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestion);
+  $questionAsked = $('<h2>').text(randomQuestionP2);
   $player2Question.append($questionAsked);
-  $answerOption1 = $('<li>').text(randomChoices[0]);
-  $answerOption2 = $('<li>').text(randomChoices[1]);
-  $answerOption3 = $('<li>').text(randomChoices[2]);
+  $answerOption1 = $('<li>').text(randomChoicesP2[0]);
+  $answerOption2 = $('<li>').text(randomChoicesP2[1]);
+  $answerOption3 = $('<li>').text(randomChoicesP2[2]);
   $player2Question.append($answerOption1);
   $player2Question.append($answerOption2);
   $player2Question.append($answerOption3);
