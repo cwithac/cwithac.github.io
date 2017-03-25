@@ -247,6 +247,10 @@ var loopQuestions = function() {
     var randomNumP1 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 1's questions -- reates different Random from P2
     var randomNumP2 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 2's questions -- Creates different Random from P1
 
+var randomNumGen = function() {
+    randNum = (Math.floor(Math.random() * (23 - 0)) + 0);
+};
+
 //Question Pulls
   //Player 1
   var randomQuestionP1 = questions[randomNumP1].question;
@@ -270,6 +274,12 @@ var loopQuestions = function() {
 var playerOneTurn = function() {
   $player2Question.empty();
   console.log("playerOneTurn function has been called."); //confirms function has been initalized
+  randomNumGen();
+  var randomQuestionP1 = questions[randNum].question;
+  var randomChoicesP1 = questions[randNum].choices;
+  var randomCorrectAnswerP1 = questions[randNum].correctAnswer;
+  var randomFromSongP1 = questions[randNum].fromSong;
+  console.log(randNum);
   $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
   $player1Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
@@ -290,7 +300,12 @@ var playerOneTurn = function() {
 //Player 2
 var playerTwoTurn = function() {
   console.log("playerTwoTurn function has been called."); //confirms function has been initalized
-  $player1Question.empty();
+  randomNumGen();
+  console.log(randNum);
+  var randomQuestionP2 = questions[randNum].question;
+  var randomChoicesP2 = questions[randNum].choices;
+  var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
+  var randomFromSongP2 = questions[randNum].fromSong;
   $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
   $player2Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
@@ -320,6 +335,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     questionCounter.push(randomCorrectAnswerP2);
   }
     $turns.text("Total Turns: " + questionCounter.length)
+    $player1Question.empty();
     playerTwoTurn();
 };
 
@@ -335,6 +351,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     questionCounter.push(randomCorrectAnswerP2);
   }
     $turns.text("Total Turns: " + questionCounter.length)
+    $player2Question.empty();
     evalWinner();
 };
 
