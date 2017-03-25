@@ -320,7 +320,7 @@ var checkForCorrect = function() {
   console.log("checkForCorrect function has been called.");
   console.log($(this).text());
   console.log(randomCorrectAnswerP1);
-  if (($(this).text()) === randomCorrectAnswerP1) {
+  if ((($(this).text()) === randomCorrectAnswerP1) || (($(this).text()) === randomCorrectAnswerP2)) {
     console.log("Correct");
   } else {
     console.log("Wrong answer");
