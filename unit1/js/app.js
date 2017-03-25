@@ -289,6 +289,9 @@ var alexanderHamilton = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
+  $answerIndex0.on('click', checkForCorrect);
+  $answerIndex1.on('click', checkForCorrect);
+  $answerIndex2.on('click', checkForCorrect);
   aaronBurr();
 };
 
@@ -307,6 +310,9 @@ var aaronBurr = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
+  $answerIndex0.on('click', checkForCorrect);
+  $answerIndex1.on('click', checkForCorrect);
+  $answerIndex2.on('click', checkForCorrect);
   // evalWinner();
 };
 
