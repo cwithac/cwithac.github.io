@@ -289,6 +289,7 @@ var playerOneTurn = function() {
 //Player 2
 var playerTwoTurn = function() {
   console.log("playerTwoTurn function has been called."); //confirms function has been initalized
+  $player1Question.empty();
   $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
   $player2Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
