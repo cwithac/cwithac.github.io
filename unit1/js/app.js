@@ -11,7 +11,7 @@ $(function() {
   $player1Score = $('#score1'); // Score paragraph for player 1
   $player2Score = $('#score2'); // Score paragraph for player 2
   $playAgain = $('#play-again'); // Play again div resegGame();
-  $howToPlay = $('#howtoplay'); // How to Play div
+  $turns = $('#turns'); // How to Play div
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
@@ -313,14 +313,13 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
   if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
     questionCounter.push(randomCorrectAnswerP1);
-    console.log(questionCounter);
     scorePlayer1++
     $player1Score.text(scorePlayer1)
   } else {
     console.log("Wrong answer");
     questionCounter.push(randomCorrectAnswerP2);
-    console.log(questionCounter);
   }
+    $turns.text("Total Turns: " + questionCounter.length)
     playerTwoTurn();
 };
 
@@ -335,6 +334,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     console.log("Wrong answer");
     questionCounter.push(randomCorrectAnswerP2);
   }
+    $turns.text("Total Turns: " + questionCounter.length)
     evalWinner();
 };
 
