@@ -281,12 +281,22 @@ var alexanderHamilton = function() {
   $player1Question.append($answerOption1);
   $player1Question.append($answerOption2);
   $player1Question.append($answerOption3);
+  aaronBurr();
 };
 
 //Player 2
 var aaronBurr = function() {
   console.log("aaronBurr function has been called.");
-  //Player 2 Turn
+  $songTitle = $('<p>').text("Track: " + randomFromSong);
+  $player2Question.append($songTitle);
+  $questionAsked = $('<h2>').text(randomQuestion);
+  $player2Question.append($questionAsked);
+  $answerOption1 = $('<li>').text(randomChoices[0]);
+  $answerOption2 = $('<li>').text(randomChoices[1]);
+  $answerOption3 = $('<li>').text(randomChoices[2]);
+  $player2Question.append($answerOption1);
+  $player2Question.append($answerOption2);
+  $player2Question.append($answerOption3);
   // evalWinner();
 };
 
