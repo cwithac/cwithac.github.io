@@ -304,8 +304,7 @@ var playerTwoTurn = function() {
   $answerIndex0.on('click', checkForCorrectP2);
   $answerIndex1.on('click', checkForCorrectP2);
   $answerIndex2.on('click', checkForCorrectP2);
-  // evalWinner();
-};
+  };
 
 var checkForCorrectP1 = function() { //Checks for matching answer to array
   console.log("checkForCorrectP1 function has been called.");
@@ -328,6 +327,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   } else {
     console.log("Wrong answer");
   }
+    evalWinner();
 };
 
 //Game Actions
