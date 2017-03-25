@@ -7,7 +7,8 @@
 }
 
 body {
-  background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;
+  /*backgroundURL removed for testing*/
+  /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
   font-weight: bold;
 }
 
@@ -21,7 +22,8 @@ header {
 section {
   display: flex;
   justify-content: space-around;
-
+  /*background color black after testing*/
+  background-color: gray;
 }
 
 footer {
