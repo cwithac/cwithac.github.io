@@ -1,24 +1,60 @@
+/*MAIN TAGS*/
 * {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
 }
 
 body {
-  /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
+  background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;
+  font-weight: bold;
 }
 
 header {
   display: flex;
   justify-content: space-around;
+  padding: 0;
+  margin-top: 0;
 }
 
 section {
   display: flex;
   justify-content: space-around;
+
 }
 
 footer {
   display: flex;
   justify-content: space-between;
+}
+
+button {
+  background-color: white;
+  float: right;
+}
+
+/*ID AND CLASS*/
+#p1-questions, #p2-questions {
+  padding: 2em 1em;
+  border: 2px solid black;
+  margin: 0 1em;
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+
+#player1-score, #player2-score {
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgba(256, 256, 256, .3);
+}
+
+#play-again, #howtoplay {
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgba(256, 256, 256, .5);
+}
+
+.halfstar {
+  height: 50px;
 }
