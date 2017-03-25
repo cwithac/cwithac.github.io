@@ -240,6 +240,12 @@ var checkWinner = function() {
   //inform winner
 };
 
+var resetGame = function() {
+  //Clears Question counter
+  //Clears asked questions
+  //Sets scores to 0
+};
+
 var startGame = function() {
   console.log("startGame function has been called.");
   // alexanderHamilton();
