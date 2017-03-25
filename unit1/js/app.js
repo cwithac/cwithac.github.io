@@ -123,9 +123,11 @@ var player2 = {
 
 //Global Trackers
 var questionCounter = [];
-
-
-
+var randomNum23 = (Math.floor(Math.random() * (23 - 0 + 1)) + 0); //Generates Random between 0-23
+var randomQuestion = questions[randomNum23].question;
+var randomChoices = questions[randomNum23].choices;
+var randomCorrectAnswer = questions[randomNum23].correctAnswer;
+var randomFromSong = questions[randomNum23].fromSong;
 
 //======================================================================//
 
@@ -250,12 +252,10 @@ var questions = [
 
 var loopQuestions = function() {
   for (var i = 0; i < questions.length; i++) {
-      var question = questions[i].question;
-      console.log(question);
-      var answers = questions[i].choices;
-      console.log(answers);
-      var correctAnswer = questions[i].correctAnswer;
-      console.log("Corect Answer is Index: " + correctAnswer);
+      questions[i].question;
+      questions[i].choices;
+      questions[i].correctAnswer;
+      questions[i].fromSong;
     }
   };
 
