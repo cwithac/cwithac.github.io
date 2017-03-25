@@ -170,7 +170,7 @@ var questions = [
   },
   { question: "Now my life gets better, every letter that you write me...", // Question...
     choices: ["Laughin’ at my sister, cuz she wants to form a harem.", "If it takes fighting a war for us to meet, it will have been worth it.", "I’m just sayin’, if you really loved me, you would share him."], // Array of possible answers
-    correctAnswer: "Laughin’ at my sister, cuz she wants to form a harem", // Correct answer
+    correctAnswer: "Laughin’ at my sister, cuz she wants to form a harem.", // Correct answer
     fromSong: "Helpless"
   },
   { question: "The feeling of freedom, of seein’ the light,", // Question...
@@ -289,9 +289,9 @@ var alexanderHamilton = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
-  $answerIndex0.on('click', checkForCorrect);
-  $answerIndex1.on('click', checkForCorrect);
-  $answerIndex2.on('click', checkForCorrect);
+  $answerIndex0.on('click', checkForCorrectP1);
+  $answerIndex1.on('click', checkForCorrectP1);
+  $answerIndex2.on('click', checkForCorrectP1);
   aaronBurr();
 };
 
@@ -310,15 +310,24 @@ var aaronBurr = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
-  $answerIndex0.on('click', checkForCorrect);
-  $answerIndex1.on('click', checkForCorrect);
-  $answerIndex2.on('click', checkForCorrect);
+  $answerIndex0.on('click', checkForCorrectP2);
+  $answerIndex1.on('click', checkForCorrectP2);
+  $answerIndex2.on('click', checkForCorrectP2);
   // evalWinner();
 };
 
-var checkForCorrect = function() { //Checks for matching answer to array
-  console.log("checkForCorrect function has been called.");
-  if ((($(this).text()) === randomCorrectAnswerP1) || (($(this).text()) === randomCorrectAnswerP2)) { //if content of clicked words is the same as correct string from questions array ...
+var checkForCorrectP1 = function() { //Checks for matching answer to array
+  console.log("checkForCorrectP1 function has been called.");
+  if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
+    console.log("Correct");
+  } else {
+    console.log("Wrong answer");
+  }
+};
+
+var checkForCorrectP2 = function() { //Checks for matching answer to array
+  console.log("checkForCorrectP2 function has been called.");
+  if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
   } else {
     console.log("Wrong answer");
