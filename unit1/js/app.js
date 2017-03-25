@@ -267,8 +267,8 @@ var loopQuestions = function() {
 
 //Player Actions
 //Player 1
-var alexanderHamilton = function() {
-  console.log("alexanderHamilton function has been called."); //confirms function has been initalized
+var playerOneTurn = function() {
+  console.log("playerOneTurn function has been called."); //confirms function has been initalized
   $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
   $player1Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
@@ -284,12 +284,11 @@ var alexanderHamilton = function() {
   $answerIndex0.on('click', checkForCorrectP1);
   $answerIndex1.on('click', checkForCorrectP1);
   $answerIndex2.on('click', checkForCorrectP1);
-  aaronBurr();
-};
+  };
 
 //Player 2
-var aaronBurr = function() {
-  console.log("aaronBurr function has been called."); //confirms function has been initalized
+var playerTwoTurn = function() {
+  console.log("playerTwoTurn function has been called."); //confirms function has been initalized
   $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
   $player2Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
@@ -317,6 +316,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
   } else {
     console.log("Wrong answer");
   }
+    playerTwoTurn();
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
@@ -352,7 +352,7 @@ var resetGame = function() {
 
 var startGame = function() {
   console.log("startGame function has been called.");
-  alexanderHamilton();
+  playerOneTurn();
 };
 
 startGame(); // Runs at Window Load, Disable to deactivate game
