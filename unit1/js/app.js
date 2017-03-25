@@ -22,76 +22,9 @@ $(function() {
 
 //PSEUDOCODE
 
-// //Characters
-// - Player 1 // Alexander Hamilton
-// - Player 2 // Aaron Burr
-//
-// //Visual
-// Container for Div P1 & Div P2
-// Div for Player 1 question
-// Div for Player 2 question
-// Score 1 Div
-// Score 2 Div
-// Reset Div
-// How to Div // Stretch
-//
-// //Content
-// questions = [
-//   { question: "Question 1", // Question 1...
-//     choices: ["A1", "A2", "A3"], // Array of possible answers
-//     correctAnswer: Index# // Correct answer
-//   },
-//   { question: "Question 2", // Question 2...
-//     choices: ["A1", "A2", "A3"], // Array of possible answers
-//     correctAnswer: Index# // Correct answer
-//   }
-// ];
-//
-// Text + Radio Button
-//
-// Player 1 Score = 0 //at start of game
-// Player 2 Score = 0 //at start of game
-//
-// question counter // tracks questions asked (if question < questions.length...)
-// user answers [] // tracks users answers (with push and .val() correct/not correct)
-//
-// How to Play (lorem ...)
-//
-// //Gameplay
-// Toggle // Switches Players after question has been asked
-// Player 1 Score +1 Question Correct +0 Incorrect
-// Player 2 Score +1 Question Correct +0 Incorrect
-//
-// //If selected = index, correct, if not, incorrect ...
-//
+
 // Each player turn, send to win eval.
 //
-// Turn Play
-//   > Question on player's side appears, question on opponents disappears.
-    // 1. From question bank, pull question.
-    //   - loop through questions to pull each one (in order)
-    //     for (var i = 0; i < questions.length; i++) {
-    //       questions[i].question
-    //     }
-    //   - questions[0].question) == first question
-    // 2. From questions bank, pull array of answers with same index.
-    //   - loop through array to pull each set (in order)
-    //     for (var i = 0; i < questions.length; i++) {
-    //       questions[i].question
-    //       questions[i].choices
-    //     }
-    //   - questions[0].question == first question
-    //   - questions[0].choices == choices for first question
-    // 3. Append Q div $player1Question
-    // 4. Append A to <ul> + <li> in $player1Question below Q.
-    //         - Next Question is index + 1?
-    //         - Question index Random num integer (0 - questions.length)
-    // 5. Submit button
-    //     If submission === correct answer index
-    //       - (questions[0].correctAnswer)
-    //       Player point ++
-    // 6. Send to Player 2
-    // 7. Eval after Player 2
 
 // //Winner Eval
 // Checks if X questions have been asked, if not continue game with P1.
@@ -232,37 +165,13 @@ var questions = [
   }
 ];
 
-//Loop through all Questions
-// var loopQuestions = function() {
-//   for (var i = 0; i < questions.length; i++) {
-//       questions[i].question;
-//       questions[i].choices;
-//       questions[i].correctAnswer;
-//       questions[i].fromSong;
-//     }
-//   };
 
 //Question Trackers
     var questionCounter = [];
-    // var randomNumP1 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 1's questions -- reates different Random from P2
-    // var randomNumP2 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index) for Player 2's questions -- Creates different Random from P1
 
-var randomNumGen = function() {
-    randNum = (Math.floor(Math.random() * (23 - 0)) + 0);
-};
-
-// //Question Pulls
-//   //Player 1
-//   var randomQuestionP1 = questions[randomNumP1].question;
-//   var randomChoicesP1 = questions[randomNumP1].choices;
-//   var randomCorrectAnswerP1 = questions[randomNumP1].correctAnswer;
-//   var randomFromSongP1 = questions[randomNumP1].fromSong;
-//
-//   //Player 2
-//   var randomQuestionP2 = questions[randomNumP2].question;
-//   var randomChoicesP2 = questions[randomNumP2].choices;
-//   var randomCorrectAnswerP2 = questions[randomNumP2].correctAnswer;
-//   var randomFromSongP2 = questions[randomNumP2].fromSong;
+    var randomNumGen = function() {
+        randNum = (Math.floor(Math.random() * (23 - 0)) + 0);
+    };
 
 
 //======================================================================//
@@ -273,13 +182,12 @@ var randomNumGen = function() {
 //Player 1
 var playerOneTurn = function() {
   $player2Question.empty();
-  console.log("playerOneTurn function has been called."); //confirms function has been initalized
+  // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
-  // var randomCorrectAnswerP1 = questions[randNum].correctAnswer;
   var randomFromSongP1 = questions[randNum].fromSong;
-  console.log(randNum);
+  // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
   $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
   $player1Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
@@ -299,13 +207,12 @@ var playerOneTurn = function() {
 
 //Player 2
 var playerTwoTurn = function() {
-  console.log("playerTwoTurn function has been called."); //confirms function has been initalized
+  // console.log("playerTwoTurn function has been called."); //confirms function has been initalized
   randomNumGen();
-  console.log(randNum);
   var randomQuestionP2 = questions[randNum].question;
   var randomChoicesP2 = questions[randNum].choices;
-  // var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
   var randomFromSongP2 = questions[randNum].fromSong;
+  // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
   $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
   $player2Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
@@ -324,11 +231,9 @@ var playerTwoTurn = function() {
   };
 
 var checkForCorrectP1 = function() { //Checks for matching answer to array
-  console.log("checkForCorrectP1 function has been called.");
+  // console.log("checkForCorrectP1 function has been called.");
   var randomCorrectAnswerP1 = questions[randNum].correctAnswer;
   if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
-    console.log(($(this).text()));
-    console.log(randomCorrectAnswerP1);
     console.log("Correct");
     questionCounter.push(randomCorrectAnswerP1);
     scorePlayer1++
@@ -343,7 +248,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
-  console.log("checkForCorrectP2 function has been called.");
+  // console.log("checkForCorrectP2 function has been called.");
   var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
   if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
@@ -355,14 +260,14 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     questionCounter.push(randomCorrectAnswerP2);
   }
     $turns.text("Total Turns: " + questionCounter.length)
-    $player2Question.empty();
+    $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
     evalWinner();
 };
 
 //Game Actions
 var evalWinner = function() {
-  console.log("evalWinner function has been called.");
-  if (questionCounter.length < questions.length) {
+  // console.log("evalWinner function has been called.");
+  if (questionCounter.length < questions.length) { //If total number of questions available have been asked...
     playerOneTurn();
   } else {
     checkWinner();
@@ -382,7 +287,7 @@ var resetGame = function() {
 };
 
 var startGame = function() {
-  console.log("startGame function has been called.");
+  // console.log("startGame function has been called.");
   playerOneTurn();
 };
 
