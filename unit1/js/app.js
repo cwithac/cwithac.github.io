@@ -18,7 +18,7 @@ $(function() {
   $player1Submit = $('#p1-submit') // Submit button inside P1 question div
   $player2Submit = $('#p2-submit') // Submit button inside P1 question div
 
-}); // closes window onload function
+
 
 //======================================================================//
 
@@ -242,6 +242,7 @@ var questions = [
   }
 ];
 
+//Loop through all Questions
 var loopQuestions = function() {
   for (var i = 0; i < questions.length; i++) {
       questions[i].question;
@@ -270,7 +271,8 @@ var loopQuestions = function() {
 //Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
-
+  $questionAsked = $('<p>').text(randomQuestion);
+  $player1Question.append($questionAsked);
 };
 
 //Player 2
@@ -302,7 +304,10 @@ var resetGame = function() {
 
 var startGame = function() {
   console.log("startGame function has been called.");
-  // alexanderHamilton();
+  alexanderHamilton();
 };
 
 startGame(); // Runs at Window Load, Disable to deactivate game
+
+
+}); // closes window onload function
