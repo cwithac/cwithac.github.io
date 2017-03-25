@@ -16,7 +16,7 @@ $(function() {
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
   $player1Submit = $('#p1-submit') // Submit button inside P1 question div
-  $player2Submit = $('#p2-submit') // Submit button inside P1 question div 
+  $player2Submit = $('#p2-submit') // Submit button inside P1 question div
 
 }); // closes window onload function
 
@@ -68,6 +68,33 @@ $(function() {
 //
 // Each player turn, send to win eval.
 //
+// Turn Play
+//   > Question on player's side appears, question on opponents disappears.
+    // 1. From question bank, pull question.
+    //   - loop through questions to pull each one (in order)
+    //     for (var i = 0; i < questions.length; i++) {
+    //       questions[i].question
+    //     }
+    //   - questions[0].question) == first question
+    // 2. From questions bank, pull array of answers with same index.
+    //   - loop through array to pull each set (in order)
+    //     for (var i = 0; i < questions.length; i++) {
+    //       questions[i].question
+    //       questions[i].choices
+    //     }
+    //   - questions[0].question == first question
+    //   - questions[0].choices == choices for first question
+    // 3. Append Q div $player1Question
+    // 4. Append A to <ul> + <li> in $player1Question below Q.
+    //         - Next Question is index + 1?
+    //         - Question index Random num integer (0 - questions.length)
+    // 5. Submit button
+    //     If submission === correct answer index
+    //       - (questions[0].correctAnswer)
+    //       Player point ++
+    // 6. Send to Player 2
+    // 7. Eval after Player 2
+
 // //Winner Eval
 // Checks if X questions have been asked, if not continue game with P1.
 // Checks between Player 1 and Player 2 Score for Winner
@@ -221,17 +248,21 @@ var questions = [
   }
 ];
 
+
 //======================================================================//
 
 //Game Play
 
 //Player Actions
+//Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
   //Player 1 Turn
+  $player1Question
   // aaronBurr();
 };
 
+//Player 2
 var aaronBurr = function() {
   console.log("aaronBurr function has been called.");
   //Player 2 Turn
