@@ -17,7 +17,7 @@ $(function() {
   $player2Question = $('#p2-questions') // P2 question div
   $player1Submit = $('#p1-submit') // Submit button inside P1 question div
   $player2Submit = $('#p2-submit') // Submit button inside P1 question div
-
+  $radioButton = $('<input>').attr('type', 'radio'); // Empty Radio Button
 
 
 //======================================================================//
@@ -283,12 +283,14 @@ var alexanderHamilton = function() {
   $player1Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP1);
   $player1Question.append($questionAsked);
-  $answerOption1 = $('<li>').text(randomChoicesP1[0]);
-  $answerOption2 = $('<li>').text(randomChoicesP1[1]);
-  $answerOption3 = $('<li>').text(randomChoicesP1[2]);
-  $player1Question.append($answerOption1);
-  $player1Question.append($answerOption2);
-  $player1Question.append($answerOption3);
+  $answerUL = $('<ul>')
+  $answerIndex0 = $('<li>').text(randomChoicesP1[0]);
+  $answerIndex1 = $('<li>').text(randomChoicesP1[1]);
+  $answerIndex2 = $('<li>').text(randomChoicesP1[2]);
+  $player1Question.append($answerUL)
+  $answerUL.append($answerIndex0);
+  $answerUL.append($answerIndex1);
+  $answerUL.append($answerIndex2);
   aaronBurr();
 };
 
@@ -299,12 +301,14 @@ var aaronBurr = function() {
   $player2Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestionP2);
   $player2Question.append($questionAsked);
-  $answerOption1 = $('<li>').text(randomChoicesP2[0]);
-  $answerOption2 = $('<li>').text(randomChoicesP2[1]);
-  $answerOption3 = $('<li>').text(randomChoicesP2[2]);
-  $player2Question.append($answerOption1);
-  $player2Question.append($answerOption2);
-  $player2Question.append($answerOption3);
+  $answerUL = $('<ul>')
+  $answerIndex0 = $('<li>').text(randomChoicesP2[0]);
+  $answerIndex1 = $('<li>').text(randomChoicesP2[1]);
+  $answerIndex2 = $('<li>').text(randomChoicesP2[2]);
+  $player2Question.append($answerUL)
+  $answerUL.append($answerIndex0);
+  $answerUL.append($answerIndex1);
+  $answerUL.append($answerIndex2);
   // evalWinner();
 };
 
