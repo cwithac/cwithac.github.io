@@ -268,6 +268,7 @@ var loopQuestions = function() {
 //Player Actions
 //Player 1
 var playerOneTurn = function() {
+  $player2Question.empty();
   console.log("playerOneTurn function has been called."); //confirms function has been initalized
   $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
   $player1Question.append($songTitle);
@@ -328,13 +329,11 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
     questionCounter.push(randomCorrectAnswerP2);
-    console.log(questionCounter);
     scorePlayer2++
     $player2Score.text(scorePlayer2)
   } else {
     console.log("Wrong answer");
     questionCounter.push(randomCorrectAnswerP2);
-    console.log(questionCounter);
   }
     evalWinner();
 };
@@ -342,9 +341,11 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
 //Game Actions
 var evalWinner = function() {
   console.log("evalWinner function has been called.");
-  //if questionCounter.length < questions.length
-  //continue game...
-  //else checkWinner();
+  if (questionCounter.length < questions.length) {
+    playerOneTurn();
+  } else {
+    checkWinner();
+  }
 };
 
 var checkWinner = function() {
