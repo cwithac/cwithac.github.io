@@ -320,9 +320,11 @@ var checkForCorrect = function() {
   console.log("checkForCorrect function has been called.");
   console.log($(this).text());
   console.log(randomCorrectAnswerP1);
-  // if (($(this)[0]) === randomCorrectAnswerP1) {
-  //   console.log("It worked");
-  // }
+  if (($(this).text()) === randomCorrectAnswerP1) {
+    console.log("Correct");
+  } else {
+    console.log("Wrong answer");
+  }
 };
 
 //Game Actions
