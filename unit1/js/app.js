@@ -121,14 +121,6 @@ var player2 = {
   answersGiven: []
 };
 
-//Global Trackers
-var questionCounter = [];
-var randomNum23 = (Math.floor(Math.random() * (23 - 0 + 1)) + 0); //Generates Random between 0-23
-var randomQuestion = questions[randomNum23].question;
-var randomChoices = questions[randomNum23].choices;
-var randomCorrectAnswer = questions[randomNum23].correctAnswer;
-var randomFromSong = questions[randomNum23].fromSong;
-
 //======================================================================//
 
 //Questions
@@ -258,6 +250,17 @@ var loopQuestions = function() {
       questions[i].fromSong;
     }
   };
+
+//Question Trackers
+    var questionCounter = [];
+    var randomNum23 = (Math.floor(Math.random() * (23 - 0 + 1)) + 0); //Generates Random between 0-23
+
+//Question Pulls
+  var randomQuestion = questions[randomNum23].question;
+  var randomChoices = questions[randomNum23].choices;
+  var randomCorrectAnswer = questions[randomNum23].correctAnswer;
+  var randomFromSong = questions[randomNum23].fromSong;
+
 
 //======================================================================//
 
