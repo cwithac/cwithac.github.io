@@ -8,15 +8,15 @@
 $(function() {
 
   //jQuery Variables
-  $player1Score = $('#score1');
-  $player2Score = $('#score2');
-  $playAgain = $('#play-again');
-  $howToPlay = $('#howtoplay');
-  $questionsContainer = $('#container');
-  $player1Question = $('#p1-questions')
-  $player2Question = $('#p2-questions')
-  $player1Submit = $('#p1-submit')
-  $player2Submit = $('#p2-submit')
+  $player1Score = $('#score1'); // Score paragraph for player 1
+  $player2Score = $('#score2'); // Score paragraph for player 2
+  $playAgain = $('#play-again'); // Play again div resegGame();
+  $howToPlay = $('#howtoplay'); // How to Play div
+  $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
+  $player1Question = $('#p1-questions') // P1 question div
+  $player2Question = $('#p2-questions') // P2 question div
+  $player1Submit = $('#p1-submit') // Submit button inside P1 question div
+  $player2Submit = $('#p2-submit') // Submit button inside P1 question div 
 
 }); // closes window onload function
 
