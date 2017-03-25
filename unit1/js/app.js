@@ -107,17 +107,9 @@ $(function() {
 //======================================================================//
 
 //Player Variables
-var player1 = {
-  name: "Alexander Hamilton",
-  score: 0,
-  answersGiven: []
-};
 
-var player2 = {
-  name: "Aaron Burr",
-  score: 0,
-  answersGiven: []
-};
+var scorePlayer1 = 0;
+var scorePlayer2 = 0;
 
 //======================================================================//
 
@@ -320,6 +312,8 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
   console.log("checkForCorrectP1 function has been called.");
   if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
+    scorePlayer1++
+    $player1Score.text(scorePlayer1)
   } else {
     console.log("Wrong answer");
   }
@@ -329,6 +323,8 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   console.log("checkForCorrectP2 function has been called.");
   if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
+    scorePlayer2++
+    $player2Score.text(scorePlayer2)
   } else {
     console.log("Wrong answer");
   }
