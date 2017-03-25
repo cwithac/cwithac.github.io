@@ -7,6 +7,16 @@
 
 $(function() {
 
+  //jQuery Variables
+  $player1Score = $('#score1');
+  $player2Score = $('#score2');
+  $playAgain = $('#play-again');
+  $howToPlay = $('#howtoplay');
+  $questionsContainer = $('#container');
+  $player1Question = $('#p1-questions')
+  $player2Question = $('#p2-questions')
+  $player1Submit = $('#p1-submit')
+  $player2Submit = $('#p2-submit')
 
 }); // closes window onload function
 
@@ -86,6 +96,8 @@ var player2 = {
 
 //Global Trackers
 var questionCounter = [];
+
+
 
 
 //======================================================================//
