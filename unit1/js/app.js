@@ -254,7 +254,7 @@ var loopQuestions = function() {
 
 //Question Trackers
     var questionCounter = [];
-    var randomNum23 = (Math.floor(Math.random() * (23 - 0 + 1)) + 0); //Generates Random between 0-23
+    var randomNum23 = (Math.floor(Math.random() * (23 - 0)) + 0); //Generates Random between 0-22 (23 questions, 0-22 index)
 
 //Question Pulls
   var randomQuestion = questions[randomNum23].question;
@@ -271,7 +271,7 @@ var loopQuestions = function() {
 //Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
-  $questionAsked = $('<p>').text(randomQuestion);
+  $questionAsked = $('<h2>').text(randomQuestion);
   $player1Question.append($questionAsked);
 };
 
