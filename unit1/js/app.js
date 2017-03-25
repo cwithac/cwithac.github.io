@@ -271,8 +271,16 @@ var loopQuestions = function() {
 //Player 1
 var alexanderHamilton = function() {
   console.log("alexanderHamilton function has been called.");
+  $songTitle = $('<p>').text("Track: " + randomFromSong);
+  $player1Question.append($songTitle);
   $questionAsked = $('<h2>').text(randomQuestion);
   $player1Question.append($questionAsked);
+  $answerOption1 = $('<li>').text(randomChoices[0]);
+  $answerOption2 = $('<li>').text(randomChoices[1]);
+  $answerOption3 = $('<li>').text(randomChoices[2]);
+  $player1Question.append($answerOption1);
+  $player1Question.append($answerOption2);
+  $player1Question.append($answerOption3);
 };
 
 //Player 2
