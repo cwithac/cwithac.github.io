@@ -1,8 +1,9 @@
 * {
+  border: 1px solid red;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;
+  /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
 }
