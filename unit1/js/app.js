@@ -311,10 +311,14 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
   console.log("checkForCorrectP1 function has been called.");
   if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
+    questionCounter.push(randomCorrectAnswerP1);
+    console.log(questionCounter);
     scorePlayer1++
     $player1Score.text(scorePlayer1)
   } else {
     console.log("Wrong answer");
+    questionCounter.push(randomCorrectAnswerP2);
+    console.log(questionCounter);
   }
     playerTwoTurn();
 };
@@ -323,10 +327,14 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   console.log("checkForCorrectP2 function has been called.");
   if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
+    questionCounter.push(randomCorrectAnswerP2);
+    console.log(questionCounter);
     scorePlayer2++
     $player2Score.text(scorePlayer2)
   } else {
     console.log("Wrong answer");
+    questionCounter.push(randomCorrectAnswerP2);
+    console.log(questionCounter);
   }
     evalWinner();
 };
