@@ -278,38 +278,44 @@ var loopQuestions = function() {
 //Player Actions
 //Player 1
 var alexanderHamilton = function() {
-  console.log("alexanderHamilton function has been called.");
-  $songTitle = $('<p>').text("Track: " + randomFromSongP1);
+  console.log("alexanderHamilton function has been called."); //confirms function has been initalized
+  $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
   $player1Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestionP1);
+  $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
   $player1Question.append($questionAsked);
-  $answerUL = $('<ul>')
-  $answerIndex0 = $('<li>').text(randomChoicesP1[0]);
-  $answerIndex1 = $('<li>').text(randomChoicesP1[1]);
-  $answerIndex2 = $('<li>').text(randomChoicesP1[2]);
+  $answerUL = $('<ul>') // UL container for LI answers
+  $answerIndex0 = $('<li>').text(randomChoicesP1[0]); //LI for answers wrapped in UL
+  $answerIndex1 = $('<li>').text(randomChoicesP1[1]); //LI for answers wrapped in UL
+  $answerIndex2 = $('<li>').text(randomChoicesP1[2]); //LI for answers wrapped in UL
   $player1Question.append($answerUL)
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
+  $player1Submit.on('click', checkForCorrect);
   aaronBurr();
 };
 
 //Player 2
 var aaronBurr = function() {
-  console.log("aaronBurr function has been called.");
-  $songTitle = $('<p>').text("Track: " + randomFromSongP2);
+  console.log("aaronBurr function has been called."); //confirms function has been initalized
+  $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
   $player2Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestionP2);
+  $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
   $player2Question.append($questionAsked);
-  $answerUL = $('<ul>')
-  $answerIndex0 = $('<li>').text(randomChoicesP2[0]);
-  $answerIndex1 = $('<li>').text(randomChoicesP2[1]);
-  $answerIndex2 = $('<li>').text(randomChoicesP2[2]);
+  $answerUL = $('<ul>') // UL container for LI answers
+  $answerIndex0 = $('<li>').text(randomChoicesP2[0]); //LI for answers wrapped in UL
+  $answerIndex1 = $('<li>').text(randomChoicesP2[1]); //LI for answers wrapped in UL
+  $answerIndex2 = $('<li>').text(randomChoicesP2[2]); //LI for answers wrapped in UL
   $player2Question.append($answerUL)
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
+  $player2Submit.on('click', checkForCorrect);
   // evalWinner();
+};
+
+var checkForCorrect = function() {
+  console.log("checkForCorrect function has been called.");
 };
 
 //Game Actions
