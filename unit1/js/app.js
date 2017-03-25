@@ -15,8 +15,6 @@ $(function() {
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
-  $player1Submit = $('#p1-submit') // Submit button inside P1 question div
-  $player2Submit = $('#p2-submit') // Submit button inside P1 question div
   $radioButton = $('<input>').attr('type', 'radio'); // Empty Radio Button
 
 
@@ -291,7 +289,6 @@ var alexanderHamilton = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
-  $player1Submit.on('click', checkForCorrect);
   aaronBurr();
 };
 
@@ -310,7 +307,6 @@ var aaronBurr = function() {
   $answerUL.append($answerIndex0);
   $answerUL.append($answerIndex1);
   $answerUL.append($answerIndex2);
-  $player2Submit.on('click', checkForCorrect);
   // evalWinner();
 };
 
