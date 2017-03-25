@@ -200,7 +200,7 @@ var questions = [
   },
   { question: "Go home, Alexander.", // Question...
     choices: ["My name’s been through a lot, I can take it.", "Or you could die and we need you alive.", "That’s an order from your commander."], // Array of possible answers
-    correctAnswer: 2, // Correct answer
+    correctAnswer: "That’s an order from your commander.", // Correct answer
     fromSong: "Meet Me Inside"
   },
   { question: "And if this child...", // Question...
@@ -316,11 +316,9 @@ var aaronBurr = function() {
   // evalWinner();
 };
 
-var checkForCorrect = function() {
+var checkForCorrect = function() { //Checks for matching answer to array
   console.log("checkForCorrect function has been called.");
-  console.log($(this).text());
-  console.log(randomCorrectAnswerP1);
-  if ((($(this).text()) === randomCorrectAnswerP1) || (($(this).text()) === randomCorrectAnswerP2)) {
+  if ((($(this).text()) === randomCorrectAnswerP1) || (($(this).text()) === randomCorrectAnswerP2)) { //if content of clicked words is the same as correct string from questions array ...
     console.log("Correct");
   } else {
     console.log("Wrong answer");
