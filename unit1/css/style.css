@@ -7,3 +7,18 @@
 body {
   /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
 }
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
