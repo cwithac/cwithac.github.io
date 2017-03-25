@@ -3,6 +3,7 @@
   /*border: 1px solid red;*/
   margin: 0;
   padding: 0.5em;
+  text-align: center;
 }
 
 body {
@@ -38,9 +39,10 @@ button {
   padding: 2em 1em;
   border: 2px solid black;
   margin: 0 1em;
-  background: black;
+  background-color: black;
   color: white;
   font-weight: normal;
+  text-align: left;
 }
 
 #player1-score, #player2-score {
@@ -57,4 +59,8 @@ button {
 
 .halfstar {
   height: 50px;
+}
+
+.logo {
+  height: 300px;
 }
