@@ -266,7 +266,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
 //Game Actions
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < questions.length) { //If total number of questions available have been asked...
+  if (questionCounter.length < 20) { //Asks 20 questions.  questions.length will ask length of quetsions available, not guaranteed all questions.
     playerOneTurn();
   } else {
     checkWinner();
