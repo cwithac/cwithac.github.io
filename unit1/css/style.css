@@ -1,7 +1,7 @@
 /*HTML <> TAGS*/
 * {
     /*FOR TESTING*/
-  /*border: 1px solid red;*/
+  border: 1px solid red;
     /*FOR TESTING*/
   margin: 0;
   padding: 0.5em;
@@ -26,9 +26,7 @@ h1 {
   margin-top: -.55em;
 }
 
-p, h2, li {
-  text-align: left;
-}
+
 
 li {
   list-style: none;
@@ -41,6 +39,13 @@ section {
   width: calc(100%-1em);
   height: 450px;
   margin-top: 15px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
 }
 
 footer {
@@ -57,6 +62,14 @@ footer {
   color: white;
   font-weight: normal;
   width: 40%;
+}
+
+#p1-questions {
+  text-align: left;
+}
+
+#p2-questions {
+  text-align: right;
 }
 
 #player1-score, #player2-score {

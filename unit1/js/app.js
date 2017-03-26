@@ -261,13 +261,13 @@ var checkWinner = function() {
   // console.log("checkWinner function has been called.");
   if (scorePlayer1 > scorePlayer2){
     $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
-    $('body').append($endGameNotif);
+    $questionsContainer.prepend($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
     $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
-    $('body').append($endGameNotif);
+    $questionsContainer.append($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
     $endGameNotif = $('<h3>').text("The game is a tie!")
-    $('body').append($endGameNotif);
+    $questionsContainer.before($endGameNotif);
   } else {
     console.log("Something is wrong with this function.");
   }
@@ -276,6 +276,7 @@ var checkWinner = function() {
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
   // console.log("resetGame function has been called.");
+  $questionsContainer.empty();
   $player1Question.empty();
   $player2Question.empty();
   questionCounter = [];
