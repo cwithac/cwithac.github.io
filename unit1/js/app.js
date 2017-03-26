@@ -15,27 +15,15 @@ $(function() {
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
-  $radioButton = $('<input>').attr('type', 'radio'); // Empty Radio Button
 
 
 //======================================================================//
 
 //PSEUDOCODE
 
-
-// Each player turn, send to win eval.
-//
-
-// //Winner Eval
-// Checks if X questions have been asked, if not continue game with P1.
-// Checks between Player 1 and Player 2 Score for Winner
-// Winner Message
-//
 // //Reset Game
 // Starts game over without refresh (resets questions asked to 0, resets score)
-//
-// //CSS Stretch
-// Background Music
+
 
 //======================================================================//
 
@@ -293,11 +281,15 @@ var checkWinner = function() {
   }
 };
 
+//Resets Game, clears questions asked and score.
 var resetGame = function() {
   //Clears Question counter
   //Clears asked questions
   //Sets scores to 0
 };
+
+//Listener for resetGame
+
 
 var startGame = function() {
   // console.log("startGame function has been called.");
