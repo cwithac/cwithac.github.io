@@ -47,7 +47,7 @@ section {
 h3 {
   font-size: 2em;
   font-weight: bold;
-  color: rgb(165,115,35);
+  color: black;
 }
 
 footer {
@@ -84,6 +84,9 @@ footer {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
+}
+
+#start-game, #how-to-play, #play-again {
   cursor: pointer;
 }
 
