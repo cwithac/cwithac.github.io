@@ -156,6 +156,7 @@ var questions = [
 
 //Player 1
 var playerOneTurn = function() {
+  $player1Question.empty();
   $player2Question.empty();
   // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();

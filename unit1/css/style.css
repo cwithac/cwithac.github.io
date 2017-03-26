@@ -1,15 +1,15 @@
-/*MAIN TAGS*/
+/*HTML <> TAGS*/
 * {
     /*FOR TESTING*/
-  border: 1px solid red;
+  /*border: 1px solid red;*/
     /*FOR TESTING*/
   margin: 0;
   padding: 0.5em;
+  font-family: 'Cinzel', serif;
 }
 
 body {
-  /*backgroundURL removed for testing*/
-  /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
+  background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;
   font-weight: bold;
   text-align: center;
 }
@@ -19,6 +19,11 @@ header {
   justify-content: space-around;
   padding: 0;
   margin-top: 0;
+}
+
+h1 {
+  font-size: 4em;
+  margin-top: -.55em;
 }
 
 p, h2, li {
@@ -32,10 +37,10 @@ li {
 section {
   display: flex;
   justify-content: space-around;
-  /*background color black after testing*/
-  background-color: gray;
+  background-color: black;
   width: calc(100%-1em);
   height: 450px;
+  margin-top: 15px;
 }
 
 footer {
@@ -45,9 +50,9 @@ footer {
 
 /*ID AND CLASS*/
 #p1-questions, #p2-questions {
-  padding: 1em .5em;
+  padding: .5em;
   border: 2px solid black;
-  margin: 0 1em;
+  margin: 0 .5em;
   background-color: black;
   color: white;
   font-weight: normal;
@@ -69,13 +74,14 @@ footer {
 #score1, #score2 {
   text-align: center;
   font-size: 60px;
-  margin-bottom: -40px;
-  margin-top: -30px;
+  margin-bottom: -50px;
+  margin-top: -40px;
 }
 
 .halfstar {
   height: 50px;
   padding-top: 0;
+  margin-bottom: -10px;
 }
 
 .titleStar {
@@ -85,16 +91,16 @@ footer {
 }
 
 .track {
-  font-size: .75em;
+  font-size: .5em;
   margin-top: 0px;
 }
 
 .question {
-  font-size: 2.25em;
+  font-size: 1.75em;
 }
 
 .answer {
-  font-size: .9em;
+  font-size: 1em;
 }
 
 .scoreNum {
