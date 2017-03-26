@@ -8,8 +8,10 @@ $(function() {
   $player1Score = $('#score1'); // Score paragraph for player 1
   $player2Score = $('#score2'); // Score paragraph for player 2
 
-  $playAgain = $('#play-again'); // Play again div resegGame();
-  $turns = $('#turns'); // How to Play div
+  $startGame = $('#start-game'); // Start Game div
+  $howToPlay = $('#how-to-play'); // How to Play div
+  $playAgain = $('#play-again'); // Play again div resetGame();
+  $turns = $('#turns'); // Turn Counter Div 
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
 
   $player1Question = $('#p1-questions') // P1 question div

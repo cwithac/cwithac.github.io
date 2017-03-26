@@ -80,7 +80,7 @@ footer {
   background-color: rgba(256, 256, 256, .3);
 }
 
-#play-again, #turns {
+#start-game, #how-to-play, #play-again, #turns {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
