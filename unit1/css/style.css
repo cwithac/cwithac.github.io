@@ -26,10 +26,12 @@ h1 {
   margin-top: -.55em;
 }
 
-
-
 li {
   list-style: none;
+}
+
+li:hover {
+  color: rgb(165,115,35);
 }
 
 section {
@@ -43,9 +45,9 @@ section {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
-  color: white;
+  color: rgb(165,115,35);
 }
 
 footer {
