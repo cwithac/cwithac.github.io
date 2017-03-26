@@ -11,7 +11,7 @@ $(function() {
   $startGame = $('#start-game'); // Start Game div
   $howToPlay = $('#how-to-play'); // How to Play div
   $playAgain = $('#play-again'); // Play again div resetGame();
-  $turns = $('#turns'); // Turn Counter Div 
+  $turns = $('#turns'); // Turn Counter Div
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
 
   $player1Question = $('#p1-questions') // P1 question div
@@ -303,7 +303,8 @@ var startGame = function() {
 };
 
 //START GAME INITALIZER
-startGame(); // Runs at Window Load, Disable to deactivate game
+//Listener for startGame function
+$startGame.on('click', startGame);
 
 
 //======================================================================//
