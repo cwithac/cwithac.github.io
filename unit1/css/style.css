@@ -84,6 +84,7 @@ footer {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
+  cursor: pointer;
 }
 
 #score1, #score2 {
