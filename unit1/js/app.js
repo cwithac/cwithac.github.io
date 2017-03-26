@@ -288,6 +288,7 @@ var resetGame = function() {
   $player1Question.empty();
   $player2Question.empty();
   questionCounter = [];
+  $turns.text("Total Turns: " + questionCounter.length)
   scorePlayer1 = 0;
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
