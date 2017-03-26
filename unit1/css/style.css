@@ -37,7 +37,7 @@ li:hover {
 section {
   display: flex;
   justify-content: space-around;
-  background-color: black;
+  /*background-color: black;*/
   width: calc(100%-1em);
   height: 450px;
   margin-top: 15px;
@@ -58,7 +58,7 @@ footer {
 /*ID AND CLASS*/
 #p1-questions, #p2-questions {
   padding: .5em;
-  border: 2px solid black;
+  border: 4px solid rgb(165,115,35);
   margin: 0 .5em;
   background-color: black;
   color: white;
