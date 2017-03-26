@@ -241,14 +241,15 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     console.log("Correct");
     questionCounter.push(randomCorrectAnswerP2);
     scorePlayer2++
-    $player2Score.text(scorePlayer2)
+    $player2Score.text(scorePlayer2);
+    evalWinner();
   } else {
     console.log("Wrong answer");
     questionCounter.push(randomCorrectAnswerP2);
+    evalWinner();
   }
     $turns.text("Total Turns: " + questionCounter.length)
     $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
-    evalWinner();
 };
 
 //Game Actions
@@ -284,9 +285,14 @@ var checkWinner = function() {
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
   console.log("resetGame function has been called.");
-  //Clears Question counter
-  //Clears asked questions
-  //Sets scores to 0
+  $player1Question.empty();
+  $player2Question.empty();
+  questionCounter = [];
+  scorePlayer1 = 0;
+  $player1Score.text(scorePlayer1)
+  scorePlayer2 = 0;
+  $player2Score.text(scorePlayer2);
+  startGame();
 };
 
 //Listener for resetGame
