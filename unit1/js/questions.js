@@ -48,9 +48,9 @@ var questions = [
     correctAnswer: "That’s true!", // Correct answer
     fromSong: "A Winter's Ball"
   },
-  { question: "Now my life gets better, every letter that you write me...", // Question...
-    choices: ["Laughin’ at my sister, cuz she wants to form a harem.", "If it takes fighting a war for us to meet, it will have been worth it.", "I’m just sayin’, if you really loved me, you would share him."], // Array of possible answers
-    correctAnswer: "Laughin’ at my sister, cuz she wants to form a harem", // Correct answer
+  { question: "Laughin’ at my sister as she’s dazzling the room...", // Question...
+    choices: ["Then you walked in and my heart went BOOM!", "If it takes fighting a war for us to meet, it will have been worth it.", "I’m just sayin’, if you really loved me, you would share him."], // Array of possible answers
+    correctAnswer: "Then you walked in and my heart went BOOM!", // Correct answer
     fromSong: "Helpless"
   },
   { question: "The feeling of freedom, of seein’ the light,", // Question...
