@@ -283,13 +283,14 @@ var checkWinner = function() {
 
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
+  console.log("resetGame function has been called.");
   //Clears Question counter
   //Clears asked questions
   //Sets scores to 0
 };
 
 //Listener for resetGame
-
+$playAgain.on('click', resetGame);
 
 var startGame = function() {
   // console.log("startGame function has been called.");
