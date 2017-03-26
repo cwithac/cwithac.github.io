@@ -259,14 +259,14 @@ var evalWinner = function() {
 var checkWinner = function() {
   // console.log("checkWinner function has been called.");
   if (scorePlayer1 > scorePlayer2){
-    $endGameNotif = $('<h2>').text("Congratulations!  Player 1 has won the game!")
-    $playAgain.after($endGameNotif);
+    $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
+    $('body').append($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
-    $endGameNotif = $('<h2>').text("Congratulations!  Player 2 has won the game!")
-    $playAgain.after($endGameNotif);
+    $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
+    $('body').append($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
-    $endGameNotif = $('<h2>').text("The game is a tie!")
-    $playAgain.after($endGameNotif);
+    $endGameNotif = $('<h3>').text("The game is a tie!")
+    $('body').append($endGameNotif);
   } else {
     console.log("Something is wrong with this function.");
   }
