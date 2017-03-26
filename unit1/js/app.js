@@ -266,7 +266,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
 //Game Actions
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < 20) { //Asks 20 questions.  questions.length will ask length of quetsions available, not guaranteed all questions.
+  if (questionCounter.length < 20) { //Asks 20 questions.  questions.length will ask length of questions available, not guaranteed all questions.
     playerOneTurn();
   } else {
     checkWinner();
@@ -275,7 +275,17 @@ var evalWinner = function() {
 
 var checkWinner = function() {
   console.log("checkWinner function has been called.");
-  //which score is higher
+  console.log(scorePlayer1);
+  console.log(scorePlayer2);
+  if (scorePlayer1 > scorePlayer2){
+    console.log("Player 1 is the Winner");
+  } else if (scorePlayer2 > scorePlayer1) {
+    console.log("Player 2 is the Winner");
+  } else if (scorePlayer1 === scorePlayer2) {
+    console.log("The game is a tie");
+  } else {
+    console.log("Something is wrong with this function.");
+  }
   //inform winner
 };
 
