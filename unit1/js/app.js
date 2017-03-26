@@ -1,36 +1,25 @@
-// if (typeof jQuery == 'undefined'){
-//   console.log('oops! I still have to link my jQuery properly!');
-// } else {console.log('I did it! I linked jQuery and this js file!')};
 
 //======================================================================//
-//Window Onload Function
-
+//Window Onload Function START
 $(function() {
+//======================================================================//
 
-  //jQuery Variables
+//jQuery Variables
   $player1Score = $('#score1'); // Score paragraph for player 1
   $player2Score = $('#score2'); // Score paragraph for player 2
+
   $playAgain = $('#play-again'); // Play again div resegGame();
   $turns = $('#turns'); // How to Play div
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
+
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
-
-
-//======================================================================//
-
-//PSEUDOCODE
-
-// //Reset Game
-// Starts game over without refresh (resets questions asked to 0, resets score)
-
 
 //======================================================================//
 
 //Player Variables
-
-var scorePlayer1 = 0;
-var scorePlayer2 = 0;
+  var scorePlayer1 = 0;
+  var scorePlayer2 = 0;
 
 //======================================================================//
 
@@ -154,18 +143,17 @@ var questions = [
 ];
 
 //Question Trackers
+    //Array of correct answers available (not chosen by player) as a choice is made.
     var questionCounter = [];
-
+    //Random number generator
     var randomNumGen = function() {
         randNum = (Math.floor(Math.random() * (23 - 0)) + 0);
-    };
-
+    }; // Generates a random number between 0 - 22, inclusive of 0. (questions array length 23, 0-22)
 
 //======================================================================//
-
-//Game Play
-
 //Player Actions
+//======================================================================//
+
 //Player 1
 var playerOneTurn = function() {
   $player2Question.empty();
@@ -175,21 +163,21 @@ var playerOneTurn = function() {
   var randomChoicesP1 = questions[randNum].choices;
   var randomFromSongP1 = questions[randNum].fromSong;
   // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
-  $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
-  $player1Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
-  $player1Question.append($questionAsked);
-  $answerUL = $('<ul>') // UL container for LI answers
-  $answerIndex0 = $('<li>').text(randomChoicesP1[0]); //LI for answers wrapped in UL
-  $answerIndex1 = $('<li>').text(randomChoicesP1[1]); //LI for answers wrapped in UL
-  $answerIndex2 = $('<li>').text(randomChoicesP1[2]); //LI for answers wrapped in UL
-  $player1Question.append($answerUL)
-  $answerUL.append($answerIndex0);
-  $answerUL.append($answerIndex1);
-  $answerUL.append($answerIndex2);
-  $answerIndex0.on('click', checkForCorrectP1);
-  $answerIndex1.on('click', checkForCorrectP1);
-  $answerIndex2.on('click', checkForCorrectP1);
+    $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
+      $player1Question.append($songTitle);
+    $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
+      $player1Question.append($questionAsked);
+    $answerUL = $('<ul>') // UL container for LI answers
+    $answerIndex0 = $('<li>').text(randomChoicesP1[0]); //LI for answers wrapped in UL
+    $answerIndex1 = $('<li>').text(randomChoicesP1[1]); //LI for answers wrapped in UL
+    $answerIndex2 = $('<li>').text(randomChoicesP1[2]); //LI for answers wrapped in UL
+      $player1Question.append($answerUL)
+      $answerUL.append($answerIndex0);
+      $answerUL.append($answerIndex1);
+      $answerUL.append($answerIndex2);
+      $answerIndex0.on('click', checkForCorrectP1);
+      $answerIndex1.on('click', checkForCorrectP1);
+      $answerIndex2.on('click', checkForCorrectP1);
   };
 
 //Player 2
@@ -200,35 +188,34 @@ var playerTwoTurn = function() {
   var randomChoicesP2 = questions[randNum].choices;
   var randomFromSongP2 = questions[randNum].fromSong;
   // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
-  $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
-  $player2Question.append($songTitle);
-  $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
-  $player2Question.append($questionAsked);
-  $answerUL = $('<ul>') // UL container for LI answers
-  $answerIndex0 = $('<li>').text(randomChoicesP2[0]); //LI for answers wrapped in UL
-  $answerIndex1 = $('<li>').text(randomChoicesP2[1]); //LI for answers wrapped in UL
-  $answerIndex2 = $('<li>').text(randomChoicesP2[2]); //LI for answers wrapped in UL
-  $player2Question.append($answerUL)
-  $answerUL.append($answerIndex0);
-  $answerUL.append($answerIndex1);
-  $answerUL.append($answerIndex2);
-  $answerIndex0.on('click', checkForCorrectP2);
-  $answerIndex1.on('click', checkForCorrectP2);
-  $answerIndex2.on('click', checkForCorrectP2);
+    $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
+      $player2Question.append($songTitle);
+    $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
+      $player2Question.append($questionAsked);
+    $answerUL = $('<ul>') // UL container for LI answers
+    $answerIndex0 = $('<li>').text(randomChoicesP2[0]); //LI for answers wrapped in UL
+    $answerIndex1 = $('<li>').text(randomChoicesP2[1]); //LI for answers wrapped in UL
+    $answerIndex2 = $('<li>').text(randomChoicesP2[2]); //LI for answers wrapped in UL
+      $player2Question.append($answerUL)
+      $answerUL.append($answerIndex0);
+      $answerUL.append($answerIndex1);
+      $answerUL.append($answerIndex2);
+      $answerIndex0.on('click', checkForCorrectP2);
+      $answerIndex1.on('click', checkForCorrectP2);
+      $answerIndex2.on('click', checkForCorrectP2);
   };
 
 var checkForCorrectP1 = function() { //Checks for matching answer to array
   // console.log("checkForCorrectP1 function has been called.");
   var randomCorrectAnswerP1 = questions[randNum].correctAnswer;
-  if (($(this).text()) === randomCorrectAnswerP1) { //if content of clicked words is the same as correct string from questions array ...
-    console.log("Correct");
-    questionCounter.push(randomCorrectAnswerP1);
-    scorePlayer1++
-    $player1Score.text(scorePlayer1)
-  } else {
-    console.log("Wrong answer");
-    questionCounter.push(randomCorrectAnswerP1);
+    if (($(this).text()) === randomCorrectAnswerP1) { //Correct Answer
+        questionCounter.push(randomCorrectAnswerP1);
+        scorePlayer1++
+        $player1Score.text(scorePlayer1)
+    } else { //Incorrect Answer
+        questionCounter.push(randomCorrectAnswerP1);
   }
+    //Actions regardless of answer's validity
     $turns.text("Total Turns: " + questionCounter.length)
     $player1Question.empty();
     playerTwoTurn();
@@ -237,22 +224,27 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
 var checkForCorrectP2 = function() { //Checks for matching answer to array
   // console.log("checkForCorrectP2 function has been called.");
   var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
-  if (($(this).text()) === randomCorrectAnswerP2) { //if content of clicked words is the same as correct string from questions array ...
-    console.log("Correct");
-    questionCounter.push(randomCorrectAnswerP2);
-    scorePlayer2++
-    $player2Score.text(scorePlayer2);
-    evalWinner();
-  } else {
-    console.log("Wrong answer");
-    questionCounter.push(randomCorrectAnswerP2);
-    evalWinner();
+    if (($(this).text()) === randomCorrectAnswerP2) { //Correct Answer
+        console.log("Correct");
+        questionCounter.push(randomCorrectAnswerP2);
+        scorePlayer2++
+        $player2Score.text(scorePlayer2);
+        evalWinner();
+    } else { //Incorrect Answer
+        console.log("Wrong answer");
+        questionCounter.push(randomCorrectAnswerP2);
+        evalWinner();
   }
+  //Actions regardless of answer's validity
     $turns.text("Total Turns: " + questionCounter.length)
     $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
 };
 
+//======================================================================//
 //Game Actions
+//======================================================================//
+
+//Evaluates if a winner can be found or if the game needs to continue
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
   if (questionCounter.length < 20) { //Asks 20 questions.  questions.length will ask length of questions available, not guaranteed all questions.
@@ -263,18 +255,16 @@ var evalWinner = function() {
 };
 
 //Confirms winner of the game once evalWinner confirms game is over.
+//End of Game until Reset/Play again is selected/activated
 var checkWinner = function() {
   // console.log("checkWinner function has been called.");
   if (scorePlayer1 > scorePlayer2){
-    console.log("Player 1 is the Winner");
     $endGameNotif = $('<h2>').text("Congratulations!  Player 1 has won the game!")
     $playAgain.after($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
-    console.log("Player 2 is the Winner");
     $endGameNotif = $('<h2>').text("Congratulations!  Player 2 has won the game!")
     $playAgain.after($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
-    console.log("The game is a tie");
     $endGameNotif = $('<h2>').text("The game is a tie!")
     $playAgain.after($endGameNotif);
   } else {
@@ -284,7 +274,7 @@ var checkWinner = function() {
 
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
-  console.log("resetGame function has been called.");
+  // console.log("resetGame function has been called.");
   $player1Question.empty();
   $player2Question.empty();
   questionCounter = [];
@@ -293,18 +283,23 @@ var resetGame = function() {
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
   $player2Score.text(scorePlayer2);
-  startGame();
+  startGame();   //Restarts Game
 };
 
-//Listener for resetGame
+//Listener for resetGame Function
 $playAgain.on('click', resetGame);
 
+//StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
   playerOneTurn();
 };
 
+//START GAME INITALIZER 
 startGame(); // Runs at Window Load, Disable to deactivate game
 
 
-}); // closes window onload function
+//======================================================================//
+//Window Onload Function END
+});
+//======================================================================//
