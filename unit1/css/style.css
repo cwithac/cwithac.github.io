@@ -1,15 +1,17 @@
 /*MAIN TAGS*/
 * {
+    /*FOR TESTING*/
   /*border: 1px solid red;*/
+    /*FOR TESTING*/
   margin: 0;
   padding: 0.5em;
-  text-align: center;
 }
 
 body {
   /*backgroundURL removed for testing*/
   /*background: url(../images/hamilton_background.jpeg) no-repeat center center fixed;*/
   font-weight: bold;
+  text-align: center;
 }
 
 header {
@@ -19,11 +21,21 @@ header {
   margin-top: 0;
 }
 
+p, h2, li {
+  text-align: left;
+}
+
+li {
+  list-style: none;
+}
+
 section {
   display: flex;
   justify-content: space-around;
   /*background color black after testing*/
   background-color: gray;
+  width: calc(100%-1em);
+  height: 450px;
 }
 
 footer {
@@ -33,13 +45,13 @@ footer {
 
 /*ID AND CLASS*/
 #p1-questions, #p2-questions {
-  padding: 2em 1em;
+  padding: 1em .5em;
   border: 2px solid black;
   margin: 0 1em;
   background-color: black;
   color: white;
   font-weight: normal;
-  text-align: left;
+  width: 40%;
 }
 
 #player1-score, #player2-score {
@@ -54,10 +66,20 @@ footer {
   background-color: rgba(256, 256, 256, .5);
 }
 
-.halfstar {
-  height: 50px;
+#score1, #score2 {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: -40px;
+  margin-top: -30px;
 }
 
-.logo {
-  height: 300px;
+.halfstar {
+  height: 50px;
+  padding-top: 0;
+}
+
+.titleStar {
+  position: fixed;
+  height: 100px;
+  margin-top: 50px;
 }
