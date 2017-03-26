@@ -273,20 +273,24 @@ var evalWinner = function() {
   }
 };
 
+//Confirms winner of the game once evalWinner confirms game is over.
 var checkWinner = function() {
-  console.log("checkWinner function has been called.");
-  console.log(scorePlayer1);
-  console.log(scorePlayer2);
+  // console.log("checkWinner function has been called.");
   if (scorePlayer1 > scorePlayer2){
     console.log("Player 1 is the Winner");
+    $endGameNotif = $('<h2>').text("Congratulations!  Player 1 has won the game!")
+    $playAgain.after($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
     console.log("Player 2 is the Winner");
+    $endGameNotif = $('<h2>').text("Congratulations!  Player 2 has won the game!")
+    $playAgain.after($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
     console.log("The game is a tie");
+    $endGameNotif = $('<h2>').text("The game is a tie!")
+    $playAgain.after($endGameNotif);
   } else {
     console.log("Something is wrong with this function.");
   }
-  //inform winner
 };
 
 var resetGame = function() {
