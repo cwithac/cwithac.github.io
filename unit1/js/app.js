@@ -263,13 +263,13 @@ var checkWinner = function() {
   console.log("checkWinner function has been called.");
   if (scorePlayer1 > scorePlayer2){
     $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
-    $questionsContainer.before($endGameNotif);
+    $questionsContainer.after($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
     $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
-    $questionsContainer.before($endGameNotif);
+    $questionsContainer.after($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
     $endGameNotif = $('<h3>').text("The game is a tie!")
-    $questionsContainer.before($endGameNotif);
+    $questionsContainer.after($endGameNotif);
   } else {
     console.log("Something is wrong with this function.");
   }

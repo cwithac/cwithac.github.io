@@ -48,6 +48,9 @@ h3 {
   font-size: 2em;
   font-weight: bold;
   color: black;
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgba(256, 256, 256, .5);
 }
 
 footer {
