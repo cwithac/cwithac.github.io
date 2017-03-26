@@ -90,7 +90,7 @@ var questions = [
     correctAnswer: "Between the sinners and the saints...", // Correct answer
     fromSong: "Wait For It"
   },
-  { question: "We cut supply lines, we steal contraband, We pick and choose our battles and places to take a stand, And ev’ry day...", // Question...
+  { question: "We pick and choose our battles and places to take a stand, And ev’ry day...", // Question...
     choices: ["We write essays against slavery.", "Sir, entrust me with a command.", "Stay alive ‘til this horror show is past."], // Array of possible answers
     correctAnswer: "Sir, entrust me with a command.", // Correct answer
     fromSong: "Stay Alive"
@@ -163,14 +163,14 @@ var playerOneTurn = function() {
   var randomChoicesP1 = questions[randNum].choices;
   var randomFromSongP1 = questions[randNum].fromSong;
   // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
-    $songTitle = $('<p>').text("Track: " + randomFromSongP1); //Song Title
+    $songTitle = $('<p>').text("Track: " + randomFromSongP1).attr('class', 'track'); //Song Title
       $player1Question.append($songTitle);
-    $questionAsked = $('<h2>').text(randomQuestionP1); //Question Asked
+    $questionAsked = $('<h2>').text(randomQuestionP1).attr('class', 'question'); //Question Asked
       $player1Question.append($questionAsked);
     $answerUL = $('<ul>') // UL container for LI answers
-    $answerIndex0 = $('<li>').text(randomChoicesP1[0]); //LI for answers wrapped in UL
-    $answerIndex1 = $('<li>').text(randomChoicesP1[1]); //LI for answers wrapped in UL
-    $answerIndex2 = $('<li>').text(randomChoicesP1[2]); //LI for answers wrapped in UL
+    $answerIndex0 = $('<li>').text(randomChoicesP1[0]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerIndex1 = $('<li>').text(randomChoicesP1[1]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerIndex2 = $('<li>').text(randomChoicesP1[2]).attr('class', 'answer'); //LI for answers wrapped in UL
       $player1Question.append($answerUL)
       $answerUL.append($answerIndex0);
       $answerUL.append($answerIndex1);
@@ -188,14 +188,14 @@ var playerTwoTurn = function() {
   var randomChoicesP2 = questions[randNum].choices;
   var randomFromSongP2 = questions[randNum].fromSong;
   // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
-    $songTitle = $('<p>').text("Track: " + randomFromSongP2); //Song Title
+    $songTitle = $('<p>').text("Track: " + randomFromSongP2).attr('class', 'track'); //Song Title
       $player2Question.append($songTitle);
-    $questionAsked = $('<h2>').text(randomQuestionP2); //Question Asked
+    $questionAsked = $('<h2>').text(randomQuestionP2).attr('class', 'question'); //Question Asked
       $player2Question.append($questionAsked);
     $answerUL = $('<ul>') // UL container for LI answers
-    $answerIndex0 = $('<li>').text(randomChoicesP2[0]); //LI for answers wrapped in UL
-    $answerIndex1 = $('<li>').text(randomChoicesP2[1]); //LI for answers wrapped in UL
-    $answerIndex2 = $('<li>').text(randomChoicesP2[2]); //LI for answers wrapped in UL
+    $answerIndex0 = $('<li>').text(randomChoicesP2[0]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerIndex1 = $('<li>').text(randomChoicesP2[1]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerIndex2 = $('<li>').text(randomChoicesP2[2]).attr('class', 'answer'); //LI for answers wrapped in UL
       $player2Question.append($answerUL)
       $answerUL.append($answerIndex0);
       $answerUL.append($answerIndex1);
@@ -295,7 +295,7 @@ var startGame = function() {
   playerOneTurn();
 };
 
-//START GAME INITALIZER 
+//START GAME INITALIZER
 startGame(); // Runs at Window Load, Disable to deactivate game
 
 

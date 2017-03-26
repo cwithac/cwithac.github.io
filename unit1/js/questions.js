@@ -68,7 +68,7 @@ var questions = [
     correctAnswer: "Between the sinners and the saints...", // Correct answer
     fromSong: "Wait For It"
   },
-  { question: "We cut supply lines, we steal contraband, We pick and choose our battles and places to take a stand, And ev’ry day...", // Question...
+  { question: "We pick and choose our battles and places to take a stand, And ev’ry day...", // Question...
     choices: ["We write essays against slavery.", "Sir, entrust me with a command.", "Stay alive ‘til this horror show is past."], // Array of possible answers
     correctAnswer: "Sir, entrust me with a command.", // Correct answer
     fromSong: "Stay Alive"

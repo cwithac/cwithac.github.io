@@ -1,7 +1,7 @@
 /*MAIN TAGS*/
 * {
     /*FOR TESTING*/
-  /*border: 1px solid red;*/
+  border: 1px solid red;
     /*FOR TESTING*/
   margin: 0;
   padding: 0.5em;
@@ -79,7 +79,24 @@ footer {
 }
 
 .titleStar {
-  position: fixed;
+  position: absolute;
   height: 100px;
   margin-top: 50px;
+}
+
+.track {
+  font-size: .75em;
+  margin-top: 0px;
+}
+
+.question {
+  font-size: 2.25em;
+}
+
+.answer {
+  font-size: .9em;
+}
+
+.scoreNum {
+  
 }
