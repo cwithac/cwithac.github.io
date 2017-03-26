@@ -276,8 +276,8 @@ var checkWinner = function() {
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
   // console.log("resetGame function has been called.");
-  $questionsContainer.empty();
-  $player1Question.empty();
+  // $questionsContainer.empty();
+  $endGameNotif.remove();
   $player2Question.empty();
   questionCounter = [];
   $turns.text("Total Turns: " + questionCounter.length)
