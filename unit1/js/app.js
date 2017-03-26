@@ -64,8 +64,8 @@ var questions = [
     fromSong: "My Shot"
   },
   { question: "Raise a glass to freedom.", // Question...
-    choices: ["No matter what they tell you", "Something they can never take away", "Raise a glass to the four of us"], // Array of possible answers
-    correctAnswer: "Something they can never take away", // Correct answer
+    choices: ["No matter what they tell you.", "Something they can never take away.", "Raise a glass to the four of us."], // Array of possible answers
+    correctAnswer: "Something they can never take away.", // Correct answer
     fromSong: "The Story of Tonight"
   },
   { question: "Angelica!  Eliza!", // Question...
@@ -95,7 +95,7 @@ var questions = [
   },
   { question: "Now my life gets better, every letter that you write me...", // Question...
     choices: ["Laughin’ at my sister, cuz she wants to form a harem.", "If it takes fighting a war for us to meet, it will have been worth it.", "I’m just sayin’, if you really loved me, you would share him."], // Array of possible answers
-    correctAnswer: "Laughin’ at my sister, cuz she wants to form a harem.", // Correct answer
+    correctAnswer: "Laughin’ at my sister, cuz she wants to form a harem", // Correct answer
     fromSong: "Helpless"
   },
   { question: "The feeling of freedom, of seein’ the light,", // Question...
@@ -104,8 +104,8 @@ var questions = [
     fromSong: "Satisfied"
   },
   { question: "If you love this woman, go get her! What are you waiting for?", // Question...
-    choices: ["Congrats again, Alexander. Smile more.", "I’ll see you on the other side of the war", "She’s married to a British officer?"], // Array of possible answers
-    correctAnswer: "I’ll see you on the other side of the war", // Correct answer
+    choices: ["Congrats again, Alexander. Smile more.", "I’ll see you on the other side of the war.", "She’s married to a British officer?"], // Array of possible answers
+    correctAnswer: "I’ll see you on the other side of the war.", // Correct answer
     fromSong: "The Story of Tonight (Reprise)"
   },
   { question: "Love doesn't discriminate...", // Question...
@@ -143,19 +143,19 @@ var questions = [
     correctAnswer: "When I was given my first command.", // Correct answer
     fromSong: "History Has Its Eyes On You"
   },
-  { question: "To my brother's revolutionary covenant", // Question...
-    choices: ["When you knock me down I get the fuck back up again!", "I’m runnin’ with the Sons of Liberty and I am lovin’ it!", "I take their measurements, information and then I smuggle it."], // Array of possible answers
+  { question: "To my brother's revolutionary covenant...", // Question...
+    choices: ["Hercules Mulligan, I need no introduction.", "I’m runnin’ with the Sons of Liberty and I am lovin’ it!", "I take their measurements, information and then I smuggle it."], // Array of possible answers
     correctAnswer: "I’m runnin’ with the Sons of Liberty and I am lovin’ it!", // Correct answer
     fromSong: "Yorktown (The World Turned Upside Down)"
   },
   { question: "What comes next?", // Question...
-    choices: ["Awesome. Wow", "You’re on your own", "You’ve been freed"], // Array of possible answers
-    correctAnswer: "You’ve been freed", // Correct answer
+    choices: ["Awesome. Wow.", "You’re on your own.", "You’ve been freed."], // Array of possible answers
+    correctAnswer: "You’ve been freed.", // Correct answer
     fromSong: "What Comes Next?"
   },
-  { question: "We’ll bleed and fight for you, we’ll make it right for you", // Question...
-    choices: ["Yeah, you’ll blow us all away", "When you smile, I fall apart", "If we lay a strong enough foundation"], // Array of possible answers
-    correctAnswer: "If we lay a strong enough foundation", // Correct answer
+  { question: "We’ll bleed and fight for you, we’ll make it right for you...", // Question...
+    choices: ["Yeah, you’ll blow us all away.", "When you smile, I fall apart.", "If we lay a strong enough foundation..."], // Array of possible answers
+    correctAnswer: "If we lay a strong enough foundation...", // Correct answer
     fromSong: "Dear Theodosia"
   },
   { question: "Why do you write like you’re running out of time?", // Question...
@@ -164,7 +164,6 @@ var questions = [
     fromSong: "Non-Stop"
   }
 ];
-
 
 //Question Trackers
     var questionCounter = [];
