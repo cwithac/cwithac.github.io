@@ -290,7 +290,6 @@ var resetGame = function() {
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
   $player2Score.text(scorePlayer2);
-  startGame();   //Restarts Game
 };
 
 //Listener for resetGame Function
