@@ -231,7 +231,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
       $player1Question.empty();
       playerTwoTurn();
     };
-    setTimeout(delayPlayerTwo, 5000);
+    setTimeout(delayPlayerTwo, 3000);
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
@@ -259,8 +259,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
       $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
       evalWinner();
     };
-    setTimeout(delayPlayerOne, 5000);
-
+    setTimeout(delayPlayerOne, 3000);
 };
 
 //======================================================================//
@@ -284,16 +283,18 @@ var checkWinner = function() {
   if (scorePlayer1 > scorePlayer2){
     $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
     $questionsContainer.after($endGameNotif);
+    $startGame.on('click', startGame);
   } else if (scorePlayer2 > scorePlayer1) {
     $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
     $questionsContainer.after($endGameNotif);
+    $startGame.on('click', startGame);
   } else if (scorePlayer1 === scorePlayer2) {
     $endGameNotif = $('<h3>').text("The game is a tie!")
     $questionsContainer.after($endGameNotif);
+    $startGame.on('click', startGame);
   } else {
     console.log("Something is wrong with this function.");
   }
-  $startGame.on('click', startGame);
 };
 
 //Resets Game, clears questions asked and score.
