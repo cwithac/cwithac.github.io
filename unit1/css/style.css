@@ -172,3 +172,11 @@ footer {
 .hidden {
   visibility: hidden;
 }
+
+.howTo {
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgba(256, 256, 256, .5);
+  position: absolute;
+  margin: 3em 8em 0 3em;
+}
