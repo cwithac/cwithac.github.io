@@ -159,9 +159,10 @@ var questions = [
 
 //Player 1
 var playerOneTurn = function() {
-  $player1Question.removeClass('hidden').empty();
-  $player2Question.removeClass('hidden').empty();
-  $resetGame.on('click', resetGame);
+  $player1Question.removeClass('hidden')
+  $player1Question.empty();
+  $player2Question.removeClass('hidden')
+  $player1Question.empty();
   // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();
   var randomQuestionP1 = questions[randNum].question;
@@ -289,15 +290,12 @@ var checkWinner = function() {
   if (scorePlayer1 > scorePlayer2){
     $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
     $questionsContainer.after($endGameNotif);
-    $startGame.on('click', startGame);
   } else if (scorePlayer2 > scorePlayer1) {
     $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
     $questionsContainer.after($endGameNotif);
-    $startGame.on('click', startGame);
   } else if (scorePlayer1 === scorePlayer2) {
     $endGameNotif = $('<h3>').text("The game is a tie!")
     $questionsContainer.after($endGameNotif);
-    $startGame.on('click', startGame);
   } else {
     console.log("Something is wrong with this function.");
   }
@@ -321,27 +319,26 @@ var resetGame = function() {
   $player1Question.addClass('hidden').empty();
   $player2Question.addClass('hidden').empty();
   $mainLogo.removeClass('hidden');
-  $startGame.on('click', startGame);
+  $howToPlayText.addClass('hidden')
 };
 
 //Listener for resetGame Function
 $resetGame.on('click', resetGame);
 
-//How to play game content from div 'button'
-var howToPlayGame = function() {
-  console.log("howToPlayGame has been called.");
-  $mainLogo.addClass('hidden');
-  var howToPlayText = $('<div>').text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.").attr('class', 'howTo');
-  $questionsContainer.prepend(howToPlayText);
-};
-
-//Listener for howToPlayGame Function
-$howToPlay.on('click', howToPlayGame);
+// //How to play game content from div 'button'
+// var howToPlayGame = function() {
+//   console.log("howToPlayGame has been called.");
+//   $mainLogo.addClass('hidden');
+//   var howToPlayText = $('<div>').text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.").attr('class', 'howTo');
+//   $questionsContainer.before(howToPlayText);
+// };
+//
+// //Listener for howToPlayGame Function
+// $howToPlay.on('click', howToPlayGame);
 
 //StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
-  $startGame.off('click', startGame); // Deactivated unless game reset, or win/loss/tie.
   $mainLogo.addClass('hidden');
   playerOneTurn();
 };
