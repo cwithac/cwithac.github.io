@@ -32,6 +32,7 @@ $(function() {
 //======================================================================//
 
 //Questions (total 46)
+//See ReadMe for resources.
 var questions = [
   { question: "The world's gonna know your name. What’s your name, man?", // Question 1...
     choices: ["Alexander Hamilton.  My name is Alexander Hamilton.", "Aaron Burr.  My name is Aaron Burr.", "George Washington.  My name is George Washington."], // Array of possible answers
