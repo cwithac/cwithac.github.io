@@ -160,6 +160,7 @@ var questions = [
 var playerOneTurn = function() {
   $player1Question.empty();
   $player2Question.empty();
+  $resetGame.on('click', resetGame);
   // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();
   var randomQuestionP1 = questions[randNum].question;
@@ -186,6 +187,7 @@ var playerOneTurn = function() {
 //Player 2
 var playerTwoTurn = function() {
   // console.log("playerTwoTurn function has been called."); //confirms function has been initalized
+  $resetGame.on('click', resetGame);
   randomNumGen();
   var randomQuestionP2 = questions[randNum].question;
   var randomChoicesP2 = questions[randNum].choices;
@@ -227,6 +229,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     $answerIndex0.off('click', checkForCorrectP1);
     $answerIndex1.off('click', checkForCorrectP1);
     $answerIndex2.off('click', checkForCorrectP1);
+    $resetGame.off('click', resetGame);
     var delayPlayerTwo = function() {
       $player1Question.empty();
       playerTwoTurn();
@@ -255,6 +258,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     $answerIndex0.off('click', checkForCorrectP2);
     $answerIndex1.off('click', checkForCorrectP2);
     $answerIndex2.off('click', checkForCorrectP2);
+    $resetGame.off('click', resetGame);
     var delayPlayerOne = function() {
       $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
       evalWinner();
@@ -280,6 +284,7 @@ var evalWinner = function() {
 //End of Game until Reset/Play again is selected/activated
 var checkWinner = function() {
   console.log("checkWinner function has been called.");
+  $resetGame.on('click', resetGame);
   if (scorePlayer1 > scorePlayer2){
     $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
     $questionsContainer.after($endGameNotif);
