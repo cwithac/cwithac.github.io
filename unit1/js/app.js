@@ -289,6 +289,7 @@ var checkWinner = function() {
   } else {
     console.log("Something is wrong with this function.");
   }
+  $startGame.on('click', startGame);
 };
 
 //Resets Game, clears questions asked and score.
@@ -306,6 +307,7 @@ var resetGame = function() {
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
   $player2Score.text(scorePlayer2);
+  $startGame.on('click', startGame);
 };
 
 //Listener for resetGame Function
@@ -314,6 +316,7 @@ $playAgain.on('click', resetGame);
 //StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
+  $startGame.off('click', startGame); // Deactivated unless game reset, or win/loss/tie.  
   playerOneTurn();
 };
 

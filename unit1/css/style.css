@@ -39,7 +39,8 @@ section {
   justify-content: space-around;
   /*background-color: black;*/
   width: calc(100%-1em);
-  height: 600px;
+  height: 100%;
+  min-height: 600px;
   margin-top: 15px;
   text-align: center;
 }
