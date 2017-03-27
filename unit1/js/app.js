@@ -158,8 +158,8 @@ var questions = [
 
 //Player 1
 var playerOneTurn = function() {
-  $player1Question.empty();
-  $player2Question.empty();
+  $player1Question.removeClass('hidden').empty();
+  $player2Question.removeClass('hidden').empty();
   $resetGame.on('click', resetGame);
   // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();
@@ -317,6 +317,8 @@ var resetGame = function() {
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
   $player2Score.text(scorePlayer2);
+  $player1Question.addClass('hidden').empty();
+  $player2Question.addClass('hidden').empty();
   $startGame.on('click', startGame);
 };
 

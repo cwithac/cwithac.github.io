@@ -163,3 +163,7 @@ footer {
   padding-right: 1em;
     margin-left: 1em;
 }
+
+.hidden {
+  visibility: hidden;
+}
