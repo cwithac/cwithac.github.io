@@ -39,7 +39,7 @@ section {
   justify-content: space-around;
   /*background-color: black;*/
   width: calc(100%-1em);
-  height: 450px;
+  height: 600px;
   margin-top: 15px;
   text-align: center;
 }
@@ -100,6 +100,14 @@ footer {
   margin-top: -40px;
 }
 
+#answers {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 4px solid rgb(165,115,35);
+  font-size: .75em;
+  padding-top: 2em;
+}
+
 .halfstar {
   height: 50px;
   padding-top: 0;
@@ -129,6 +137,18 @@ footer {
 
 }
 
-.tie {
-  color: black;
+.correctP1, .correctP2 {
+  color: rgb(165,115,35);
+  width: 95%;
+  background-color: black;
+  font-size: 1em;
+  padding: 0;
+}
+
+.correctP1 {
+  text-align: left;
+}
+
+.correctP2 {
+  text-align: right;
 }

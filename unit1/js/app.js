@@ -219,9 +219,15 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
         questionCounter.push(randomCorrectAnswerP1);
   }
     //Actions regardless of answer's validity
-    $turns.text("Total Turns: " + questionCounter.length)
-    $player1Question.empty();
-    playerTwoTurn();
+    $turns.text("Total Turns: " + questionCounter.length);
+    $theCorrectAnswerIs = $('<div>').attr('id', 'answers').text("The correct answer is: ");
+    $player1Question.append($theCorrectAnswerIs);
+    $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
+
+    // $player1Question.empty();
+    // playerTwoTurn();
+
+
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
