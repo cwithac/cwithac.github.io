@@ -178,5 +178,6 @@ footer {
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
   position: absolute;
-  margin: 3em 8em 0 3em;
+  margin-right: 1em;
+  margin-top: 5em;
 }
