@@ -84,13 +84,13 @@ footer {
   background-color: rgba(256, 256, 256, .3);
 }
 
-#start-game, #how-to-play, #play-again, #turns {
+#start-game, #how-to-play, #reset-game, #turns {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
 }
 
-#start-game, #how-to-play, #play-again {
+#start-game, #how-to-play, #reset-game {
   cursor: pointer;
 }
 

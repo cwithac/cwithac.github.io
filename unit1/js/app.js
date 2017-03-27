@@ -10,7 +10,7 @@ $(function() {
 
   $startGame = $('#start-game'); // Start Game div
   $howToPlay = $('#how-to-play'); // How to Play div
-  $playAgain = $('#play-again'); // Play again div resetGame();
+  $resetGame = $('#reset-game'); // Play again div resetGame();
   $turns = $('#turns'); // Turn Counter Div
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
 
@@ -316,7 +316,7 @@ var resetGame = function() {
 };
 
 //Listener for resetGame Function
-$playAgain.on('click', resetGame);
+$resetGame.on('click', resetGame);
 
 //StartGame sends to player one for the turn
 var startGame = function() {
