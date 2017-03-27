@@ -224,7 +224,9 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     $turns.text("Total Turns: " + questionCounter.length);
     $player1Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
-
+    $answerIndex0.off('click', checkForCorrectP1);
+    $answerIndex1.off('click', checkForCorrectP1);
+    $answerIndex2.off('click', checkForCorrectP1);
     var delayPlayerTwo = function() {
       $player1Question.empty();
       playerTwoTurn();
@@ -250,7 +252,9 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     $turns.text("Total Turns: " + questionCounter.length)
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
-
+    $answerIndex0.off('click', checkForCorrectP2);
+    $answerIndex1.off('click', checkForCorrectP2);
+    $answerIndex2.off('click', checkForCorrectP2);
     var delayPlayerOne = function() {
       $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
       evalWinner();
@@ -316,7 +320,7 @@ $playAgain.on('click', resetGame);
 //StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
-  $startGame.off('click', startGame); // Deactivated unless game reset, or win/loss/tie.  
+  $startGame.off('click', startGame); // Deactivated unless game reset, or win/loss/tie.
   playerOneTurn();
 };
 
