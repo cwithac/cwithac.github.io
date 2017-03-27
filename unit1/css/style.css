@@ -108,6 +108,14 @@ footer {
   padding-top: 2em;
 }
 
+#answersP2 {
+  flex-wrap: wrap;
+  border-top: 4px solid rgb(165,115,35);
+  font-size: .75em;
+  padding-top: 2em;
+  text-align: right;
+}
+
 .halfstar {
   height: 50px;
   padding-top: 0;
@@ -151,4 +159,6 @@ footer {
 
 .correctP2 {
   text-align: right;
+  padding-right: 1em;
+    margin-left: 1em;
 }

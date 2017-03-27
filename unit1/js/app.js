@@ -224,8 +224,8 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     $player1Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
 
-    // $player1Question.empty();
-    // playerTwoTurn();
+    $player1Question.empty();
+    playerTwoTurn();
 
 
 };
@@ -246,6 +246,9 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   }
   //Actions regardless of answer's validity
     $turns.text("Total Turns: " + questionCounter.length)
+    $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("The correct answer is: ");
+    $player2Question.append($theCorrectAnswerIs);
+    $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
     $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
 };
 
