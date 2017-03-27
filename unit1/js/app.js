@@ -324,7 +324,7 @@ var resetGame = function() {
   $player1Question.addClass('hidden').empty();
   $player2Question.addClass('hidden').empty();
   $mainLogo.removeClass('hidden');
-  $howToPlayText.addClass('hidden')
+  $howToPlayBox.addClass('hidden')
 };
 
 //Listener for resetGame Function
@@ -333,7 +333,7 @@ $resetGame.on('click', resetGame);
 //How to play game content from div 'button'
 var howToPlayGame = function() {
   console.log("howToPlayGame has been called.");
-  $howToPlayText.removeClass('hidden')
+  $howToPlayBox.removeClass('hidden')
   $mainLogo.addClass('hidden');
   $questionsContainer.before($howToPlayBox);
   $howToPlayBox.append($howToPlayText);
@@ -343,9 +343,7 @@ var howToPlayGame = function() {
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
   };
-
   $closeButton.on('click', closeHowTo);
-
 };
 
 //Listener for howToPlayGame Function
@@ -355,7 +353,7 @@ $howToPlay.on('click', howToPlayGame);
 var startGame = function() {
   // console.log("startGame function has been called.");
   $mainLogo.addClass('hidden');
-  $howToPlayText.addClass('hidden')
+  $howToPlayBox.addClass('hidden')
   playerOneTurn();
 };
 
