@@ -13,6 +13,7 @@ $(function() {
   $resetGame = $('#reset-game'); // Play again div resetGame();
   $turns = $('#turns'); // Turn Counter Div
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
+  $mainLogo = $('#main-logo') // Central image before start and on reset
 
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
@@ -319,6 +320,7 @@ var resetGame = function() {
   $player2Score.text(scorePlayer2);
   $player1Question.addClass('hidden').empty();
   $player2Question.addClass('hidden').empty();
+  $mainLogo.removeClass('hidden');
   $startGame.on('click', startGame);
 };
 
@@ -329,6 +331,7 @@ $resetGame.on('click', resetGame);
 var startGame = function() {
   // console.log("startGame function has been called.");
   $startGame.off('click', startGame); // Deactivated unless game reset, or win/loss/tie.
+  $mainLogo.addClass('hidden');
   playerOneTurn();
 };
 
