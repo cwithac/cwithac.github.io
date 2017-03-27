@@ -270,8 +270,8 @@ var questions = [
     var questionCounter = [];
     //Random number generator
     var randomNumGen = function() {
-        randNum = (Math.floor(Math.random() * (23 - 0)) + 0);
-    }; // Generates a random number between 0 - 22, inclusive of 0. (questions array length 23, 0-22)
+        randNum = (Math.floor(Math.random() * (46 - 0)) + 0);
+    }; // Generates a random number between 0 - 45, inclusive of 0. (questions array length 46, 0-45)
 
 //======================================================================//
 //Player Actions
