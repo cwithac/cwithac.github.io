@@ -215,12 +215,13 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
         questionCounter.push(randomCorrectAnswerP1);
         scorePlayer1++
         $player1Score.text(scorePlayer1)
+        $theCorrectAnswerIs = $('<div>').attr('id', 'answers').text("Correct!");
     } else { //Incorrect Answer
         questionCounter.push(randomCorrectAnswerP1);
+        $theCorrectAnswerIs = $('<div>').attr('id', 'answers').text("Incorrect!  The correct answer is: ");
   }
     //Actions regardless of answer's validity
     $turns.text("Total Turns: " + questionCounter.length);
-    $theCorrectAnswerIs = $('<div>').attr('id', 'answers').text("The correct answer is: ");
     $player1Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
 
@@ -238,15 +239,16 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
         questionCounter.push(randomCorrectAnswerP2);
         scorePlayer2++
         $player2Score.text(scorePlayer2);
+        $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Correct!");
         evalWinner();
     } else { //Incorrect Answer
         console.log("Wrong answer");
         questionCounter.push(randomCorrectAnswerP2);
+        $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Incorrect!  The correct answer is: ");
         evalWinner();
   }
   //Actions regardless of answer's validity
     $turns.text("Total Turns: " + questionCounter.length)
-    $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("The correct answer is: ");
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
     $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
