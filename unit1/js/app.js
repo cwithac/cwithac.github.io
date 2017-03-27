@@ -224,11 +224,11 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     $turns.text("Total Turns: " + questionCounter.length);
     $player1Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
-
-    $player1Question.empty();
-    playerTwoTurn();
-
-
+    var delayPlayerTwo = function() {
+      $player1Question.empty();
+      playerTwoTurn();
+    };
+    setTimeout(delayPlayerTwo, 5000);
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
