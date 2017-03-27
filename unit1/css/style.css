@@ -122,6 +122,11 @@ footer {
   position: absolute;
 }
 
+#graphic {
+  float: left;
+  width: 25%;
+}
+
 .halfstar {
   height: 50px;
   padding-top: 0;
@@ -174,8 +179,9 @@ footer {
 }
 
 .howTo {
+  display: block;
   border: 2px solid black;
-  text-align: center;
+  text-align: right;
   background-color: rgba(256, 256, 256, .5);
   position: absolute;
   margin-right: 1em;

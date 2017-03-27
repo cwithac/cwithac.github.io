@@ -18,8 +18,10 @@ $(function() {
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
 
-  $howToPlayText = $('<div>').text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.").attr('class', 'howTo');
+  $howToPlayBox = $('<div>').attr('class', 'howTo');
+  $howToPlayText = $('<p>').text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
   $closeButton = $('<div>').attr('id', 'close').text("close");
+  $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
 
 //======================================================================//
 
@@ -333,11 +335,13 @@ var howToPlayGame = function() {
   console.log("howToPlayGame has been called.");
   $howToPlayText.removeClass('hidden')
   $mainLogo.addClass('hidden');
-  $questionsContainer.before($howToPlayText);
-  $howToPlayText.append($closeButton);
-
+  $questionsContainer.before($howToPlayBox);
+  $howToPlayBox.append($howToPlayText);
+  $howToPlayBox.append($howToGraphic);
+  $howToPlayBox.append($howToPlayText);
+  $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
-    $howToPlayText.addClass('hidden');
+    $howToPlayBox.addClass('hidden');
   };
 
   $closeButton.on('click', closeHowTo);
