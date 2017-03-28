@@ -490,14 +490,13 @@ $resetGame.on('click', resetGame);
 var howToPlayGame = function() {
   // console.log("howToPlayGame has been called.");
   $howToPlayBox.removeClass('hidden')
-  $mainLogo.addClass('hidden');
   $questionsContainer.append($howToPlayBox);
-  // $howToPlayBox.append($howToGraphic);
   $howToPlayBox.append($howToPlayHeader);
   $howToPlayBox.append($howToPlayText);
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
+    $mainLogo.removeClass('hidden');
   };
   $closeButton.on('click', closeHowTo);
 };
