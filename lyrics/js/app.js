@@ -474,6 +474,10 @@ var resetGame = function() {
   $howToPlayBox.addClass('hidden')
   var $p1Name = $player1Input.val();
   $('form').trigger('reset')
+  $player1Input.removeClass('hidden')
+  $player2Input.removeClass('hidden')
+  $submitButtonP1.removeClass('hidden')
+  $submitButtonP2.removeClass('hidden')
   $player1Name.html("Player 1's Score");
   $player2Name.html("Player 2's Score");
   $startGame.on('click', startGame);
