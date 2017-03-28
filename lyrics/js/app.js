@@ -6,7 +6,14 @@ $(function() {
 
 //jQuery Variables
   $player1Score = $('#score1'); // Score paragraph for player 1
+  $player1Name = $('#p1Name'); // Name placeholder for player 1
+  $player2Name = $('#p2Name'); // Name placeholder for player 1
   $player2Score = $('#score2'); // Score paragraph for player 2
+
+  $player1Input = $('#inputP1');
+  $player2Input = $('#inputP2');
+  $submitButtonP1 = $('#checkP1');
+  $submitButtonP2 = $('#checkP2');
 
   $startGame = $('#start-game'); // Start Game div
   $howToPlay = $('#how-to-play'); // How to Play div
@@ -392,6 +399,22 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     };
     setTimeout(delayPlayerOne, 2000);
 };
+
+
+//Set Name Input for P1
+$submitButtonP1.on('click', function() {
+  var $p1Name = $player1Input.val();
+  console.log($p1Name);
+  $player1Name.html($p1Name + "'s Score");
+});
+
+//Set Name Input for P2
+$submitButtonP2.on('click', function() {
+var $p2Name = $player2Input.val();
+console.log($p2Name);
+$player2Name.html($p2Name + "'s Score");
+});
+
 
 //======================================================================//
 //Game Actions
