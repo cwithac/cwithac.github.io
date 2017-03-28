@@ -18,7 +18,7 @@ $(function() {
   $player1Question = $('#p1-questions') // P1 question div
   $player2Question = $('#p2-questions') // P2 question div
 
-  $howToPlayBox = $('<div>').attr('class', 'howTo');
+  $howToPlayBox = $('<div>').attr('id', 'howTo');
   $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
   $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
   $closeButton = $('<div>').attr('id', 'close').text("close");
@@ -456,8 +456,8 @@ var howToPlayGame = function() {
   // console.log("howToPlayGame has been called.");
   $howToPlayBox.removeClass('hidden')
   $mainLogo.addClass('hidden');
-  $questionsContainer.before($howToPlayBox);
-  $howToPlayBox.append($howToGraphic);
+  $questionsContainer.append($howToPlayBox);
+  // $howToPlayBox.append($howToGraphic);
   $howToPlayBox.append($howToPlayHeader);
   $howToPlayBox.append($howToPlayText);
   $howToPlayBox.append($closeButton);

@@ -37,7 +37,6 @@ li:hover {
 section {
   display: flex;
   justify-content: space-around;
-  /*background-color: black;*/
   width: calc(100%-1em);
   height: 100%;
   min-height: 600px;
@@ -131,19 +130,21 @@ p {
   position: absolute;
 }
 
-#graphic {
-  float: left;
-  max-height: 350px;
-}
-
 #close {
   color: rgb(165,115,35);
   font-size: 2em;
   font-weight: bold;
-  margin-left: 85%;
-  /*margin-top: 100px;*/
-  padding: 0 .5em 0 0;
+  position: relative;
 }
+
+#howTo {
+    border: 2px solid black;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    width: 50%;
+    margin-top: 3em;
+  }
 
 .halfstar {
   height: 50px;
@@ -194,15 +195,4 @@ p {
 
 .hidden {
   visibility: hidden;
-}
-
-.howTo {
-  display: block;
-  border: 2px solid black;
-  text-align: right;
-  background-color: white;
-  position: absolute;
-  margin-right: 1em;
-  margin-top: 1em;
-  max-height: 500px;
 }
