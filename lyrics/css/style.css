@@ -147,9 +147,9 @@ p {
 }
 
 .titleStar {
-  position: absolute;
+  /*position: relative;*/
   height: 100px;
-  margin-top: 50px;
+  margin-top: -65px;
 }
 
 .track {
