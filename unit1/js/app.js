@@ -19,7 +19,9 @@ $(function() {
   $player2Question = $('#p2-questions') // P2 question div
 
   $howToPlayBox = $('<div>').attr('class', 'howTo');
-  $howToPlayText = $('<p>').text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+  $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
+  $howToPlayText1 = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
+  $howToPlayText2 = $('<p>').text("Stuck?  Click on the TRACK listing above each lyric to play the song.");
   $closeButton = $('<div>').attr('id', 'close').text("close");
   $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
 
@@ -456,9 +458,10 @@ var howToPlayGame = function() {
   $howToPlayBox.removeClass('hidden')
   $mainLogo.addClass('hidden');
   $questionsContainer.before($howToPlayBox);
-  $howToPlayBox.append($howToPlayText);
   $howToPlayBox.append($howToGraphic);
-  $howToPlayBox.append($howToPlayText);
+  $howToPlayBox.append($howToPlayHeader);
+  $howToPlayBox.append($howToPlayText1);
+  $howToPlayBox.append($howToPlayText2);
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
