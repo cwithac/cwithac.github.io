@@ -20,8 +20,7 @@ $(function() {
 
   $howToPlayBox = $('<div>').attr('class', 'howTo');
   $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
-  $howToPlayText1 = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
-  $howToPlayText2 = $('<p>').text("Stuck?  Click on the TRACK listing above each lyric to play the song.");
+  $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
   $closeButton = $('<div>').attr('id', 'close').text("close");
   $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
 
@@ -460,8 +459,7 @@ var howToPlayGame = function() {
   $questionsContainer.before($howToPlayBox);
   $howToPlayBox.append($howToGraphic);
   $howToPlayBox.append($howToPlayHeader);
-  $howToPlayBox.append($howToPlayText1);
-  $howToPlayBox.append($howToPlayText2);
+  $howToPlayBox.append($howToPlayText);
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
