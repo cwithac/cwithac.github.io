@@ -182,7 +182,14 @@ button {
 }
 
 .scoreNum {
+  animation-name: blackgold;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
 
+@keyframes blackgold {
+  0%    {color: rgb(165,115,35)}
+  100%  {color: black}
 }
 
 .correctP1, .correctP2 {
