@@ -90,6 +90,7 @@ p {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .3);
+  margin-bottom: auto;
 }
 
 #start-game, #how-to-play, #reset-game, #turns {
