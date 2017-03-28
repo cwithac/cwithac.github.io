@@ -71,6 +71,12 @@ form {
   display: inline;
 }
 
+button {
+  background-color: rgba(256, 256, 256, .5);
+  border-color: rgb(165,115,35);
+  color: black;
+}
+
 /*ID AND CLASS*/
 #p1-questions, #p2-questions {
   padding: .5em;
