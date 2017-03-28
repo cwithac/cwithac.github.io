@@ -419,7 +419,7 @@ var checkWinner = function() {
     $questionsContainer.after($endGameNotif);
   } else {
     console.log("Something is wrong with this function.");
-  }
+  }  $startGame.on('click', startGame);
 };
 
 //Resets Game, clears questions asked and score.
@@ -441,6 +441,7 @@ var resetGame = function() {
   $player2Question.addClass('hidden').empty();
   $mainLogo.removeClass('hidden');
   $howToPlayBox.addClass('hidden')
+  $startGame.on('click', startGame);
 };
 
 //Listener for resetGame Function
@@ -448,7 +449,7 @@ $resetGame.on('click', resetGame);
 
 //How to play game content from div 'button'
 var howToPlayGame = function() {
-  console.log("howToPlayGame has been called.");
+  // console.log("howToPlayGame has been called.");
   $howToPlayBox.removeClass('hidden')
   $mainLogo.addClass('hidden');
   $questionsContainer.before($howToPlayBox);
@@ -468,6 +469,7 @@ $howToPlay.on('click', howToPlayGame);
 //StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
+  $startGame.off('click', startGame);
   $mainLogo.addClass('hidden');
   $howToPlayBox.addClass('hidden')
   playerOneTurn();
