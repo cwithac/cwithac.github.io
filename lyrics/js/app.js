@@ -374,13 +374,11 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   // console.log("checkForCorrectP2 function has been called.");
   var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
     if (($(this).text()) === randomCorrectAnswerP2) { //Correct Answer
-        console.log("Correct");
         questionCounter.push(randomCorrectAnswerP2);
         scorePlayer2++
         $player2Score.text(scorePlayer2);
         $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Correct!");
     } else { //Incorrect Answer
-        console.log("Wrong answer");
         questionCounter.push(randomCorrectAnswerP2);
         $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Incorrect!  The correct answer is: ");
   }
@@ -402,17 +400,20 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
 
 
 //Set Name Input for P1
+
 $submitButtonP1.on('click', function() {
   var $p1Name = $player1Input.val();
   console.log($p1Name);
   $player1Name.html($p1Name + "'s Score");
 });
 
+
+
 //Set Name Input for P2
 $submitButtonP2.on('click', function() {
-var $p2Name = $player2Input.val();
-console.log($p2Name);
-$player2Name.html($p2Name + "'s Score");
+  var $p2Name = $player2Input.val();
+  console.log($p2Name);
+  $player2Name.html($p2Name + "'s Score");
 });
 
 
@@ -433,13 +434,15 @@ var evalWinner = function() {
 //Confirms winner of the game once evalWinner confirms game is over.
 //End of Game until Reset/Play again is selected/activated
 var checkWinner = function() {
-  console.log("checkWinner function has been called.");
+  // console.log("checkWinner function has been called.");
+  var $p1Name = $player1Input.val();
+  var $p2Name = $player2Input.val();
   $resetGame.on('click', resetGame);
   if (scorePlayer1 > scorePlayer2){
-    $endGameNotif = $('<h3>').text("Congratulations!  Player 1 has won the game!")
+    $endGameNotif = $('<h3>').text($p1Name + " has won the game!")
     $questionsContainer.after($endGameNotif);
   } else if (scorePlayer2 > scorePlayer1) {
-    $endGameNotif = $('<h3>').text("Congratulations!  Player 2 has won the game!")
+    $endGameNotif = $('<h3>').text($p2Name + " has won the game!")
     $questionsContainer.after($endGameNotif);
   } else if (scorePlayer1 === scorePlayer2) {
     $endGameNotif = $('<h3>').text("The game is a tie!")
