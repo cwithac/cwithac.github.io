@@ -230,7 +230,7 @@ var questions = [
   },
   { question: "This is my very first duel...", // Question...
     choices: ["Where is this happening?", "Philip, your mother can’t take another heartbreak.", "They don’t exactly cover this subject in boarding school."], // Array of possible answers
-    correctAnswer: "", // Correct answer
+    correctAnswer: "They don’t exactly cover this subject in boarding school.", // Correct answer
     fromSong: "Blow Us All Away"
   },
   { question: "Un deux trois quatre...", // Question...
