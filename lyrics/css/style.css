@@ -67,6 +67,10 @@ p {
   font-size: 1.25em;
 }
 
+form {
+  display: inline;
+}
+
 /*ID AND CLASS*/
 #p1-questions, #p2-questions {
   padding: .5em;
@@ -108,6 +112,7 @@ p {
   font-size: 60px;
   margin-bottom: -50px;
   margin-top: -40px;
+  padding-top: 10px;
 }
 
 #answers, #answersP2 {
@@ -139,7 +144,11 @@ p {
     position: absolute;
     width: 50%;
     margin-top: 3em;
-  }
+}
+
+#p1Name, #p2Name {
+  padding: 0;
+}
 
 .halfstar {
   height: 50px;
