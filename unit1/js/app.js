@@ -29,6 +29,9 @@ $(function() {
   var scorePlayer1 = 0;
   var scorePlayer2 = 0;
 
+//Game Variables
+    var rounds = 0;
+
 //======================================================================//
 
 //Questions (total 46)
@@ -346,7 +349,6 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
         $theCorrectAnswerIs = $('<div>').attr('id', 'answers').text("Incorrect!  The correct answer is: ");
   }
     //Actions regardless of answer's validity
-    $turns.text("Total Turns: " + questionCounter.length);
     $player1Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP1').text(randomCorrectAnswerP1));
     $answerIndex0.off('click', checkForCorrectP1);
@@ -357,7 +359,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
       $player1Question.empty();
       playerTwoTurn();
     };
-    setTimeout(delayPlayerTwo, 2000);
+    setTimeout(delayPlayerTwo, 3000);
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
@@ -375,7 +377,8 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
         $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Incorrect!  The correct answer is: ");
   }
   //Actions regardless of answer's validity
-    $turns.text("Total Turns: " + questionCounter.length)
+    rounds++;
+    $turns.text("Total Rounds: " + rounds)
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
     $answerIndex0.off('click', checkForCorrectP2);

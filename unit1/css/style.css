@@ -88,6 +88,7 @@ footer {
   border: 2px solid black;
   text-align: center;
   background-color: rgba(256, 256, 256, .5);
+  justify-content: space-around;
 }
 
 #start-game, #how-to-play, #reset-game {
