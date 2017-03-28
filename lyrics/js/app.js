@@ -405,6 +405,7 @@ $submitButtonP1.on('click', function() {
   var $p1Name = $player1Input.val();
   console.log($p1Name);
   $player1Name.html($p1Name + "'s Score");
+
 });
 
 
@@ -506,6 +507,10 @@ var startGame = function() {
   $startGame.off('click', startGame);
   $mainLogo.addClass('hidden');
   $howToPlayBox.addClass('hidden')
+  $player1Input.addClass('hidden')
+  $player2Input.addClass('hidden')
+  $submitButtonP1.addClass('hidden')
+  $submitButtonP2.addClass('hidden')
   playerOneTurn();
 };
 
