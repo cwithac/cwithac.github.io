@@ -471,6 +471,10 @@ var resetGame = function() {
   $player2Question.addClass('hidden').empty();
   $mainLogo.removeClass('hidden');
   $howToPlayBox.addClass('hidden')
+  var $p1Name = $player1Input.val();
+  $('form').trigger('reset')
+  $player1Name.html("Player 1's Score");
+  $player2Name.html("Player 2's Score");
   $startGame.on('click', startGame);
 };
 
