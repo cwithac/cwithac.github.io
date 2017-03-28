@@ -357,7 +357,7 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
       $player1Question.empty();
       playerTwoTurn();
     };
-    setTimeout(delayPlayerTwo, 3000);
+    setTimeout(delayPlayerTwo, 2000);
 };
 
 var checkForCorrectP2 = function() { //Checks for matching answer to array
@@ -386,7 +386,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
       $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
       evalWinner();
     };
-    setTimeout(delayPlayerOne, 3000);
+    setTimeout(delayPlayerOne, 2000);
 };
 
 //======================================================================//
