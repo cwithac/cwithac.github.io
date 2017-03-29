@@ -497,6 +497,7 @@ var resetGame = function() {
     $endGameNotif.remove();
   }
   questionCounter = [];
+  levelChosen = 12;
   $turns.text("Total Rounds: " + (levelChosen/2))
   scorePlayer1 = 0;
   $player1Score.text(scorePlayer1)
@@ -519,6 +520,13 @@ var resetGame = function() {
   $star1.removeClass('starsEnd');
   $star2.removeClass('starsEnd');
   $star3.removeClass('starsEnd');
+  $star4.removeClass('starsEnd');
+  $star5.removeClass('starsEnd');
+  $star1.addClass('stars');
+  $star2.addClass('stars');
+  $star3.addClass('stars');
+  $star4.addClass('stars');
+  $star5.addClass('stars');
 };
 
 //Listener for resetGame Function

@@ -58,7 +58,7 @@ h4 {
   font-weight: bold;
 }
 
-footer {
+nav {
   display: flex;
   justify-content: space-between;
 }
@@ -250,7 +250,7 @@ button {
   header {
     flex-wrap: wrap;
   }
-  footer {
+  nav {
     flex-wrap: wrap;
     justify-content: space-around;
   }
