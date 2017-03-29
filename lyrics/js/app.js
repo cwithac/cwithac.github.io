@@ -281,20 +281,22 @@ var questions = [
     //Array of correct answers available (not chosen by player) as a choice is made.
     var questionCounter = [];
     var randomCounter = [];
-    //Random number generator
-    var randomNumGen = function() {
-        randNum = (Math.floor(Math.random() * (46 - 0)) + 0);
-        console.log(randNum);
-        for (var i = 0; i < randomCounter.length; i++) {
-          if (randNum === randomCounter[i]) {
-            randNum = (Math.floor(Math.random() * (46 - 0)) + 0);
-          }
-        }
-        randomCounter.push(randNum);
-        console.log(randNum);
-        console.log(randomCounter);
-    }; // Generates a random number between 0 - 45, inclusive of 0. (questions array length 46, 0-45).  If number has already been used, generate a new random within the parameters and check again.
 
+//Random Questions     
+    //Creates an array of numbers 0-45 and shuffles them upon click of 'start' to create 'random'
+    var shuffleRandomArray = function() {
+      for (var i = 0; i < questions.length; i++) {
+        randomCounter.push(i);
+      } console.log(randomCounter);
+      randomCounter.sort(function(a, b){return 0.5 - Math.random()});
+      console.log(randomCounter);
+    };
+    //As each question appears, removes the first number from the shuffled array for unique 'random'.
+    var shiftArray = function() {
+      randNum = randomCounter.shift();
+      console.log(randNum);
+      console.log(randomCounter);
+    };
 
 
 //======================================================================//
@@ -308,7 +310,7 @@ var playerOneTurn = function() {
   $player1Question.empty();
   $player2Question.removeClass('hidden')
   $player1Question.empty();
-  randomNumGen();
+  shiftArray();
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
   var randomFromSongP1 = questions[randNum].fromSong;
@@ -334,7 +336,7 @@ var playerOneTurn = function() {
 var playerTwoTurn = function() {
   // console.log("playerTwoTurn function has been called."); //confirms function has been initalized
   $resetGame.on('click', resetGame);
-  randomNumGen();
+  shiftArray();
   var randomQuestionP2 = questions[randNum].question;
   var randomChoicesP2 = questions[randNum].choices;
   var randomFromSongP2 = questions[randNum].fromSong;
@@ -541,6 +543,7 @@ var startGame = function() {
   $player2Input.addClass('hidden')
   $submitButtonP1.addClass('hidden')
   $submitButtonP2.addClass('hidden')
+  shuffleRandomArray();
   playerOneTurn();
 };
 
