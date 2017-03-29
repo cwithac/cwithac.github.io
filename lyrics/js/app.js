@@ -550,31 +550,21 @@ var levelOne = function() {
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
 var levelTwo = function() {
-  $star1.attr('class', 'starsEnd');
   $star2.attr('class', 'starsEnd');
   levelChosen = 12;
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
 var levelThree = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
   $star3.attr('class', 'starsEnd');
   levelChosen = 20;
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
 var levelFour = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
   $star4.attr('class', 'starsEnd');
   levelChosen = 30;
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
 var levelFive = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.attr('class', 'starsEnd');
   $star5.attr('class', 'starsEnd');
   levelChosen = 40;
   $turns.text("Total Rounds: " + (levelChosen/2))
