@@ -280,10 +280,20 @@ var questions = [
 //Question Trackers
     //Array of correct answers available (not chosen by player) as a choice is made.
     var questionCounter = [];
+    var randomCounter = [];
     //Random number generator
     var randomNumGen = function() {
         randNum = (Math.floor(Math.random() * (46 - 0)) + 0);
-    }; // Generates a random number between 0 - 45, inclusive of 0. (questions array length 46, 0-45)
+        console.log(randNum);
+        for (var i = 0; i < randomCounter.length; i++) {
+          if (randNum === randomCounter[i]) {
+            randNum = (Math.floor(Math.random() * (46 - 0)) + 0);
+          }
+        }
+        randomCounter.push(randNum);
+        console.log(randNum);
+        console.log(randomCounter);
+    }; // Generates a random number between 0 - 45, inclusive of 0. (questions array length 46, 0-45).  If number has already been used, generate a new random within the parameters and check again.
 
 //======================================================================//
 //Player Actions
@@ -291,11 +301,11 @@ var questions = [
 
 //Player 1
 var playerOneTurn = function() {
+    // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   $player1Question.removeClass('hidden')
   $player1Question.empty();
   $player2Question.removeClass('hidden')
   $player1Question.empty();
-  // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   randomNumGen();
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
