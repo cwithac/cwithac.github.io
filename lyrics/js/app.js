@@ -496,7 +496,7 @@ var howToPlayGame = function() {
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
-    $mainLogo.removeClass('hidden');
+    // $mainLogo.removeClass('hidden');
   };
   $closeButton.on('click', closeHowTo);
 };
