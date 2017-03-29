@@ -527,6 +527,11 @@ var resetGame = function() {
   $star3.addClass('stars');
   $star4.addClass('stars');
   $star5.addClass('stars');
+  $star1.on('click', levelOne)
+  $star2.on('click', levelTwo)
+  $star3.on('click', levelThree)
+  $star4.on('click', levelFour)
+  $star5.on('click', levelFive)
 };
 
 //Listener for resetGame Function
