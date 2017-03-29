@@ -438,19 +438,35 @@ var checkWinner = function() {
   // console.log("checkWinner function has been called.");
   var $p1Name = $player1Input.val();
   var $p2Name = $player2Input.val();
-  $resetGame.on('click', resetGame);
-  if (scorePlayer1 > scorePlayer2){
-    $endGameNotif = $('<h3>').text($p1Name + " has won the game!")
-    $questionsContainer.after($endGameNotif);
-  } else if (scorePlayer2 > scorePlayer1) {
-    $endGameNotif = $('<h3>').text($p2Name + " has won the game!")
-    $questionsContainer.after($endGameNotif);
-  } else if (scorePlayer1 === scorePlayer2) {
-    $endGameNotif = $('<h3>').text("The game is a tie!")
-    $questionsContainer.after($endGameNotif);
-  } else {
-    console.log("Something is wrong with this function.");
-  }  $startGame.on('click', startGame);
+    if (($p1Name.length > 0) || ($p2Name.length > 0)) {
+      $resetGame.on('click', resetGame);
+      if (scorePlayer1 > scorePlayer2){
+        $endGameNotif = $('<h3>').text($p1Name + " has won the game!")
+        $questionsContainer.after($endGameNotif);
+      } else if (scorePlayer2 > scorePlayer1) {
+        $endGameNotif = $('<h3>').text($p2Name + " has won the game!")
+        $questionsContainer.after($endGameNotif);
+      } else if (scorePlayer1 === scorePlayer2) {
+        $endGameNotif = $('<h3>').text("The game is a tie!")
+        $questionsContainer.after($endGameNotif);
+      } else {
+        console.log("Something is wrong with this function.");
+      }  $startGame.on('click', startGame);
+    } else {
+      $resetGame.on('click', resetGame);
+      if (scorePlayer1 > scorePlayer2){
+        $endGameNotif = $('<h3>').text("Player 1 has won the game!")
+        $questionsContainer.after($endGameNotif);
+      } else if (scorePlayer2 > scorePlayer1) {
+        $endGameNotif = $('<h3>').text("Player 2 has won the game!")
+        $questionsContainer.after($endGameNotif);
+      } else if (scorePlayer1 === scorePlayer2) {
+        $endGameNotif = $('<h3>').text("The game is a tie!")
+        $questionsContainer.after($endGameNotif);
+      } else {
+        console.log("Something is wrong with this function.");
+      }  $startGame.on('click', startGame);
+    }
 };
 
 //Resets Game, clears questions asked and score.
@@ -496,7 +512,6 @@ var howToPlayGame = function() {
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
-    // $mainLogo.removeClass('hidden');
   };
   $closeButton.on('click', closeHowTo);
 };
