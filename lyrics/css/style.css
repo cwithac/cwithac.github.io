@@ -133,9 +133,9 @@ button {
 }
 
 #main-logo {
-  height: 300px;
+  height: 450px;
   position: absolute;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 #close {
@@ -214,4 +214,42 @@ button {
 
 .hidden {
   visibility: hidden;
+}
+
+@media (max-width: 575px) {
+  body {
+    font-size: 15px;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+  footer {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #score1, #score2 {
+    font-size: 20px;
+  }
+  section {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #p1-questions, #p2-questions {
+    width: 90%;
+  }
+  #main-logo {
+    height: 300px;
+    position: absolute;
+    margin-top: 4em;
+  }
+  .titleStar {
+    visibility: collapse;
+  }
+  p {
+    font-size: 1em;
+    margin-top: .25em;
+  }
+  .halfstar {
+    visibility: collapse;
+  }
 }
