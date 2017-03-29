@@ -28,12 +28,15 @@ $(function() {
   $howToPlayBox = $('<div>').attr('id', 'howTo');
   $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
   $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
+  $levelsDefinedText = $('<p>').text("Choose a \u2605 to select a number of rounds, from \u2605 three rounds up to \u2605 \u2605 \u2605 \u2605 \u2605 twenty.  There will be six rounds if no selection is made.");
   $closeButton = $('<div>').attr('id', 'close').text("close");
   $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
 
   $star1 = $('#star1')
   $star2 = $('#star2')
   $star3 = $('#star3')
+  $star4 = $('#star4')
+  $star5 = $('#star5')
   $levelStars = $('#levels')
 
 //======================================================================//
@@ -440,7 +443,7 @@ $submitButtonP2.on('click', function() {
 //Evaluates if a winner can be found or if the game needs to continue
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < levelChosen) { 
+  if (questionCounter.length < levelChosen) {
     playerOneTurn();
   } else {
     checkWinner();
@@ -528,6 +531,7 @@ var howToPlayGame = function() {
   $questionsContainer.append($howToPlayBox);
   $howToPlayBox.append($howToPlayHeader);
   $howToPlayBox.append($howToPlayText);
+  $howToPlayBox.append($levelsDefinedText);
   $howToPlayBox.append($closeButton);
   var closeHowTo = function() {
     $howToPlayBox.addClass('hidden');
@@ -539,7 +543,7 @@ var howToPlayGame = function() {
 $howToPlay.on('click', howToPlayGame);
 
 //SetLevel
-var levelChosen = 12; // Default if no level chosen (10 rounds, 20 questions)
+var levelChosen = 12; // Default if no level chosen
 var levelOne = function() {
   $star1.attr('class', 'starsEnd');
   levelChosen = 6;
@@ -548,7 +552,7 @@ var levelOne = function() {
 var levelTwo = function() {
   $star1.attr('class', 'starsEnd');
   $star2.attr('class', 'starsEnd');
-  levelChosen = 10;
+  levelChosen = 12;
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
 var levelThree = function() {
@@ -558,10 +562,28 @@ var levelThree = function() {
   levelChosen = 20;
   $turns.text("Total Rounds: " + (levelChosen/2))
 }
+var levelFour = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  $star4.attr('class', 'starsEnd');
+  levelChosen = 30;
+  $turns.text("Total Rounds: " + (levelChosen/2))
+}
+var levelFive = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  $star4.attr('class', 'starsEnd');
+  $star5.attr('class', 'starsEnd');
+  levelChosen = 40;
+  $turns.text("Total Rounds: " + (levelChosen/2))
+}
 $star1.on('click', levelOne)
 $star2.on('click', levelTwo)
 $star3.on('click', levelThree)
-
+$star4.on('click', levelFour)
+$star5.on('click', levelFive)
 
 //StartGame sends to player one for the turn
 var startGame = function() {
