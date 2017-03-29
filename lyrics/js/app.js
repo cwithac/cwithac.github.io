@@ -440,7 +440,7 @@ $submitButtonP2.on('click', function() {
 //Evaluates if a winner can be found or if the game needs to continue
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < (levelChosen)/2) { //Asks 20 questions.  questions.length will ask length of questions available, not guaranteed all questions.
+  if (questionCounter.length < levelChosen) { 
     playerOneTurn();
   } else {
     checkWinner();
