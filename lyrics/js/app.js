@@ -295,6 +295,8 @@ var questions = [
         console.log(randomCounter);
     }; // Generates a random number between 0 - 45, inclusive of 0. (questions array length 46, 0-45).  If number has already been used, generate a new random within the parameters and check again.
 
+
+
 //======================================================================//
 //Player Actions
 //======================================================================//
