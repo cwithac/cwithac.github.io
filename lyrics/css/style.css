@@ -135,7 +135,7 @@ button {
 #main-logo {
   height: 450px;
   position: absolute;
-  margin-top: 2em;
+  margin-top: 0;
 }
 
 #close {
@@ -194,6 +194,31 @@ button {
   100%  {color: black}
 }
 
+.stars {
+  font-size: 2.5em;
+  display: inline;
+  padding: 0;
+  color: white;
+}
+
+.starsH2 {
+  font-size: 2.5em;
+  display: inline;
+  padding: 0;
+  color: black;
+}
+
+.stars:hover {
+  color: black;
+}
+
+.starsEnd {
+  font-size: 2.5em;
+  display: inline;
+  padding: 0;
+  color: black;
+}
+
 .correctP1, .correctP2 {
   color: rgb(165,115,35);
   width: 95%;
@@ -215,6 +240,8 @@ button {
 .hidden {
   visibility: hidden;
 }
+
+/*RESPONSIVE*/
 
 @media (max-width: 575px) {
   body {

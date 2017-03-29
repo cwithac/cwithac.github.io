@@ -31,6 +31,11 @@ $(function() {
   $closeButton = $('<div>').attr('id', 'close').text("close");
   $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
 
+  $star1 = $('#star1')
+  $star2 = $('#star2')
+  $star3 = $('#star3')
+  $levelStars = $('#levels')
+
 //======================================================================//
 
 //Player Variables
@@ -282,20 +287,16 @@ var questions = [
     var questionCounter = [];
     var randomCounter = [];
 
-//Random Questions     
+//Random Questions
     //Creates an array of numbers 0-45 and shuffles them upon click of 'start' to create 'random'
     var shuffleRandomArray = function() {
       for (var i = 0; i < questions.length; i++) {
         randomCounter.push(i);
-      } console.log(randomCounter);
-      randomCounter.sort(function(a, b){return 0.5 - Math.random()});
-      console.log(randomCounter);
+      } randomCounter.sort(function(a, b){return 0.5 - Math.random()});
     };
     //As each question appears, removes the first number from the shuffled array for unique 'random'.
     var shiftArray = function() {
       randNum = randomCounter.shift();
-      console.log(randNum);
-      console.log(randomCounter);
     };
 
 
@@ -398,7 +399,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   }
   //Actions regardless of answer's validity
     rounds++;
-    $turns.text("Total Rounds: " + rounds)
+    $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2))
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
     $answerIndex0.off('click', checkForCorrectP2);
@@ -439,7 +440,7 @@ $submitButtonP2.on('click', function() {
 //Evaluates if a winner can be found or if the game needs to continue
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < 20) { //Asks 20 questions.  questions.length will ask length of questions available, not guaranteed all questions.
+  if (questionCounter.length < (levelChosen)/2) { //Asks 20 questions.  questions.length will ask length of questions available, not guaranteed all questions.
     playerOneTurn();
   } else {
     checkWinner();
@@ -486,14 +487,14 @@ var checkWinner = function() {
 //Resets Game, clears questions asked and score.
 var resetGame = function() {
   // console.log("resetGame function has been called.");
-  if (questionCounter.length < 20) { //If no one has won...
+  if (questionCounter.length < (levelChosen/2)) { //If no one has won...
         $player1Question.empty();
         $player2Question.empty();
   } else { //If the game is over and winner has been announced...
     $endGameNotif.remove();
   }
   questionCounter = [];
-  $turns.text("Total Turns: " + questionCounter.length)
+  $turns.text("Total Rounds: " + (levelChosen/2))
   scorePlayer1 = 0;
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
@@ -511,6 +512,10 @@ var resetGame = function() {
   $player1Name.html("Player 1's Score");
   $player2Name.html("Player 2's Score");
   $startGame.on('click', startGame);
+  $('main').prepend($levelStars)
+  $star1.removeClass('starsEnd');
+  $star2.removeClass('starsEnd');
+  $star3.removeClass('starsEnd');
 };
 
 //Listener for resetGame Function
@@ -533,6 +538,31 @@ var howToPlayGame = function() {
 //Listener for howToPlayGame Function
 $howToPlay.on('click', howToPlayGame);
 
+//SetLevel
+var levelChosen = 12; // Default if no level chosen (10 rounds, 20 questions)
+var levelOne = function() {
+  $star1.attr('class', 'starsEnd');
+  levelChosen = 6;
+  $turns.text("Total Rounds: " + (levelChosen/2))
+}
+var levelTwo = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  levelChosen = 10;
+  $turns.text("Total Rounds: " + (levelChosen/2))
+}
+var levelThree = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  levelChosen = 20;
+  $turns.text("Total Rounds: " + (levelChosen/2))
+}
+$star1.on('click', levelOne)
+$star2.on('click', levelTwo)
+$star3.on('click', levelThree)
+
+
 //StartGame sends to player one for the turn
 var startGame = function() {
   // console.log("startGame function has been called.");
@@ -543,6 +573,7 @@ var startGame = function() {
   $player2Input.addClass('hidden')
   $submitButtonP1.addClass('hidden')
   $submitButtonP2.addClass('hidden')
+  $levelStars.remove();
   shuffleRandomArray();
   playerOneTurn();
 };
