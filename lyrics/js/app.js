@@ -498,6 +498,7 @@ var resetGame = function() {
   }
   randomCounter = [];
   questionCounter = [];
+  shuffleRandomArray();
   levelChosen = 12;
   rounds = 0;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
