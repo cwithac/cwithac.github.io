@@ -2,11 +2,16 @@
 
 ## Live Site: https://cwithac.github.io/lyrics/
 
-## cwithac repo:
-https://github.com/cwithac/cwithac.github.io
+## GitHub Repository: https://github.com/cwithac/cwithac.github.io/tree/master/lyrics
 
-## Technologies Used:
+### Technologies Used:
+HTML, CSS, JavaScript, jQuery
 
-## Approach Taken:
+### Improvements:
+Initial layout for better responsive design. 
 
-## Notes:
+### Notes:
+
+Lyrics Resource: https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording
+
+Created by Cathleen Wright for General Assembly WDIR 2017
