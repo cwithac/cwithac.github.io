@@ -402,7 +402,7 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
   }
   //Actions regardless of answer's validity
     rounds++;
-    $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2))
+    $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
     $answerIndex0.off('click', checkForCorrectP2);
@@ -496,9 +496,11 @@ var resetGame = function() {
   } else { //If the game is over and winner has been announced...
     $endGameNotif.remove();
   }
+  randomCounter = [];
   questionCounter = [];
   levelChosen = 12;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+  rounds = 0;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
   scorePlayer1 = 0;
   $player1Score.text(scorePlayer1)
   scorePlayer2 = 0;
@@ -560,27 +562,27 @@ var levelChosen = 12; // Default if no level chosen
 var levelOne = function() {
   $star1.attr('class', 'starsEnd');
   levelChosen = 6;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelTwo = function() {
   $star2.attr('class', 'starsEnd');
   levelChosen = 12;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelThree = function() {
   $star3.attr('class', 'starsEnd');
   levelChosen = 20;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+$turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelFour = function() {
   $star4.attr('class', 'starsEnd');
   levelChosen = 30;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelFive = function() {
   $star5.attr('class', 'starsEnd');
   levelChosen = 40;
-  $turns.text("Total Rounds: " + (levelChosen/2))
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 $star1.on('click', levelOne)
 $star2.on('click', levelTwo)
