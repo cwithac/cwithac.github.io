@@ -9,8 +9,11 @@ HTML, CSS, JavaScript, jQuery
 
 ### Improvements:
 Initial layout for better responsive design.  
+
 Allow game reset with less restrictions.
+
 Allow name input at any time.
+
 Star levels reveal rounds at same location. 
 
 ### Notes:
