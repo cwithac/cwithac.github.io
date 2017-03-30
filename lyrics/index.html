@@ -16,8 +16,13 @@
     <title>Lyrics</title>
         </head>
   <body>
+    <!-- PLAYER SCORES AND TITLE -->
     <header>
-      <div id="player1-score"><p id="p1Name">Player 1's Score</p><br><p id = "score1" class="scoreNum">0</p><img class = "halfstar" src="images/hamilton_halfstar.png"></img>
+      <div id="player1-score">
+        <p id="p1Name">Player 1's Score</p>
+        <br>
+        <p id = "score1" class="scoreNum">0</p>
+        <img class = "halfstar" src="images/hamilton_halfstar.png"></img>
         <br>
         <form>
           <input type="text" placeholder="Enter Player 1 Name" id="inputP1">
@@ -27,8 +32,12 @@
       <div id="titleLogo">
         <h1>LYRICS</h1>
         <img class = "titleStar" src="images/hamilton_halfstar.png"></img>
-              </div>
-      <div id="player2-score"><p id="p2Name">Player 2's Score</p><br><p id = "score2" class="scoreNum">0</p><img class = "halfstar" src="images/hamilton_halfstar.png"></img>
+      </div>
+      <div id="player2-score">
+        <p id="p2Name">Player 2's Score</p>
+        <br>
+        <p id = "score2" class="scoreNum">0</p>
+        <img class = "halfstar" src="images/hamilton_halfstar.png"></img>
         <br>
         <form>
           <input type="text" placeholder="Enter Player 2 Name" id="inputP2">
@@ -36,6 +45,7 @@
           <button id="checkP2">&#10003;</button>
       </div>
     </header>
+    <!-- LEVELS AND QUESTIONS -->
     <main>
       <div id="levels">
         <h2 class="starsH2">Level: </h2>
@@ -46,19 +56,17 @@
         <h2 id="star5" class="stars">&#9733;</h2>
       </div>
       <section id="container">
-              <img id="main-logo" src = "images/hamilton_logo.png"></img>
-        <div id="p1-questions" class="hidden"><br>
-        </div>
-        <div id="p2-questions" class="hidden"><br>
-        </div>
+        <img id="main-logo" src = "images/hamilton_logo.png"></img>
+        <div id="p1-questions" class="hidden"><br></div>
+        <div id="p2-questions" class="hidden"><br></div>
       </section>
     </main>
+    <!-- FOOTER NAVIGATION -->
     <nav>
       <div id="start-game">Start Game</div>
       <div id="how-to-play">How to Play</div>
       <div id="reset-game">Reset Game</div>
-      <div id="turns">Total Rounds: 6 </div>
-    </nav><br>
-<!-- <footer>Created by Cathleen Wright for General Assembly WDIR 2017</footer> -->
+      <div id="turns">Total Rounds: 0 / 6 </div>
+    </nav>
   </body>
 </html>
