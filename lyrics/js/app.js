@@ -559,36 +559,116 @@ $howToPlay.on('click', howToPlayGame);
 
 //SetLevel
 var levelChosen = 12; // Default if no level chosen
+var levelDefault = function() {
+  $star1.removeClass('starsEnd');
+  $star2.removeClass('starsEnd');
+  $star3.removeClass('starsEnd');
+  $star4.removeClass('starsEnd');
+  $star5.removeClass('starsEnd');
+  $star1.attr('class', 'stars');
+  $star2.attr('class', 'stars');
+  $star3.attr('class', 'stars');
+  $star4.attr('class', 'stars');
+  $star5.attr('class', 'stars');
+  levelChosen = 12;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
 var levelOne = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.removeClass('starsEnd');
+  $star3.removeClass('starsEnd');
+  $star4.removeClass('starsEnd');
+  $star5.removeClass('starsEnd');
+  levelChosen = 6;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
+var levelOneHover = function() {
   $star1.attr('class', 'starsEnd');
   levelChosen = 6;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelTwo = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.removeClass('starsEnd');
+  $star4.removeClass('starsEnd');
+  $star5.removeClass('starsEnd');
+  levelChosen = 12;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
+var levelTwoHover = function() {
+  $star1.attr('class', 'starsEnd');
   $star2.attr('class', 'starsEnd');
   levelChosen = 12;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelThree = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
   $star3.attr('class', 'starsEnd');
+  $star4.removeClass('starsEnd');
+  $star5.removeClass('starsEnd');
   levelChosen = 20;
 $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
+var levelThreeHover = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  levelChosen = 20;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
 var levelFour = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  $star4.attr('class', 'starsEnd');
+  $star5.removeClass('starsEnd');
+  levelChosen = 30;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
+var levelFourHover = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
   $star4.attr('class', 'starsEnd');
   levelChosen = 30;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 var levelFive = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  $star4.attr('class', 'starsEnd');
+  $star5.attr('class', 'starsEnd');
+  levelChosen = 40;
+  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+}
+var levelFiveHover = function() {
+  $star1.attr('class', 'starsEnd');
+  $star2.attr('class', 'starsEnd');
+  $star3.attr('class', 'starsEnd');
+  $star4.attr('class', 'starsEnd');
   $star5.attr('class', 'starsEnd');
   levelChosen = 40;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
 $star1.on('click', levelOne)
+$star1.on('mouseover', levelOneHover)
+$star1.on('mouseleave', levelDefault)
 $star2.on('click', levelTwo)
+$star2.on('mouseover', levelTwoHover)
+$star2.on('mouseleave', levelDefault)
 $star3.on('click', levelThree)
+$star3.on('mouseover', levelThreeHover)
+$star3.on('mouseleave', levelDefault)
 $star4.on('click', levelFour)
+$star4.on('mouseover', levelFourHover)
+$star4.on('mouseleave', levelDefault)
 $star5.on('click', levelFive)
+$star5.on('mouseover', levelFiveHover)
+$star5.on('mouseleave', levelDefault)
+
 
 //StartGame sends to player one for the turn
 var startGame = function() {
