@@ -8,7 +8,7 @@
 HTML, CSS, JavaScript, jQuery
 
 ### Improvements:
-Initial layout for better responsive design. 
+Initial layout for better responsive design.   
 
 ### Notes:
 
