@@ -327,6 +327,7 @@ var playerOneTurn = function() {
   $player1Question.empty();
   $player2Question.removeClass('hidden')
   $player1Question.empty();
+  shuffleRandomArray();
   shiftArray();
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
@@ -671,7 +672,7 @@ var resetGame = function() {
   //Actions regardless of game status
   randomCounter = [];
   questionCounter = [];
-  shuffleRandomArray();
+  console.log(randomCounter);
   levelChosen = 12;
   rounds = 0;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
@@ -747,7 +748,6 @@ var startGame = function() {
   $submitButtonP1.addClass('hidden')
   $submitButtonP2.addClass('hidden')
   $levelStars.remove();
-  shuffleRandomArray();
   playerOneTurn();
 };
 
