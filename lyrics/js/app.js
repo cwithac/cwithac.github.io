@@ -4,63 +4,63 @@
 $(function() {
 //======================================================================//
 
-//jQuery Variables
+//======================================================================//
+// JQUERY GLOBAL VARIABLES
+//======================================================================//
+
+//HEADER
   $player1Score = $('#score1'); // Score paragraph for player 1
   $player1Name = $('#p1Name'); // Name placeholder for player 1
-  $player2Name = $('#p2Name'); // Name placeholder for player 1
+  $player1Input = $('#inputP1'); // Name input for player 1
+  $submitButtonP1 = $('#checkP1'); // Submit Button for player 1
   $player2Score = $('#score2'); // Score paragraph for player 2
+  $player2Name = $('#p2Name'); // Name placeholder for player 2
+  $player2Input = $('#inputP2'); // Name input for player 1
+  $submitButtonP2 = $('#checkP2'); // Submit Button for player 2
 
-  $player1Input = $('#inputP1');
-  $player2Input = $('#inputP2');
-  $submitButtonP1 = $('#checkP1');
-  $submitButtonP2 = $('#checkP2');
-
-  $startGame = $('#start-game'); // Start Game div
-  $howToPlay = $('#how-to-play'); // How to Play div
-  $resetGame = $('#reset-game'); // Play again div resetGame();
-  $turns = $('#turns'); // Turn Counter Div
+//MAIN BODY
   $questionsContainer = $('#container'); // Container section for both P1 and P2 questions
-  $mainLogo = $('#main-logo') // Central image before start and on reset
+  $mainLogo = $('#main-logo') // Central image of logo
+  $player1Question = $('#p1-questions') // P1 question
+  $player2Question = $('#p2-questions') // P2 question
 
-  $player1Question = $('#p1-questions') // P1 question div
-  $player2Question = $('#p2-questions') // P2 question div
+    //LEVELS CONTENT
+      $star1 = $('#star1')
+      $star2 = $('#star2')
+      $star3 = $('#star3')
+      $star4 = $('#star4')
+      $star5 = $('#star5')
+      $levelStars = $('#levels')
 
-  $howToPlayBox = $('<div>').attr('id', 'howTo');
-  $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
-  $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
-  $levelsDefinedText = $('<p>').text("Choose a \u2605 to select a number of rounds, from \u2605 three rounds up to \u2605 \u2605 \u2605 \u2605 \u2605 twenty.  There will be six rounds if no selection is made.");
-  $closeButton = $('<div>').attr('id', 'close').text("close");
-  $howToGraphic = $('<img>').attr('src', 'images/example.png').attr('id', 'graphic');
+//FOOTER NAV
+  $startGame = $('#start-game'); // Start Game
+  $howToPlay = $('#how-to-play'); // How to Play
+  $resetGame = $('#reset-game'); // Reset Game
+  $turns = $('#turns'); // Turn Counter Div
 
-  $star1 = $('#star1')
-  $star2 = $('#star2')
-  $star3 = $('#star3')
-  $star4 = $('#star4')
-  $star5 = $('#star5')
-  $levelStars = $('#levels')
+    //HOW TO PLAY CONTENT
+      $howToPlayBox = $('<div>').attr('id', 'howTo');
+      $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
+      $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
+      $levelsDefinedText = $('<p>').text("Choose a \u2605 to select a number of rounds, from \u2605 three rounds up to \u2605 \u2605 \u2605 \u2605 \u2605 twenty.  There will be six rounds if no selection is made.");
+      $closeButton = $('<div>').attr('id', 'close').text("close");
 
+//======================================================================//
+// GLOBAL PLAYER AND GAME VARIABLES EXCLUSIVE TO QUESTIONS
 //======================================================================//
 
 //Player Variables
-  var scorePlayer1 = 0;
-  var scorePlayer2 = 0;
+  var scorePlayer1 = 0; // Base score P1
+  var scorePlayer2 = 0; // Base score P2
 
 //Game Variables
-    var rounds = 0;
+  var rounds = 0; // P1 + P2 turn = 1R
+  var levelChosen = 12; // Default if no level chosen
 
 //======================================================================//
-//
 // QUESTIONS DATABASE
-//
-// Contains:
 //   - Questions Array
-//   - Global variables for:
-//     - questionCounter
-//     - randomCounter
 //   - Random Number Generator
-//     - shuffleRandomArray();
-//     - shiftArray();
-
 //======================================================================//
 
 //Questions (total 46)
@@ -178,7 +178,7 @@ var questions = [
     fromSong: "Dear Theodosia"
   },
   { question: "Why do you write like you’re running out of time?",
-    choices: ["Write day and night like you’re running out of time?", "Keep on fighting in the meantime.", "Why do you assume you’re the smartest in the room?"], /
+    choices: ["Write day and night like you’re running out of time?", "Keep on fighting in the meantime.", "Why do you assume you’re the smartest in the room?"],
     correctAnswer: "Write day and night like you’re running out of time?",
     fromSong: "Non-Stop"
   },
@@ -209,7 +209,7 @@ var questions = [
   },
   { question: "Look! Grandpa’s in the paper!",
     choices: ["Daddy’s gonna find out any minute.", "No one knows who you are or what you do.", "War hero Philip Schuyler loses senate seat to young upstart Aaron Burr."],
-    correctAnswer: "War hero Philip Schuyler loses senate seat to young upstart Aaron Burr.",  answer
+    correctAnswer: "War hero Philip Schuyler loses senate seat to young upstart Aaron Burr.",
     fromSong: "Schuyler Defeated"
   },
   { question: "He knows nothing of loyalty...",
@@ -315,12 +315,12 @@ var questions = [
       randNum = randomCounter.shift();
     };
 
-
 //======================================================================//
-//Player Actions
+//PLAYER TURN FUNCTIONS
 //======================================================================//
 
 //Player 1
+//Generates random question and associated answers and appends to P1's side of the section.
 var playerOneTurn = function() {
     // console.log("playerOneTurn function has been called."); //confirms function has been initalized
   $player1Question.removeClass('hidden')
@@ -331,15 +331,14 @@ var playerOneTurn = function() {
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
   var randomFromSongP1 = questions[randNum].fromSong;
-  // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
     $songTitle = $('<p>').text("Track: " + randomFromSongP1).attr('class', 'track'); //Song Title
       $player1Question.append($songTitle);
     $questionAsked = $('<h2>').text(randomQuestionP1).attr('class', 'question'); //Question Asked
       $player1Question.append($questionAsked);
-    $answerUL = $('<ul>') // UL container for LI answers
-    $answerIndex0 = $('<li>').text(randomChoicesP1[0]).attr('class', 'answer'); //LI for answers wrapped in UL
-    $answerIndex1 = $('<li>').text(randomChoicesP1[1]).attr('class', 'answer'); //LI for answers wrapped in UL
-    $answerIndex2 = $('<li>').text(randomChoicesP1[2]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerUL = $('<ul>')
+    $answerIndex0 = $('<li>').text(randomChoicesP1[0]).attr('class', 'answer'); // Answer 1
+    $answerIndex1 = $('<li>').text(randomChoicesP1[1]).attr('class', 'answer'); // Answer 2
+    $answerIndex2 = $('<li>').text(randomChoicesP1[2]).attr('class', 'answer'); // Answer 3
       $player1Question.append($answerUL)
       $answerUL.append($answerIndex0);
       $answerUL.append($answerIndex1);
@@ -350,6 +349,7 @@ var playerOneTurn = function() {
   };
 
 //Player 2
+//Generates random question and associated answers and appends to P1's side of the section.
 var playerTwoTurn = function() {
   // console.log("playerTwoTurn function has been called."); //confirms function has been initalized
   $resetGame.on('click', resetGame);
@@ -357,15 +357,14 @@ var playerTwoTurn = function() {
   var randomQuestionP2 = questions[randNum].question;
   var randomChoicesP2 = questions[randNum].choices;
   var randomFromSongP2 = questions[randNum].fromSong;
-  // console.log("Index Number is: " + randNum); // Confirms questions are random and which index
     $songTitle = $('<p>').text("Track: " + randomFromSongP2).attr('class', 'track'); //Song Title
       $player2Question.append($songTitle);
     $questionAsked = $('<h2>').text(randomQuestionP2).attr('class', 'question'); //Question Asked
       $player2Question.append($questionAsked);
-    $answerUL = $('<ul>') // UL container for LI answers
-    $answerIndex0 = $('<li>').text(randomChoicesP2[0]).attr('class', 'answer'); //LI for answers wrapped in UL
-    $answerIndex1 = $('<li>').text(randomChoicesP2[1]).attr('class', 'answer'); //LI for answers wrapped in UL
-    $answerIndex2 = $('<li>').text(randomChoicesP2[2]).attr('class', 'answer'); //LI for answers wrapped in UL
+    $answerUL = $('<ul>')
+    $answerIndex0 = $('<li>').text(randomChoicesP2[0]).attr('class', 'answer'); // Answer 1
+    $answerIndex1 = $('<li>').text(randomChoicesP2[1]).attr('class', 'answer'); // Answer 2
+    $answerIndex2 = $('<li>').text(randomChoicesP2[2]).attr('class', 'answer'); // Answer 3
       $player2Question.append($answerUL)
       $answerUL.append($answerIndex0);
       $answerUL.append($answerIndex1);
@@ -375,7 +374,14 @@ var playerTwoTurn = function() {
       $answerIndex2.on('click', checkForCorrectP2);
   };
 
-var checkForCorrectP1 = function() { //Checks for matching answer to array
+//======================================================================//
+//PLAYER 1 AND 2 ACTION FUNCTIONS
+// - Check for Correct, - Input Name, - Select Level
+//======================================================================//
+
+//Validates if P1's answer is correct and applies changes to gameboard.
+//off('click') eliminates ability to select more than one answer.
+var checkForCorrectP1 = function() {
   // console.log("checkForCorrectP1 function has been called.");
   var randomCorrectAnswerP1 = questions[randNum].correctAnswer;
     if (($(this).text()) === randomCorrectAnswerP1) { //Correct Answer
@@ -394,14 +400,16 @@ var checkForCorrectP1 = function() { //Checks for matching answer to array
     $answerIndex1.off('click', checkForCorrectP1);
     $answerIndex2.off('click', checkForCorrectP1);
     $resetGame.off('click', resetGame);
-    var delayPlayerTwo = function() {
+    var delayPlayerTwo = function() { //3 Second Delay to show correct answer before switching to Player 2.
       $player1Question.empty();
       playerTwoTurn();
     };
     setTimeout(delayPlayerTwo, 3000);
 };
 
-var checkForCorrectP2 = function() { //Checks for matching answer to array
+//Validates if P2's answer is correct and applies changes to gameboard.
+//off('click') eliminates ability to select more than one answer.
+var checkForCorrectP2 = function() {
   // console.log("checkForCorrectP2 function has been called.");
   var randomCorrectAnswerP2 = questions[randNum].correctAnswer;
     if (($(this).text()) === randomCorrectAnswerP2) { //Correct Answer
@@ -413,8 +421,8 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
         questionCounter.push(randomCorrectAnswerP2);
         $theCorrectAnswerIs = $('<div>').attr('id', 'answersP2').text("Incorrect!  The correct answer is: ");
   }
-  //Actions regardless of answer's validity
-    rounds++;
+    //Actions regardless of answer's validity
+    rounds++; // Rounds only increase after player 2
     $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
     $player2Question.append($theCorrectAnswerIs);
     $theCorrectAnswerIs.append($('<h3>').attr('class', 'correctP2').text(randomCorrectAnswerP2));
@@ -422,85 +430,236 @@ var checkForCorrectP2 = function() { //Checks for matching answer to array
     $answerIndex1.off('click', checkForCorrectP2);
     $answerIndex2.off('click', checkForCorrectP2);
     $resetGame.off('click', resetGame);
-    var delayPlayerOne = function() {
-      $player2Question.empty(); //clears out contents of player two's div, duplicated in case of eval not sending to P1
+    var delayPlayerOne = function() { //3 Second Delay to show correct answer before sending to evalWinner
+      $player2Question.empty();
       evalWinner();
     };
     setTimeout(delayPlayerOne, 2000);
 };
 
-
-//Set Name Input for P1
-
-$submitButtonP1.on('click', function() {
-  var $p1Name = $player1Input.val();
-  console.log($p1Name);
-  $player1Name.html($p1Name + "'s Score");
-
-});
-
-
-
-//Set Name Input for P2
-$submitButtonP2.on('click', function() {
-  var $p2Name = $player2Input.val();
-  console.log($p2Name);
-  $player2Name.html($p2Name + "'s Score");
-});
-
+    //======================================================================//
+    //NAME INPUT (Player 1 and Player 2 are default)
+    //======================================================================//
+    //P1
+    $submitButtonP1.on('click', function() {
+      var $p1Name = $player1Input.val();
+      console.log($p1Name);
+      $player1Name.html($p1Name + "'s Score");
+    });
+    //P2
+    $submitButtonP2.on('click', function() {
+      var $p2Name = $player2Input.val();
+      console.log($p2Name);
+      $player2Name.html($p2Name + "'s Score");
+    });
+    //======================================================================//
+    //SELECT LEVEL (Level 2 is default)
+    //======================================================================//
+      //Hover Levels allow for update of content without selection, sets to levelDefault with mouse off.
+      var levelDefault = function() { //Default Level (for mouse off)
+        $star1.removeClass('starsEnd');
+        $star2.removeClass('starsEnd');
+        $star3.removeClass('starsEnd');
+        $star4.removeClass('starsEnd');
+        $star5.removeClass('starsEnd');
+        $star1.attr('class', 'stars');
+        $star2.attr('class', 'stars');
+        $star3.attr('class', 'stars');
+        $star4.attr('class', 'stars');
+        $star5.attr('class', 'stars');
+        levelChosen = 12;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var levelOne = function() { //Level One - 1 Star
+        $star1.attr('class', 'starsEnd');
+        $star2.removeClass('starsEnd');
+        $star3.removeClass('starsEnd');
+        $star4.removeClass('starsEnd');
+        $star5.removeClass('starsEnd');
+        $star2.addClass('stars');
+        $star3.addClass('stars');
+        $star4.addClass('stars');
+        $star5.addClass('stars');
+        levelChosen = 6;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+        $star1.off('mouseleave', levelDefault)
+        $star2.off('mouseleave', levelDefault)
+        $star3.off('mouseleave', levelDefault)
+        $star4.off('mouseleave', levelDefault)
+        $star5.off('mouseleave', levelDefault)
+      }
+      var levelOneHover = function() {
+        $star1.attr('class', 'starsEnd');
+        levelChosen = 6;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var levelTwo = function() { //Level Two - 2 Stars
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.removeClass('starsEnd');
+        $star4.removeClass('starsEnd');
+        $star5.removeClass('starsEnd');
+        $star3.addClass('stars');
+        $star4.addClass('stars');
+        $star5.addClass('stars');
+        levelChosen = 12;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+        $star1.off('mouseleave', levelDefault)
+        $star2.off('mouseleave', levelDefault)
+        $star3.off('mouseleave', levelDefault)
+        $star4.off('mouseleave', levelDefault)
+        $star5.off('mouseleave', levelDefault)
+      }
+      var levelTwoHover = function() {
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        levelChosen = 12;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var levelThree = function() { //Level Three - 3 Stars
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        $star4.removeClass('starsEnd');
+        $star5.removeClass('starsEnd');
+        $star4.addClass('stars');
+        $star5.addClass('stars');
+        levelChosen = 20;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+        $star1.off('mouseleave', levelDefault)
+        $star2.off('mouseleave', levelDefault)
+        $star3.off('mouseleave', levelDefault)
+        $star4.off('mouseleave', levelDefault)
+        $star5.off('mouseleave', levelDefault)
+      }
+      var levelThreeHover = function() {
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        levelChosen = 20;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var levelFour = function() { //Level Four - 4 Stars
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        $star4.attr('class', 'starsEnd');
+        $star5.removeClass('starsEnd');
+        $star5.addClass('stars');
+        levelChosen = 30;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+        $star1.off('mouseleave', levelDefault)
+        $star2.off('mouseleave', levelDefault)
+        $star3.off('mouseleave', levelDefault)
+        $star4.off('mouseleave', levelDefault)
+        $star5.off('mouseleave', levelDefault)
+      }
+      var levelFourHover = function() {
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        $star4.attr('class', 'starsEnd');
+        levelChosen = 30;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var levelFive = function() { //Level Five - 5 Stars
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        $star4.attr('class', 'starsEnd');
+        $star5.attr('class', 'starsEnd');
+        levelChosen = 40;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+        $star1.off('mouseleave', levelDefault)
+        $star2.off('mouseleave', levelDefault)
+        $star3.off('mouseleave', levelDefault)
+        $star4.off('mouseleave', levelDefault)
+        $star5.off('mouseleave', levelDefault)
+      }
+      var levelFiveHover = function() {
+        $star1.attr('class', 'starsEnd');
+        $star2.attr('class', 'starsEnd');
+        $star3.attr('class', 'starsEnd');
+        $star4.attr('class', 'starsEnd');
+        $star5.attr('class', 'starsEnd');
+        levelChosen = 40;
+        $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
+      }
+      var starFunctions = function() { // Allows scrolling stars prior to selection
+        $star1.on('click', levelOne)
+        $star1.on('mouseover', levelOneHover)
+        $star1.on('mouseleave', levelDefault)
+        $star2.on('click', levelTwo)
+        $star2.on('mouseover', levelTwoHover)
+        $star2.on('mouseleave', levelDefault)
+        $star3.on('click', levelThree)
+        $star3.on('mouseover', levelThreeHover)
+        $star3.on('mouseleave', levelDefault)
+        $star4.on('click', levelFour)
+        $star4.on('mouseover', levelFourHover)
+        $star4.on('mouseleave', levelDefault)
+        $star5.on('click', levelFive)
+        $star5.on('mouseover', levelFiveHover)
+        $star5.on('mouseleave', levelDefault)
+      }
+        starFunctions(); // Turns on starFunctions function
 
 //======================================================================//
-//Game Actions
+//GAME EVAL AND WINNER FUNCTIONS
+  // - evalWinner, - checkWinner
 //======================================================================//
 
 //Evaluates if a winner can be found or if the game needs to continue
 var evalWinner = function() {
   // console.log("evalWinner function has been called.");
-  if (questionCounter.length < levelChosen) {
+  if (questionCounter.length < levelChosen) { // If all rounds have not been completed
     playerOneTurn();
-  } else {
+  } else { // If level rounds have been completed
     checkWinner();
   }
 };
-
-//Confirms winner of the game once evalWinner confirms game is over.
-//End of Game until Reset/Play again is selected/activated
+//Determins and announces winner
 var checkWinner = function() {
   // console.log("checkWinner function has been called.");
   var $p1Name = $player1Input.val();
   var $p2Name = $player2Input.val();
-    if (($p1Name.length > 0) || ($p2Name.length > 0)) {
-      $resetGame.on('click', resetGame);
-      if (scorePlayer1 > scorePlayer2){
-        $endGameNotif = $('<h3>').text($p1Name + " has won the game!")
-        $questionsContainer.after($endGameNotif);
-      } else if (scorePlayer2 > scorePlayer1) {
-        $endGameNotif = $('<h3>').text($p2Name + " has won the game!")
-        $questionsContainer.after($endGameNotif);
-      } else if (scorePlayer1 === scorePlayer2) {
-        $endGameNotif = $('<h3>').text("The game is a tie!")
-        $questionsContainer.after($endGameNotif);
-      } else {
-        console.log("Something is wrong with this function.");
-      }  $startGame.on('click', startGame);
-    } else {
-      $resetGame.on('click', resetGame);
-      if (scorePlayer1 > scorePlayer2){
-        $endGameNotif = $('<h3>').text("Player 1 has won the game!")
-        $questionsContainer.after($endGameNotif);
-      } else if (scorePlayer2 > scorePlayer1) {
-        $endGameNotif = $('<h3>').text("Player 2 has won the game!")
-        $questionsContainer.after($endGameNotif);
-      } else if (scorePlayer1 === scorePlayer2) {
-        $endGameNotif = $('<h3>').text("The game is a tie!")
-        $questionsContainer.after($endGameNotif);
-      } else {
-        console.log("Something is wrong with this function.");
-      }  $startGame.on('click', startGame);
-    }
+    if (($p1Name.length > 0) || ($p2Name.length > 0)) { //If a name has been input, use name.
+        $resetGame.on('click', resetGame);
+        if (scorePlayer1 > scorePlayer2){
+          $endGameNotif = $('<h3>').text($p1Name + " has won the game!")
+          $questionsContainer.after($endGameNotif);
+        } else if (scorePlayer2 > scorePlayer1) {
+          $endGameNotif = $('<h3>').text($p2Name + " has won the game!")
+          $questionsContainer.after($endGameNotif);
+        } else if (scorePlayer1 === scorePlayer2) {
+          $endGameNotif = $('<h3>').text("The game is a tie!")
+          $questionsContainer.after($endGameNotif);
+        } else {
+          console.log("Something is wrong with this function.");
+        }  $startGame.on('click', startGame);
+    } else { //If no name input, default P1 and P2
+        $resetGame.on('click', resetGame);
+        if (scorePlayer1 > scorePlayer2){
+          $endGameNotif = $('<h3>').text("Player 1 has won the game!")
+          $questionsContainer.after($endGameNotif);
+        } else if (scorePlayer2 > scorePlayer1) {
+          $endGameNotif = $('<h3>').text("Player 2 has won the game!")
+          $questionsContainer.after($endGameNotif);
+        } else if (scorePlayer1 === scorePlayer2) {
+          $endGameNotif = $('<h3>').text("The game is a tie!")
+          $questionsContainer.after($endGameNotif);
+        } else {
+          console.log("Something is wrong with this function.");
+        }  $startGame.on('click', startGame);
+      }
 };
 
-//Resets Game, clears questions asked and score.
+//======================================================================//
+//RESET GAME
+//======================================================================//
+
+//Resets Game, clears all data without refresh.
+//Not available during setTimeout between turns
 var resetGame = function() {
   // console.log("resetGame function has been called.");
   if (questionCounter.length < (levelChosen/2)) { //If no one has won...
@@ -509,6 +668,7 @@ var resetGame = function() {
   } else { //If the game is over and winner has been announced...
     $endGameNotif.remove();
   }
+  //Actions regardless of game status
   randomCounter = [];
   questionCounter = [];
   shuffleRandomArray();
@@ -550,7 +710,11 @@ var resetGame = function() {
 //Listener for resetGame Function
 $resetGame.on('click', resetGame);
 
-//How to play game content from div 'button'
+//======================================================================//
+//HOW TO PLAY
+//======================================================================//
+
+//Reveals HowToPlay content
 var howToPlayGame = function() {
   // console.log("howToPlayGame has been called.");
   $howToPlayBox.removeClass('hidden')
@@ -568,157 +732,11 @@ var howToPlayGame = function() {
 //Listener for howToPlayGame Function
 $howToPlay.on('click', howToPlayGame);
 
-//SetLevel
-var levelChosen = 12; // Default if no level chosen
-var levelDefault = function() {
-  $star1.removeClass('starsEnd');
-  $star2.removeClass('starsEnd');
-  $star3.removeClass('starsEnd');
-  $star4.removeClass('starsEnd');
-  $star5.removeClass('starsEnd');
-  $star1.attr('class', 'stars');
-  $star2.attr('class', 'stars');
-  $star3.attr('class', 'stars');
-  $star4.attr('class', 'stars');
-  $star5.attr('class', 'stars');
-  levelChosen = 12;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var levelOne = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.removeClass('starsEnd');
-  $star3.removeClass('starsEnd');
-  $star4.removeClass('starsEnd');
-  $star5.removeClass('starsEnd');
-  $star2.addClass('stars');
-  $star3.addClass('stars');
-  $star4.addClass('stars');
-  $star5.addClass('stars');
-  levelChosen = 6;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-  $star1.off('mouseleave', levelDefault)
-  $star2.off('mouseleave', levelDefault)
-  $star3.off('mouseleave', levelDefault)
-  $star4.off('mouseleave', levelDefault)
-  $star5.off('mouseleave', levelDefault)
-}
-var levelOneHover = function() {
-  $star1.attr('class', 'starsEnd');
-  levelChosen = 6;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var levelTwo = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.removeClass('starsEnd');
-  $star4.removeClass('starsEnd');
-  $star5.removeClass('starsEnd');
-  $star3.addClass('stars');
-  $star4.addClass('stars');
-  $star5.addClass('stars');
-  levelChosen = 12;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-  $star1.off('mouseleave', levelDefault)
-  $star2.off('mouseleave', levelDefault)
-  $star3.off('mouseleave', levelDefault)
-  $star4.off('mouseleave', levelDefault)
-  $star5.off('mouseleave', levelDefault)
-}
-var levelTwoHover = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  levelChosen = 12;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var levelThree = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.removeClass('starsEnd');
-  $star5.removeClass('starsEnd');
-  $star4.addClass('stars');
-  $star5.addClass('stars');
-  levelChosen = 20;
-$turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-$star1.off('mouseleave', levelDefault)
-$star2.off('mouseleave', levelDefault)
-$star3.off('mouseleave', levelDefault)
-$star4.off('mouseleave', levelDefault)
-$star5.off('mouseleave', levelDefault)
-}
-var levelThreeHover = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  levelChosen = 20;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var levelFour = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.attr('class', 'starsEnd');
-  $star5.removeClass('starsEnd');
-  $star5.addClass('stars');
-  levelChosen = 30;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-  $star1.off('mouseleave', levelDefault)
-  $star2.off('mouseleave', levelDefault)
-  $star3.off('mouseleave', levelDefault)
-  $star4.off('mouseleave', levelDefault)
-  $star5.off('mouseleave', levelDefault)
-}
-var levelFourHover = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.attr('class', 'starsEnd');
-  levelChosen = 30;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var levelFive = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.attr('class', 'starsEnd');
-  $star5.attr('class', 'starsEnd');
-  levelChosen = 40;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-  $star1.off('mouseleave', levelDefault)
-  $star2.off('mouseleave', levelDefault)
-  $star3.off('mouseleave', levelDefault)
-  $star4.off('mouseleave', levelDefault)
-  $star5.off('mouseleave', levelDefault)
-}
-var levelFiveHover = function() {
-  $star1.attr('class', 'starsEnd');
-  $star2.attr('class', 'starsEnd');
-  $star3.attr('class', 'starsEnd');
-  $star4.attr('class', 'starsEnd');
-  $star5.attr('class', 'starsEnd');
-  levelChosen = 40;
-  $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
-}
-var starFunctions = function() {
-  $star1.on('click', levelOne)
-  $star1.on('mouseover', levelOneHover)
-  $star1.on('mouseleave', levelDefault)
-  $star2.on('click', levelTwo)
-  $star2.on('mouseover', levelTwoHover)
-  $star2.on('mouseleave', levelDefault)
-  $star3.on('click', levelThree)
-  $star3.on('mouseover', levelThreeHover)
-  $star3.on('mouseleave', levelDefault)
-  $star4.on('click', levelFour)
-  $star4.on('mouseover', levelFourHover)
-  $star4.on('mouseleave', levelDefault)
-  $star5.on('click', levelFive)
-  $star5.on('mouseover', levelFiveHover)
-  $star5.on('mouseleave', levelDefault)
-}
-starFunctions();
+//======================================================================//
+//START GAME
+//======================================================================//
 
-//StartGame sends to player one for the turn
+//StartGame
 var startGame = function() {
   // console.log("startGame function has been called.");
   $startGame.off('click', startGame);
