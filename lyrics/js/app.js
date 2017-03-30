@@ -518,6 +518,7 @@ var resetGame = function() {
   $player1Name.html("Player 1's Score");
   $player2Name.html("Player 2's Score");
   $startGame.on('click', startGame);
+  $levelStars.remove();
   $('main').prepend($levelStars)
   $star1.removeClass('starsEnd');
   $star2.removeClass('starsEnd');
@@ -529,11 +530,7 @@ var resetGame = function() {
   $star3.addClass('stars');
   $star4.addClass('stars');
   $star5.addClass('stars');
-  $star1.on('click', levelOne)
-  $star2.on('click', levelTwo)
-  $star3.on('click', levelThree)
-  $star4.on('click', levelFour)
-  $star5.on('click', levelFive)
+  starFunctions();
 };
 
 //Listener for resetGame Function
@@ -688,23 +685,24 @@ var levelFiveHover = function() {
   levelChosen = 40;
   $turns.text("Total Rounds: " + rounds + " / " + (levelChosen/2));
 }
-$star1.on('click', levelOne)
-$star1.on('mouseover', levelOneHover)
-$star1.on('mouseleave', levelDefault)
-$star2.on('click', levelTwo)
-$star2.on('mouseover', levelTwoHover)
-$star2.on('mouseleave', levelDefault)
-$star3.on('click', levelThree)
-$star3.on('mouseover', levelThreeHover)
-$star3.on('mouseleave', levelDefault)
-$star4.on('click', levelFour)
-$star4.on('mouseover', levelFourHover)
-$star4.on('mouseleave', levelDefault)
-$star5.on('click', levelFive)
-$star5.on('mouseover', levelFiveHover)
-$star5.on('mouseleave', levelDefault)
-
-
+var starFunctions = function() {
+  $star1.on('click', levelOne)
+  $star1.on('mouseover', levelOneHover)
+  $star1.on('mouseleave', levelDefault)
+  $star2.on('click', levelTwo)
+  $star2.on('mouseover', levelTwoHover)
+  $star2.on('mouseleave', levelDefault)
+  $star3.on('click', levelThree)
+  $star3.on('mouseover', levelThreeHover)
+  $star3.on('mouseleave', levelDefault)
+  $star4.on('click', levelFour)
+  $star4.on('mouseover', levelFourHover)
+  $star4.on('mouseleave', levelDefault)
+  $star5.on('click', levelFive)
+  $star5.on('mouseover', levelFiveHover)
+  $star5.on('mouseleave', levelDefault)
+}
+starFunctions();
 
 //StartGame sends to player one for the turn
 var startGame = function() {
