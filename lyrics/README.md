@@ -12,10 +12,12 @@ HTML, CSS, JavaScript, jQuery
 - Allow game reset with less restrictions.
 - Allow name input at any time.
 - Star levels reveal rounds at same location.
-- Constructor Functions for more than two players (including single layout format)
+- Update for more than two players (including constructor functions, single layout format).
+
 
 ### Notes:
 
 Lyrics Resource: https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording
+*Some lyrics are not verbatim or have been uniquely created.* 
 
 Created by Cathleen Wright for General Assembly WDIR 2017
