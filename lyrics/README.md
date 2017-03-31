@@ -22,13 +22,14 @@ Enter player names and select a level.  Press 'start game' to begin a new game. 
 - Update for more than two players (including constructor functions, single layout format).
 
 ### Approach Taken:
-- Rotating interface between randomly inserted questions with visual direction to differentiate players.  
+
+Rotating interface between randomly inserted questions with visual direction to differentiate players.  
 
 ### Notes and Resources:
 
-Lyrics Resource: https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording
+[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
 
-*Some lyrics are not verbatim or have been uniquely created.*
+<sub>*Some lyrics are not verbatim or have been uniquely created.*</sub>
 
 Images:
 
@@ -36,6 +37,6 @@ Images:
 - [Main Logo](http://www.stickpng.com/img/miscellaneous/shows/hamilton-star-logo)
 - [Star Logo](http://cdn.spotcointeractive.com/websites/hamilton/_img/keyart-bottom.png)
 
-*Star Logo modified in photoshop.*
+<sub>*Star Logo modified in photoshop.*</sub>
 
 Created by Cathleen Wright for General Assembly WDIR 2017
