@@ -304,6 +304,7 @@ var questions = [
         var randomCounter = []; //End content after shuffleRandomArray();
 
 //Random Questions
+    //*Shuffle Functionality - 'Sorting an Array in Random Order': https://www.w3schools.com/js/js_array_sort.asp
     //Creates an array of numbers 0-45 and shuffles them upon click of 'start' to create 'random'
     var shuffleRandomArray = function() {
       for (var i = 0; i < questions.length; i++) {
