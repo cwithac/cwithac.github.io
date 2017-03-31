@@ -8,13 +8,13 @@
 HTML, CSS, JavaScript, jQuery
 
 ### Description:
-- Two player trivia game with multiple choice answers.  Five level options for number of rounds (P1 and P2 turn per round) including default Level 2.  Game database and styling dedicated to [Hamilton: An American Musical](https://en.wikipedia.org/wiki/Hamilton_(musical)).
+Two player trivia game with multiple choice answers.  Five level options for number of rounds (P1 and P2 turn per round) including default Level 2.  Game database and styling dedicated to [Hamilton: An American Musical](https://en.wikipedia.org/wiki/Hamilton_(musical)).
 
 ### Installation Instructions:
 
 Enter player names and select a level.  Press 'start game' to begin a new game.  Default player names and levels will run if no specifications made.
 
-### Improvements:
+### Possible Improvements:
 - Initial layout for better responsive design.  
 - Allow game reset with less restrictions.
 - Allow name input at any time.
@@ -28,14 +28,18 @@ Rotating interface between randomly inserted questions with visual direction to 
 
 ### Notes and Resources:
 
-[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
+####[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
 
 
-Images:
+####Images:
 
 - [Background](http://4.bp.blogspot.com/-LVTcDP8579o/VyJ-xprNNiI/AAAAAAAABIA/v4z_45jQWxsAbVSCrqVDYvboeNOBiUWCgCK4B/s1600/medium%2BORIGINAL%2B1400%2Bx%2B842.jpg)
 - [Main Logo](http://www.stickpng.com/img/miscellaneous/shows/hamilton-star-logo)
 - [Star Logo](http://cdn.spotcointeractive.com/websites/hamilton/_img/keyart-bottom.png)
+
+####Fonts:
+
+- [Cinzel](https://fonts.google.com/specimen/Cinzel)
 
 <sub>*Some lyrics are not verbatim or have been uniquely created.  Star Logo modified in photoshop.*</sub>
 
