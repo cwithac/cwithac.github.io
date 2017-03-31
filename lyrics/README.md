@@ -15,6 +15,7 @@ Two player trivia game with multiple choice answers.  Five level options for num
 Enter player names and select a level.  Press 'start game' to begin a new game.  Default player names and levels will run if no specifications made.
 
 ### Possible Improvements:
+- Different quizzes within a generic layout. 
 - Initial layout for better responsive design.  
 - Allow game reset with less restrictions.
 - Allow name input at any time.
