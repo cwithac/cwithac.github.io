@@ -20,7 +20,7 @@ Enter player names and select a level.  Press 'start game' to begin a new game. 
 - Allow name input at any time.
 - Star levels reveal rounds at same location.
 - Update for more than two players (including constructor functions, single layout format).
-- Color nimation of score upon increase.
+- Color animation of score upon increase.
 
 ### Approach Taken:
 
@@ -29,14 +29,15 @@ Rotating interface between randomly inserted questions with visual direction to 
 ### Notes and Resources:
 
 [Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
-<sub>*Some lyrics are not verbatim or have been uniquely created.*</sub>
+
 
 Images:
 
 - [Background](http://4.bp.blogspot.com/-LVTcDP8579o/VyJ-xprNNiI/AAAAAAAABIA/v4z_45jQWxsAbVSCrqVDYvboeNOBiUWCgCK4B/s1600/medium%2BORIGINAL%2B1400%2Bx%2B842.jpg)
 - [Main Logo](http://www.stickpng.com/img/miscellaneous/shows/hamilton-star-logo)
 - [Star Logo](http://cdn.spotcointeractive.com/websites/hamilton/_img/keyart-bottom.png)
-<sub>*Star Logo modified in photoshop.*</sub>
+
+<sub>*Some lyrics are not verbatim or have been uniquely created.  Star Logo modified in photoshop.*</sub>
 
 ______
 
