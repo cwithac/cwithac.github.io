@@ -72,6 +72,7 @@ button {
   background-color: rgba(256, 256, 256, .5);
   border-color: rgb(165,115,35);
   color: black;
+  cursor: pointer;
 }
 
 /*ID AND CLASS*/
@@ -139,6 +140,7 @@ button {
   font-size: 2em;
   font-weight: bold;
   position: relative;
+  cursor: pointer;
 }
 
 #howTo {

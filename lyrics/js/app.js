@@ -327,7 +327,6 @@ var playerOneTurn = function() {
   $player1Question.empty();
   $player2Question.removeClass('hidden')
   $player1Question.empty();
-  shuffleRandomArray();
   shiftArray();
   var randomQuestionP1 = questions[randNum].question;
   var randomChoicesP1 = questions[randNum].choices;
@@ -748,6 +747,7 @@ var startGame = function() {
   $submitButtonP1.addClass('hidden')
   $submitButtonP2.addClass('hidden')
   $levelStars.remove();
+  shuffleRandomArray();
   playerOneTurn();
 };
 
