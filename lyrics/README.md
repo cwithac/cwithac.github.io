@@ -28,16 +28,16 @@ Rotating interface between randomly inserted questions with visual direction to 
 
 ### Notes and Resources:
 
-####[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
+#### [Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
 
 
-####Images:
+#### Images:
 
 - [Background](http://4.bp.blogspot.com/-LVTcDP8579o/VyJ-xprNNiI/AAAAAAAABIA/v4z_45jQWxsAbVSCrqVDYvboeNOBiUWCgCK4B/s1600/medium%2BORIGINAL%2B1400%2Bx%2B842.jpg)
 - [Main Logo](http://www.stickpng.com/img/miscellaneous/shows/hamilton-star-logo)
 - [Star Logo](http://cdn.spotcointeractive.com/websites/hamilton/_img/keyart-bottom.png)
 
-####Fonts:
+#### Fonts:
 
 - [Cinzel](https://fonts.google.com/specimen/Cinzel)
 
