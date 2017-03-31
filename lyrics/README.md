@@ -4,6 +4,8 @@
 
 ## GitHub Repository: https://github.com/cwithac/cwithac.github.io/tree/master/lyrics
 
+______
+
 ### Technologies Used:
 HTML, CSS, JavaScript, jQuery
 
@@ -20,6 +22,7 @@ Enter player names and select a level.  Press 'start game' to begin a new game. 
 - Allow name input at any time.
 - Star levels reveal rounds at same location.
 - Update for more than two players (including constructor functions, single layout format).
+- Color nimation of score upon increase.
 
 ### Approach Taken:
 
@@ -27,9 +30,11 @@ Rotating interface between randomly inserted questions with visual direction to 
 
 ### Notes and Resources:
 
-[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
-
 <sub>*Some lyrics are not verbatim or have been uniquely created.*</sub>
+
+<sub>*Star Logo modified in photoshop.*</sub>
+
+[Lyrics Resource](https://genius.com/albums/Lin-manuel-miranda/Hamilton-original-broadway-cast-recording)
 
 Images:
 
@@ -37,6 +42,6 @@ Images:
 - [Main Logo](http://www.stickpng.com/img/miscellaneous/shows/hamilton-star-logo)
 - [Star Logo](http://cdn.spotcointeractive.com/websites/hamilton/_img/keyart-bottom.png)
 
-<sub>*Star Logo modified in photoshop.*</sub>
+______
 
-Created by Cathleen Wright for General Assembly WDIR 2017
+**Created by Cathleen Wright for General Assembly WDIR 2017**
