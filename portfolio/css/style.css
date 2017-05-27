@@ -20,6 +20,7 @@ nav {
   background-color: crimson;
   text-align: center;
   color: white;
+  padding: 1vw;
 }
 
 nav h1 {
@@ -28,7 +29,10 @@ nav h1 {
 }
 
 main {
-  width: 70%
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .photo {
@@ -50,6 +54,19 @@ main {
 
 .social a:hover {
   color: gray;
+}
+
+.project {
+  height: 30%;
+  border: 1px solid black;
+  margin: 1vh 1vw;
+  padding: 1vh 1vw;
+  width: 40%;
+}
+
+.project img {
+  max-width: 100%;
+  display: flex;
 }
 
 @media (max-width: 750px) {
