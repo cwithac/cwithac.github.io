@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+
 * {
 box-sizing: border-box;
 border: 1px dotted red;
@@ -7,6 +10,7 @@ body {
  color: black;
  margin: 0;
  padding: 0;
+ font-family: 'Special Elite', cursive;
 }
 
 .container {
