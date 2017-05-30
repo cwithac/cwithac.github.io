@@ -16,20 +16,34 @@ body {
 }
 
 nav {
-  width: 30%;
-  background-color: crimson;
+  width: 25%;
+  background-color: DimGrey;
+  color: lightgray;
   text-align: center;
-  color: white;
   padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 nav h1 {
-  height: 1em;
-  font-size: 2em;
+  font-size: 1.5em;
+  color: white;
 }
 
+#text-bio {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: white;
+}
+
+
 main {
-  width: 70%;
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,7 +51,7 @@ main {
 
 .photo {
   max-width: 50%;
-  border-radius: 100px;
+  border-radius: 500px;
   border: 5px solid white;
 }
 
@@ -49,11 +63,11 @@ main {
 }
 
 .social a {
-  color: white;
+  color: lightgray;
 }
 
 .social a:hover {
-  color: gray;
+  color: white;
 }
 
 .project {
@@ -70,7 +84,40 @@ main {
 }
 
 @media (max-width: 750px) {
+  .container {
+    display: block;
+  }
+  nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
   nav h1 {
     font-size: 1.5em;
+    margin: 0;
+  }
+  nav div {
+    margin: 0;
+  }
+  nav .social{
+    margin-top: 2%;
+  }
+  main {
+    width: 100%;
+    display: block;
+  }
+  main .project{
+    width: 90%;
+    display: block;
+    margin: 5% auto;
+  }
+  .photo {
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 500px) {
+  .photo {
+    max-width: 40%;
   }
 }
