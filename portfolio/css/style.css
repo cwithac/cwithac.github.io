@@ -96,13 +96,14 @@ main h1 {
   }
   nav h1 {
     font-size: 1.5em;
-    margin: 0;
+    margin: 2% 0 0 0;
   }
   nav div {
     margin: 0;
   }
   nav .social{
     margin-top: 2%;
+    margin-bottom: 2%;
   }
   main {
     width: 100%;
