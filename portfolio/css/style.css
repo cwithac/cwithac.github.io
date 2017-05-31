@@ -28,6 +28,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  min-height: 630px;
 }
 
 nav h1 {
@@ -103,6 +104,7 @@ main a:hover {
     width: 100%;
     margin: 0;
     padding: 0;
+    min-height: 0;
   }
   nav h1 {
     font-size: 1.5em;
