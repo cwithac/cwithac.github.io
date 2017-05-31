@@ -93,12 +93,15 @@ main a:hover {
 
 .project {
   width: 75%;
-  margin: 5vh auto;
+  margin: 1vh auto;
 }
 
 .description {
   text-align: justify;
 }
+
+/*RESPONSIVE*/
+
 
 @media (max-width: 750px) {
   .container {
