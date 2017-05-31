@@ -137,7 +137,7 @@ main a:hover {
     max-width: 25%;
   }
   .bio {
-    text-align: justify;
+    /*text-align: justify;*/
     padding: 1vh 5vw;
   }
 }
