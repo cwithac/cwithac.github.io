@@ -92,7 +92,7 @@ main a:hover {
 }
 
 .project {
-  width: 400px;
+  width: 75%;
   margin: 5vh auto;
 }
 
@@ -133,7 +133,10 @@ main a:hover {
   .photo {
     max-width: 25%;
   }
-
+  .bio {
+    text-align: justify;
+    padding: 1vh 5vw;
+  }
 }
 
 @media (max-width: 500px) {
