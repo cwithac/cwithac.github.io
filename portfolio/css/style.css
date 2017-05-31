@@ -46,6 +46,10 @@ nav h1 {
   color: white;
 }
 
+.bio {
+  padding: 1vh 1vw;
+  font-size: .75em;
+}
 
 main {
   width: 75%;
@@ -129,6 +133,7 @@ main a:hover {
   .photo {
     max-width: 25%;
   }
+
 }
 
 @media (max-width: 500px) {
