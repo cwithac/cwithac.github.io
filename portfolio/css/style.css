@@ -21,7 +21,7 @@ body {
 
 nav {
   width: 25%;
-  background-color: DimGrey;
+  background-color: #9CAD68;
   color: lightgray;
   text-align: center;
   padding: 1vw;
@@ -33,7 +33,7 @@ nav {
 
 nav h1 {
   font-size: 1.5em;
-  color: purple;
+  color: white;
 }
 
 #text-bio {
@@ -46,9 +46,17 @@ nav h1 {
   color: white;
 }
 
+.logo {
+  color: black;
+  font-size: 2.5em;
+  padding: 0;
+  margin-bottom: 5%;
+}
+
 .bio {
   padding: 1vh 1vw;
   font-size: .75em;
+  color: black;
 }
 
 main {
@@ -61,7 +69,7 @@ main h1 {
 }
 
 main a {
-  color: purple;
+  color: #9CAD68;
   text-decoration: none;
 }
 
@@ -88,7 +96,7 @@ main a:hover {
 }
 
 .social a:hover {
-  color: purple;
+  color: gray;
 }
 
 .project {
