@@ -21,7 +21,7 @@ body {
 
 nav {
   width: 25%;
-  background-color: #9CAD68;
+  background-color: RebeccaPurple;
   color: lightgray;
   text-align: center;
   padding: 1vw;
@@ -69,7 +69,7 @@ main h1 {
 }
 
 main a {
-  color: #9CAD68;
+  color: RebeccaPurple;
   text-decoration: none;
 }
 
