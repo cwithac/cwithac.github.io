@@ -21,7 +21,7 @@ body {
 
 nav {
   width: 25%;
-  background-color: lightgray;
+  background-color: darkgrey;
   color: black;
   text-align: center;
   padding: 1vw;
@@ -65,7 +65,7 @@ nav h1 {
   margin-left: 1%;
   padding: 1%;
   color: white;
-  background-color: lightgray;
+  background-color: darkgrey;
   border-radius: 50px;
   font-size: .5em;
 }
