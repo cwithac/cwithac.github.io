@@ -29,6 +29,7 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 630px;
+  overflow: auto;
 }
 
 nav h1 {
@@ -79,7 +80,7 @@ nav h1 {
 
 .tag-box {
   text-align: right;
-  margin-top: -2%;
+  margin-top: -1.5%;
 
 }
 
@@ -137,6 +138,10 @@ main a:hover {
 .project {
   width: 75%;
   margin: 3vh auto;
+}
+
+p {
+  font-size: .85em;
 }
 
 .description {
