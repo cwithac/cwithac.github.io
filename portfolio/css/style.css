@@ -21,8 +21,8 @@ body {
 
 nav {
   width: 25%;
-  background-color: RebeccaPurple;
-  color: lightgray;
+  background-color: lightgray;
+  color: black;
   text-align: center;
   padding: 1vw;
   display: flex;
@@ -56,17 +56,31 @@ nav h1 {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: .05em;
-  animation:
-    typing 2.5s steps(40, end)
+
+  animation: typing 2.5s steps(40, end);
 }
 
 .tag {
   margin-left: 1%;
   padding: 1%;
   color: white;
-  background-color: purple;
-  border-radius: 100px;
+  background-color: lightgray;
+  border-radius: 50px;
   font-size: .5em;
+}
+
+.tag a {
+  color: white;
+}
+
+.tag a:hover {
+  color: rebeccapurple;
+}
+
+.tag-box {
+  text-align: right;
+  margin-top: -2%;
+
 }
 
 @keyframes typing {
@@ -113,7 +127,7 @@ main a:hover {
 }
 
 .social a {
-  color: lightgray;
+  color: rebeccapurple;
 }
 
 .social a:hover {
