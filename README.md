@@ -1,6 +1,6 @@
 # cwithac.github.io
 
-## Portfolio: [Site](https://cwithac.github.io/portfolio/) + [Repo](https://github.com/cwithac/cwithac.github.io/tree/master/portfolio)
+## Portfolio: [Site](https://cwithac.github.io/) + [Repo](https://github.com/cwithac/cwithac.github.io)
 
 
-+ Lyrics: [Site](https://cwithac.github.io/lyrics/) + [Repo](https://github.com/cwithac/cwithac.github.io/tree/master/lyrics)
+### Lyrics: [Site](https://cwithac.github.io/lyrics/) + [Repo](https://github.com/cwithac/cwithac.github.io/tree/master/lyrics)
