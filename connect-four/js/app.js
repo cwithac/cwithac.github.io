@@ -63,7 +63,8 @@ const UI = {
         };
     },
     checkForWinner() {
-      console.log('checking called');
+      
+      this.whoseTurnIsIt();
     }
   }; //End UI object
 
@@ -81,13 +82,13 @@ const UI = {
           $(e.currentTarget).attr('class', 'redChip').addClass('played').removeClass('emptySpace');
           redTurn = false;
           played = true;
-          UI.whoseTurnIsIt();
+          UI.checkForWinner()
         } else {
           $(e.currentTarget).attr('class', 'blackChip').addClass('played').removeClass('emptySpace');
           redTurn = true;
           played = true;
-          UI.whoseTurnIsIt();
+          UI.checkForWinner()
         };
-      };
+      }
     }
   }; //End PA Object
