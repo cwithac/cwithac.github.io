@@ -42,3 +42,13 @@
   border-radius: 50px;
   vertical-align: middle;
 }
+
+.canBePlayed:hover {
+    display: inline-block;
+    border: 5px solid yellow;
+    background-color: lightgray;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    vertical-align: middle;
+}

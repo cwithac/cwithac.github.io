@@ -60,16 +60,14 @@ const UI = {
   const PA = {
     checkForLegalMove(e) {
       //Confirms 'gravity', fill from bottom to top
-      const $targetIDAbove = parseInt($(e.currentTarget).attr('id'));
       const $openSpace = $(e.currentTarget).hasClass('canBePlayed')
+      const $targetIDAbove = parseInt($(e.currentTarget).attr('id'));
       const $spaceAbove = $('#' + ($targetIDAbove - 7));
         if ($openSpace) {
           $spaceAbove.addClass('canBePlayed');
           legalMove = true;
         } else {
           legalMove = false;
-          $message = $('<div>').text('illegal move');
-          $message.insertAfter('#whose-turn'); //repeating
         };
     },
     playPiece(e) {
