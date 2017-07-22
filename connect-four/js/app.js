@@ -53,8 +53,8 @@ const UI = {
     checkForLegalMove(e) {
       //Confirms 'gravity', fill from bottom to top
       const $openSpace = $(e.currentTarget).hasClass('canBePlayed')
-      const $targetIDAbove = parseInt($(e.currentTarget).attr('id'));
-      const $spaceAbove = $('#' + ($targetIDAbove - 7));
+      const $targetID = parseInt($(e.currentTarget).attr('id'));
+      const $spaceAbove = $('#' + ($targetID - 7));
         if ($openSpace) {
           $spaceAbove.addClass('canBePlayed');
           legalMove = true;
@@ -62,8 +62,10 @@ const UI = {
           legalMove = false;
         };
     },
-    checkForWinner() {
-      
+    checkForWinner(e) {
+      console.log($(e.currentTarget));
+      const $redSpacePlayed = $(e.currentTarget).hasClass('redChip')
+      const $targetID = parseInt($(e.currentTarget).attr('id'));
       this.whoseTurnIsIt();
     }
   }; //End UI object
@@ -82,12 +84,12 @@ const UI = {
           $(e.currentTarget).attr('class', 'redChip').addClass('played').removeClass('emptySpace');
           redTurn = false;
           played = true;
-          UI.checkForWinner()
+          UI.checkForWinner(e)
         } else {
           $(e.currentTarget).attr('class', 'blackChip').addClass('played').removeClass('emptySpace');
           redTurn = true;
           played = true;
-          UI.checkForWinner()
+          UI.checkForWinner(e)
         };
       }
     }
