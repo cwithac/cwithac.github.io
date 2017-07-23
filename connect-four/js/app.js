@@ -78,28 +78,58 @@ const UI = {
         const $leftTwoSpace = $('#' + ($targetID - 2));
         const $leftThreeSpace = $('#' + ($targetID - 3));
 
-        const playedArray = [$leftThreeSpace, $leftTwoSpace, $leftOneSpace, $playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace];
-        for (let i = 0; i < playedArray.length; i++) {
-          if ((playedArray[0].hasClass('redChip')) && (playedArray[1].hasClass('redChip')) && (playedArray[2].hasClass('redChip')) && (playedArray[3].hasClass('redChip'))) {
-            console.log('Red Wins Row');
-            let redWinsGame = true;
-            let blackWinsGame = false;
-          } else if ((playedArray[3].hasClass('redChip')) && (playedArray[4].hasClass('redChip')) && (playedArray[5].hasClass('redChip')) && (playedArray[6].hasClass('redChip'))) {
-            console.log('Red Wins Row');
-            let redWinsGame = true;
-            let blackWinsGame = false;
-          } else if ((playedArray[0].hasClass('blackChip')) && (playedArray[1].hasClass('blackChip')) && (playedArray[2].hasClass('blackChip')) && (playedArray[3].hasClass('blackChip'))) {
-            console.log('Black Wins Row');
-            let redWinsGame = false;
-            let blackWinsGame = true;
-          } else if ((playedArray[3].hasClass('blackChip')) && (playedArray[4].hasClass('blackChip')) && (playedArray[5].hasClass('blackChip')) && (playedArray[6].hasClass('blackChip'))) {
-            console.log('Black Wins Row');
-            let redWinsGame = false;
-            let blackWinsGame = true;
+        const rowPlayedArray = [$leftThreeSpace, $leftTwoSpace, $leftOneSpace, $playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace];
+        for (let i = 0; i < rowPlayedArray.length; i++) {
+          if ((rowPlayedArray[0].hasClass('redChip')) && (rowPlayedArray[1].hasClass('redChip')) && (rowPlayedArray[2].hasClass('redChip')) && (rowPlayedArray[3].hasClass('redChip'))) {
+            // console.log('Red Wins Row');
+            redWinsGame = true;
+            blackWinsGame = false;
+          } else if ((rowPlayedArray[3].hasClass('redChip')) && (rowPlayedArray[4].hasClass('redChip')) && (rowPlayedArray[5].hasClass('redChip')) && (rowPlayedArray[6].hasClass('redChip'))) {
+            // console.log('Red Wins Row');
+            redWinsGame = true;
+            blackWinsGame = false;
+          } else if ((rowPlayedArray[0].hasClass('blackChip')) && (rowPlayedArray[1].hasClass('blackChip')) && (rowPlayedArray[2].hasClass('blackChip')) && (rowPlayedArray[3].hasClass('blackChip'))) {
+            // console.log('Black Wins Row');
+            redWinsGame = false;
+            blackWinsGame = true;
+          } else if ((rowPlayedArray[3].hasClass('blackChip')) && (rowPlayedArray[4].hasClass('blackChip')) && (rowPlayedArray[5].hasClass('blackChip')) && (rowPlayedArray[6].hasClass('blackChip'))) {
+            // console.log('Black Wins Row');
+            redWinsGame = false;
+            blackWinsGame = true;
           }
-        }
+        }; //End Row For Loop
 
-      this.whoseTurnIsIt();
+        //COL CHECK
+          const $downOneSpace = $('#' + ($targetID + 7));
+          const $downTwoSpace = $('#' + ($targetID + 14));
+          const $downThreeSpace = $('#' + ($targetID + 21));
+
+          const colPlayedArray = [$playedSpace, $downOneSpace, $downTwoSpace, $downThreeSpace];
+          for (let i = 0; i < colPlayedArray.length; i++) {
+            if ((colPlayedArray[0].hasClass('redChip')) && (colPlayedArray[1].hasClass('redChip')) && (colPlayedArray[2].hasClass('redChip')) && (colPlayedArray[3].hasClass('redChip'))) {
+              // console.log('Red Wins Col');
+              redWinsGame = true;
+              blackWinsGame = false;
+              // this.announceTheWinner();
+            } else if ((colPlayedArray[0].hasClass('blackChip')) && (colPlayedArray[1].hasClass('blackChip')) && (colPlayedArray[2].hasClass('blackChip')) && (colPlayedArray[3].hasClass('blackChip'))) {
+              // console.log('Black Wins Col');
+              redWinsGame = false;
+              blackWinsGame = true;
+            }
+          }; //End Col For Loop
+
+          //WINNER DEFINED
+              // console.log(redWinsGame);
+              // console.log(blackWinsGame);
+              if (!redWinsGame && !blackWinsGame) {
+                  // console.log('Game Continues');
+              } else if (redWinsGame && !blackWinsGame) {
+                console.log('Red Wins Game');
+              } else if (!redWinsGame && blackWinsGame) {
+                console.log('Black Wins Game');
+              } else {
+                console.log('Error');
+              }
     }
   }; //End UI object
 
