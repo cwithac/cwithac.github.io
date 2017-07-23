@@ -63,9 +63,42 @@ const UI = {
         };
     },
     checkForWinner(e) {
-      console.log($(e.currentTarget));
-      const $redSpacePlayed = $(e.currentTarget).hasClass('redChip')
+
+      let redWinsGame = false;
+      let blackWinsGame = false;
+
       const $targetID = parseInt($(e.currentTarget).attr('id'));
+      const $playedSpace = $('#' + ($targetID));
+
+      //ROW CHECK
+        const $rightOneSpace = $('#' + ($targetID + 1));
+        const $rightTwoSpace = $('#' + ($targetID + 2));
+        const $rightThreeSpace = $('#' + ($targetID + 3));
+        const $leftOneSpace = $('#' + ($targetID - 1));
+        const $leftTwoSpace = $('#' + ($targetID - 2));
+        const $leftThreeSpace = $('#' + ($targetID - 3));
+
+        const playedArray = [$leftThreeSpace, $leftTwoSpace, $leftOneSpace, $playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace];
+        for (let i = 0; i < playedArray.length; i++) {
+          if ((playedArray[0].hasClass('redChip')) && (playedArray[1].hasClass('redChip')) && (playedArray[2].hasClass('redChip')) && (playedArray[3].hasClass('redChip'))) {
+            console.log('Red Wins Row');
+            let redWinsGame = true;
+            let blackWinsGame = false;
+          } else if ((playedArray[3].hasClass('redChip')) && (playedArray[4].hasClass('redChip')) && (playedArray[5].hasClass('redChip')) && (playedArray[6].hasClass('redChip'))) {
+            console.log('Red Wins Row');
+            let redWinsGame = true;
+            let blackWinsGame = false;
+          } else if ((playedArray[0].hasClass('blackChip')) && (playedArray[1].hasClass('blackChip')) && (playedArray[2].hasClass('blackChip')) && (playedArray[3].hasClass('blackChip'))) {
+            console.log('Black Wins Row');
+            let redWinsGame = false;
+            let blackWinsGame = true;
+          } else if ((playedArray[3].hasClass('blackChip')) && (playedArray[4].hasClass('blackChip')) && (playedArray[5].hasClass('blackChip')) && (playedArray[6].hasClass('blackChip'))) {
+            console.log('Black Wins Row');
+            let redWinsGame = false;
+            let blackWinsGame = true;
+          }
+        }
+
       this.whoseTurnIsIt();
     }
   }; //End UI object
