@@ -118,6 +118,44 @@ const UI = {
             }
           }; //End Col For Loop
 
+
+        //DIAG CHECK
+          const $downRightSpaceOne = $('#' + ($targetID + 8));
+          const $downRightSpaceTwo = $('#' + ($targetID + 16));
+          const $downRightSpaceThree = $('#' + ($targetID + 24));
+
+          const $downLeftSpaceOne = $('#' + ($targetID + 6));
+          const $downLeftSpaceTwo = $('#' + ($targetID + 12));
+          const $downLeftSpaceThree = $('#' + ($targetID + 18));
+
+          const diagPlayedArrayRight = [$playedSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree];
+          for (let i = 0; i < diagPlayedArrayRight.length; i++) {
+            if ((diagPlayedArrayRight[0].hasClass('redChip')) && (diagPlayedArrayRight[1].hasClass('redChip')) && (diagPlayedArrayRight[2].hasClass('redChip')) && (diagPlayedArrayRight[3].hasClass('redChip'))) {
+              // console.log('Red Wins Col');
+              redWinsGame = true;
+              blackWinsGame = false;
+              // this.announceTheWinner();
+            } else if ((diagPlayedArrayRight[0].hasClass('blackChip')) && (diagPlayedArrayRight[1].hasClass('blackChip')) && (diagPlayedArrayRight[2].hasClass('blackChip')) && (diagPlayedArrayRight[3].hasClass('blackChip'))) {
+              // console.log('Black Wins Col');
+              redWinsGame = false;
+              blackWinsGame = true;
+            }
+          }; //End DiagRight For Loop
+
+          const diagPlayedArrayLeft = [$playedSpace, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
+          for (let i = 0; i < diagPlayedArrayLeft.length; i++) {
+            if ((diagPlayedArrayLeft[0].hasClass('redChip')) && (diagPlayedArrayLeft[1].hasClass('redChip')) && (diagPlayedArrayLeft[2].hasClass('redChip')) && (diagPlayedArrayLeft[3].hasClass('redChip'))) {
+              // console.log('Red Wins Col');
+              redWinsGame = true;
+              blackWinsGame = false;
+              // this.announceTheWinner();
+            } else if ((diagPlayedArrayLeft[0].hasClass('blackChip')) && (diagPlayedArrayLeft[1].hasClass('blackChip')) && (diagPlayedArrayLeft[2].hasClass('blackChip')) && (diagPlayedArrayLeft[3].hasClass('blackChip'))) {
+              // console.log('Black Wins Col');
+              redWinsGame = false;
+              blackWinsGame = true;
+            }
+          }; //End DiagLeft For Loop
+
           //WINNER DEFINED
               // console.log(redWinsGame);
               // console.log(blackWinsGame);
