@@ -11,6 +11,7 @@ body {
  margin: 0;
  padding: 0;
  font-family: 'Special Elite', cursive;
+ background-color: #CFBAA9;
 }
 
 .container {
@@ -21,7 +22,7 @@ body {
 
 nav {
   width: 25%;
-  background-color: darkgrey;
+  background-color: #6B462C;
   color: black;
   text-align: center;
   padding: 1vw;
@@ -34,7 +35,7 @@ nav {
 
 nav h1 {
   font-size: 1.5em;
-  color: white;
+  color: #CFBAA9;
 }
 
 #text-bio {
@@ -44,7 +45,7 @@ nav h1 {
 }
 
 .title {
-  color: white;
+  color: #CFBAA9;
 }
 
 .logo {
@@ -65,7 +66,7 @@ nav h1 {
   margin-left: 1%;
   padding: 1%;
   color: white;
-  background-color: darkgrey;
+  background-color: #6B462C;
   border-radius: 50px;
   font-size: .5em;
 }
@@ -75,12 +76,12 @@ nav h1 {
 }
 
 .tag a:hover {
-  color: rebeccapurple;
+  color: #a52309;
 }
 
 .tag-box {
   text-align: right;
-  margin-top: -1.5%;
+  margin-top: -0.5%;
 
 }
 
@@ -105,19 +106,19 @@ main h1 {
 }
 
 main a {
-  color: RebeccaPurple;
+  color: #412E20;
   text-decoration: none;
 }
 
 main a:hover {
-  color: gray;
+  color: #765D55;
   text-decoration: none;
 }
 
 .photo {
   max-width: 50%;
   border-radius: 500px;
-  border: 5px solid white;
+  border: 5px solid #CFBAA9;
 }
 
 .social {
@@ -128,11 +129,11 @@ main a:hover {
 }
 
 .social a {
-  color: rebeccapurple;
+  color: #412E20;
 }
 
 .social a:hover {
-  color: gray;
+  color: #CFBAA9;
 }
 
 .project {
