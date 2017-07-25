@@ -3,10 +3,6 @@ console.log('connect four app.js');
 //https://en.wikipedia.org/wiki/Connect_Four
 //The animation demonstrates Connect Four gameplay where the first player begins by dropping his/her yellow disc into the center column of the game board. The two players then alternate turns dropping one of their discs at a time into an unfilled column, until the second player, with red discs, achieves four discs in a row, diagonally, and wins. If the game board fills before either player achieves four in a row, then the game is a draw.
 
-
-//https://github.com/edoorn/edoorn.github.io/blob/master/pandulce/js/app.js
-//Win cases
-
 //---------------------------------------------------------//
 
 $(() => { // Window Onload
