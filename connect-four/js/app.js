@@ -73,84 +73,62 @@ const UI = {
         const $leftOneSpace = $('#' + ($targetID - 1));
         const $leftTwoSpace = $('#' + ($targetID - 2));
         const $leftThreeSpace = $('#' + ($targetID - 3));
+      //COLUMN CHECK
+        const $downOneSpace = $('#' + ($targetID + 7));
+        const $downTwoSpace = $('#' + ($targetID + 14));
+        const $downThreeSpace = $('#' + ($targetID + 21));
+      //DIAGONAL CHECK
+        const $downRightSpaceOne = $('#' + ($targetID + 8));
+        const $downRightSpaceTwo = $('#' + ($targetID + 16));
+        const $downRightSpaceThree = $('#' + ($targetID + 24));
+        const $downLeftSpaceOne = $('#' + ($targetID + 6));
+        const $downLeftSpaceTwo = $('#' + ($targetID + 12));
+        const $downLeftSpaceThree = $('#' + ($targetID + 18));
 
-        const rowPlayedArray = [$leftThreeSpace, $leftTwoSpace, $leftOneSpace, $playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace];
-        for (let i = 0; i < rowPlayedArray.length; i++) {
-          if ((rowPlayedArray[0].hasClass('redChip')) && (rowPlayedArray[1].hasClass('redChip')) && (rowPlayedArray[2].hasClass('redChip')) && (rowPlayedArray[3].hasClass('redChip'))) {
+        const arrayOfWinning = [$playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace, $leftThreeSpace, $leftTwoSpace, $leftOneSpace, $downOneSpace, $downTwoSpace, $downThreeSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
+        for (let i = 0; i < arrayOfWinning.length; i++) {
+          if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[1].hasClass('redChip')) && (arrayOfWinning[2].hasClass('redChip')) && (arrayOfWinning[3].hasClass('redChip'))) {
             // console.log('Red Wins Row');
             redWinsGame = true;
             blackWinsGame = false;
-          } else if ((rowPlayedArray[3].hasClass('redChip')) && (rowPlayedArray[4].hasClass('redChip')) && (rowPlayedArray[5].hasClass('redChip')) && (rowPlayedArray[6].hasClass('redChip'))) {
+          } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[4].hasClass('redChip')) && (arrayOfWinning[5].hasClass('redChip')) && (arrayOfWinning[6].hasClass('redChip'))) {
             // console.log('Red Wins Row');
             redWinsGame = true;
             blackWinsGame = false;
-          } else if ((rowPlayedArray[0].hasClass('blackChip')) && (rowPlayedArray[1].hasClass('blackChip')) && (rowPlayedArray[2].hasClass('blackChip')) && (rowPlayedArray[3].hasClass('blackChip'))) {
+          } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[1].hasClass('blackChip')) && (arrayOfWinning[2].hasClass('blackChip')) && (arrayOfWinning[3].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
             redWinsGame = false;
             blackWinsGame = true;
-          } else if ((rowPlayedArray[3].hasClass('blackChip')) && (rowPlayedArray[4].hasClass('blackChip')) && (rowPlayedArray[5].hasClass('blackChip')) && (rowPlayedArray[6].hasClass('blackChip'))) {
+          } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[4].hasClass('blackChip')) && (arrayOfWinning[5].hasClass('blackChip')) && (arrayOfWinning[6].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
+            redWinsGame = false;
+            blackWinsGame = true;
+          } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[7].hasClass('redChip')) && (arrayOfWinning[8].hasClass('redChip')) && (arrayOfWinning[9].hasClass('redChip'))) {
+            // console.log('Red Wins Col');
+            redWinsGame = true;
+            blackWinsGame = false;
+          } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[7].hasClass('blackChip')) && (arrayOfWinning[8].hasClass('blackChip')) && (arrayOfWinning[9].hasClass('blackChip'))) {
+            // console.log('Black Wins Col');
+            redWinsGame = false;
+            blackWinsGame = true;
+          } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[10].hasClass('redChip')) && (arrayOfWinning[11].hasClass('redChip')) && (arrayOfWinning[12].hasClass('redChip'))) {
+            // console.log('Red Wins Diag');
+            redWinsGame = true;
+            blackWinsGame = false;
+          } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[10].hasClass('blackChip')) && (arrayOfWinning[11].hasClass('blackChip')) && (arrayOfWinning[12].hasClass('blackChip'))) {
+            // console.log('Black Wins Diag');
+            redWinsGame = false;
+            blackWinsGame = true;
+          } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[13].hasClass('redChip')) && (arrayOfWinning[14].hasClass('redChip')) && (arrayOfWinning[15].hasClass('redChip'))) {
+            // console.log('Red Wins Daig');
+            redWinsGame = true;
+            blackWinsGame = false;
+          } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[13].hasClass('blackChip')) && (arrayOfWinning[14].hasClass('blackChip')) && (arrayOfWinning[15].hasClass('blackChip'))) {
+            // console.log('Black Wins Diag');
             redWinsGame = false;
             blackWinsGame = true;
           }
-        }; //End Row For Loop
-
-        //COL CHECK
-          const $downOneSpace = $('#' + ($targetID + 7));
-          const $downTwoSpace = $('#' + ($targetID + 14));
-          const $downThreeSpace = $('#' + ($targetID + 21));
-
-          const colPlayedArray = [$playedSpace, $downOneSpace, $downTwoSpace, $downThreeSpace];
-          for (let i = 0; i < colPlayedArray.length; i++) {
-            if ((colPlayedArray[0].hasClass('redChip')) && (colPlayedArray[1].hasClass('redChip')) && (colPlayedArray[2].hasClass('redChip')) && (colPlayedArray[3].hasClass('redChip'))) {
-              // console.log('Red Wins Col');
-              redWinsGame = true;
-              blackWinsGame = false;
-              // this.announceTheWinner();
-            } else if ((colPlayedArray[0].hasClass('blackChip')) && (colPlayedArray[1].hasClass('blackChip')) && (colPlayedArray[2].hasClass('blackChip')) && (colPlayedArray[3].hasClass('blackChip'))) {
-              // console.log('Black Wins Col');
-              redWinsGame = false;
-              blackWinsGame = true;
-            }
-          }; //End Col For Loop
-
-
-        //DIAG CHECK
-          const $downRightSpaceOne = $('#' + ($targetID + 8));
-          const $downRightSpaceTwo = $('#' + ($targetID + 16));
-          const $downRightSpaceThree = $('#' + ($targetID + 24));
-
-          const $downLeftSpaceOne = $('#' + ($targetID + 6));
-          const $downLeftSpaceTwo = $('#' + ($targetID + 12));
-          const $downLeftSpaceThree = $('#' + ($targetID + 18));
-
-          const diagPlayedArrayRight = [$playedSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree];
-          for (let i = 0; i < diagPlayedArrayRight.length; i++) {
-            if ((diagPlayedArrayRight[0].hasClass('redChip')) && (diagPlayedArrayRight[1].hasClass('redChip')) && (diagPlayedArrayRight[2].hasClass('redChip')) && (diagPlayedArrayRight[3].hasClass('redChip'))) {
-              // console.log('Red Wins Col');
-              redWinsGame = true;
-              blackWinsGame = false;
-              // this.announceTheWinner();
-            } else if ((diagPlayedArrayRight[0].hasClass('blackChip')) && (diagPlayedArrayRight[1].hasClass('blackChip')) && (diagPlayedArrayRight[2].hasClass('blackChip')) && (diagPlayedArrayRight[3].hasClass('blackChip'))) {
-              // console.log('Black Wins Col');
-              redWinsGame = false;
-              blackWinsGame = true;
-            }
-          }; //End DiagRight For Loop
-
-          const diagPlayedArrayLeft = [$playedSpace, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
-          for (let i = 0; i < diagPlayedArrayLeft.length; i++) {
-            if ((diagPlayedArrayLeft[0].hasClass('redChip')) && (diagPlayedArrayLeft[1].hasClass('redChip')) && (diagPlayedArrayLeft[2].hasClass('redChip')) && (diagPlayedArrayLeft[3].hasClass('redChip'))) {
-              // console.log('Red Wins Col');
-              redWinsGame = true;
-              blackWinsGame = false;
-              // this.announceTheWinner();
-            } else if ((diagPlayedArrayLeft[0].hasClass('blackChip')) && (diagPlayedArrayLeft[1].hasClass('blackChip')) && (diagPlayedArrayLeft[2].hasClass('blackChip')) && (diagPlayedArrayLeft[3].hasClass('blackChip'))) {
-              // console.log('Black Wins Col');
-              redWinsGame = false;
-              blackWinsGame = true;
-            }
-          }; //End DiagLeft For Loop
+        };
 
           //WINNER DEFINED
               // console.log(redWinsGame);
