@@ -18,6 +18,8 @@ $(() => { // Window Onload
   let redTurn = true;
   let played = false;
   let legalMove = false;
+  let redWinsGame = false;
+  let blackWinsGame = false;
 
 //---------------------------------------------------------//
 
@@ -59,11 +61,10 @@ const UI = {
         };
     },
     checkForWinner(e) {
-
-      let redWinsGame = false;
-      let blackWinsGame = false;
+      //searches for winner, game continues if condition is not met
 
       const $targetID = parseInt($(e.currentTarget).attr('id'));
+      //Last played space
       const $playedSpace = $('#' + ($targetID));
 
       //ROW CHECK
@@ -86,6 +87,7 @@ const UI = {
         const $downLeftSpaceThree = $('#' + ($targetID + 18));
 
         const arrayOfWinning = [$playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace, $leftThreeSpace, $leftTwoSpace, $leftOneSpace, $downOneSpace, $downTwoSpace, $downThreeSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
+
         for (let i = 0; i < arrayOfWinning.length; i++) {
           if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[1].hasClass('redChip')) && (arrayOfWinning[2].hasClass('redChip')) && (arrayOfWinning[3].hasClass('redChip'))) {
             // console.log('Red Wins Row');
@@ -130,18 +132,22 @@ const UI = {
           }
         };
 
-          //WINNER DEFINED
-              // console.log(redWinsGame);
-              // console.log(blackWinsGame);
-              if (!redWinsGame && !blackWinsGame) {
-                  // console.log('Game Continues');
-              } else if (redWinsGame && !blackWinsGame) {
-                console.log('Red Wins Game');
-              } else if (!redWinsGame && blackWinsGame) {
-                console.log('Black Wins Game');
-              } else {
-                console.log('Error');
-              }
+      //WINNER DEFINED
+          if (!redWinsGame && !blackWinsGame) {
+              // console.log('Game Continues');
+          } else if (redWinsGame && !blackWinsGame) {
+            console.log('Red Wins Game');
+            this.announceTheWinner();
+          } else if (!redWinsGame && blackWinsGame) {
+            console.log('Black Wins Game');
+            this.announceTheWinner();
+          } else {
+            console.log('Error');
+          }
+    },
+    announceTheWinner() {
+      console.log(redWinsGame);
+      console.log(blackWinsGame);
     }
   }; //End UI object
 
