@@ -146,8 +146,20 @@ const UI = {
           }
     },
     announceTheWinner() {
-      console.log(redWinsGame);
-      console.log(blackWinsGame);
+      // console.log(redWinsGame);
+      // console.log(blackWinsGame);
+
+      //turn off future possible plays
+      $('.canBePlayed').removeClass('canBePlayed');
+
+      //notify winner
+      if (redWinsGame) {
+        $('#whose-turn').text('Red Wins')
+      } else if (blackWinsGame) {
+        $('#whose-turn').text('Black Wins')
+      }
+
+
     }
   }; //End UI object
 
