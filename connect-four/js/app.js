@@ -93,6 +93,17 @@ const UI = {
       //Array of possible winning positions delcared in checks
         const arrayOfWinning = [$playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace, $leftThreeSpace, $leftTwoSpace, $leftOneSpace, $downOneSpace, $downTwoSpace, $downThreeSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
 
+        const arrayOfWinningOptions = [
+          [arrayOfWinning[0], arrayOfWinning[1], arrayOfWinning[2], arrayOfWinning[3]],
+          [arrayOfWinning[0], arrayOfWinning[4], arrayOfWinning[5], arrayOfWinning[6]],
+          [arrayOfWinning[0], arrayOfWinning[7], arrayOfWinning[8], arrayOfWinning[9]],
+          [arrayOfWinning[0], arrayOfWinning[10], arrayOfWinning[11], arrayOfWinning[12]],
+          [arrayOfWinning[0], arrayOfWinning[13], arrayOfWinning[14], arrayOfWinning[15]],
+        ];
+
+        console.log('arrayOfWinningOptions', arrayOfWinningOptions);
+        console.log('1', arrayOfWinningOptions[0][0]);
+
       //Apply if winning condition is met
         //Sets winner of game based on condition
           //Highlights winner's play

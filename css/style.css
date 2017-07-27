@@ -11,7 +11,7 @@ body {
  margin: 0;
  padding: 0;
  font-family: 'Special Elite', cursive;
- background-color: #CFBAA9;
+ background-image: url('./../images/typewriter.jpg');
 }
 
 .container {
@@ -20,10 +20,16 @@ body {
   height: 100vh;
 }
 
+.body-box {
+  margin: 1em 4em;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, .9);
+  width: 70%;
+}
+
 nav {
   width: 25%;
-  background-color: #6B462C;
-  color: black;
+  background-color: black;
   text-align: center;
   padding: 1vw;
   display: flex;
@@ -35,7 +41,7 @@ nav {
 
 nav h1 {
   font-size: 1.5em;
-  color: #CFBAA9;
+  color: white;
 }
 
 #text-bio {
@@ -45,11 +51,11 @@ nav h1 {
 }
 
 .title {
-  color: #CFBAA9;
+  color: white;
 }
 
 .logo {
-  color: black;
+  color: white;
   font-size: 2.5em;
   padding: 0;
   margin: 0 auto;
@@ -65,8 +71,8 @@ nav h1 {
 .tag {
   margin-left: 1%;
   padding: 1%;
-  color: white;
-  background-color: #6B462C;
+  color: black;
+  background-color: darkgray;
   border-radius: 50px;
   font-size: .5em;
 }
@@ -76,7 +82,7 @@ nav h1 {
 }
 
 .tag a:hover {
-  color: #a52309;
+  color: black;
 }
 
 .tag-box {
@@ -93,7 +99,7 @@ nav h1 {
 .bio {
   padding: 1vh 1vw;
   font-size: .75em;
-  color: black;
+  color: white;
 }
 
 main {
@@ -106,19 +112,19 @@ main h1 {
 }
 
 main a {
-  color: #412E20;
+  color: black;
   text-decoration: none;
 }
 
 main a:hover {
-  color: #765D55;
+  color: dimgray;
   text-decoration: none;
 }
 
 .photo {
   max-width: 50%;
   border-radius: 500px;
-  border: 5px solid #CFBAA9;
+  border: 5px solid white;
 }
 
 .social {
@@ -129,15 +135,15 @@ main a:hover {
 }
 
 .social a {
-  color: #412E20;
+  color: dimgray;
 }
 
 .social a:hover {
-  color: #CFBAA9;
+  color: gray;
 }
 
 .project {
-  width: 75%;
+  width: 90%;
   margin: 3vh auto;
 }
 
