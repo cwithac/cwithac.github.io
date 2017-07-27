@@ -187,6 +187,7 @@ p {
     width: 90%;
     display: block;
     margin: 5% auto;
+    margin-bottom: 15%;
   }
   .photo {
     max-width: 25%;
@@ -194,6 +195,12 @@ p {
   .bio {
     /*text-align: justify;*/
     padding: 1vh 5vw;
+  }
+  .body-box {
+    width: 90%;
+  }
+  .tag {
+    padding: 3%;
   }
 }
 
