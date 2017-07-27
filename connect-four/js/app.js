@@ -15,11 +15,14 @@ $(() => { // Window Onload
 
 //Global variables
 
+  let playCounter = 0;
   let redTurn = true;
   let played = false;
   let legalMove = false;
   let redWinsGame = false;
   let blackWinsGame = false;
+  let redScore = 0;
+  let blackScore = 0;
 
 //---------------------------------------------------------//
 
@@ -97,6 +100,12 @@ const UI = {
             // console.log('Red Wins Row');
             redWinsGame = true;
             blackWinsGame = false;
+
+            // arrayOfWinning[0].attr('class', 'makeBlue')
+            // arrayOfWinning[4].attr('class', 'makeBlue')
+            // arrayOfWinning[5].attr('class', 'makeBlue')
+            // arrayOfWinning[6].attr('class', 'makeBlue')
+
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[1].hasClass('blackChip')) && (arrayOfWinning[2].hasClass('blackChip')) && (arrayOfWinning[3].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
             redWinsGame = false;
@@ -133,8 +142,13 @@ const UI = {
         };
 
       //WINNER DEFINED
-          if (!redWinsGame && !blackWinsGame) {
-              // console.log('Game Continues');
+
+          if (!redWinsGame && !blackWinsGame && (playCounter === 42)) {
+            console.log('Game is a Draw');
+            this.announceTheWinner();
+          } else if (!redWinsGame && !blackWinsGame) {
+              console.log('Game Continues');
+              console.log(playCounter);
           } else if (redWinsGame && !blackWinsGame) {
             console.log('Red Wins Game');
             this.announceTheWinner();
@@ -148,7 +162,9 @@ const UI = {
     announceTheWinner() {
       // console.log(redWinsGame);
       // console.log(blackWinsGame);
-
+    if (playCounter === 42) {
+      $('#whose-turn').text('The Game is a Draw')
+    } else {
       //turn off future possible plays
       $('.canBePlayed').removeClass('canBePlayed');
 
@@ -158,7 +174,10 @@ const UI = {
       } else if (blackWinsGame) {
         $('#whose-turn').text('Black Wins')
       }
+    }
 
+    },
+    keepScore() {
 
     }
   }; //End UI object
@@ -177,11 +196,13 @@ const UI = {
           $(e.currentTarget).attr('class', 'redChip').addClass('played').removeClass('emptySpace');
           redTurn = false;
           played = true;
+          playCounter++;
           UI.checkForWinner(e)
         } else {
           $(e.currentTarget).attr('class', 'blackChip').addClass('played').removeClass('emptySpace');
           redTurn = true;
           played = true;
+          playCounter++;
           UI.checkForWinner(e)
         };
       }
