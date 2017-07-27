@@ -41,6 +41,7 @@ const UI = {
           $square.on('click', PA.playPiece);
         };
         this.whoseTurnIsIt();
+        this.keepScore();
       },
     whoseTurnIsIt() {
       //Informs user if it is red turn or black turn
@@ -147,8 +148,7 @@ const UI = {
             console.log('Game is a Draw');
             this.announceTheWinner();
           } else if (!redWinsGame && !blackWinsGame) {
-              console.log('Game Continues');
-              console.log(playCounter);
+              // console.log('Game Continues');
           } else if (redWinsGame && !blackWinsGame) {
             console.log('Red Wins Game');
             this.announceTheWinner();
@@ -160,8 +160,7 @@ const UI = {
           }
     },
     announceTheWinner() {
-      // console.log(redWinsGame);
-      // console.log(blackWinsGame);
+      //Updates winner and shuts off game
     if (playCounter === 42) {
       $('#whose-turn').text('The Game is a Draw')
     } else {
@@ -170,15 +169,22 @@ const UI = {
 
       //notify winner
       if (redWinsGame) {
-        $('#whose-turn').text('Red Wins')
+        $('#whose-turn').text('Red Wins');
+        redScore++;
       } else if (blackWinsGame) {
-        $('#whose-turn').text('Black Wins')
+        $('#whose-turn').text('Black Wins');
+        blackScore++;
       }
-    }
-
+    };
+      this.keepScore();
     },
     keepScore() {
+      //Tracks score after game win
+      const $redScore = $('#red-score');
+      const $blackScore = $('#black-score');
 
+      $redScore.text(redScore);
+      $blackScore.text(blackScore)
     }
   }; //End UI object
 
@@ -197,7 +203,7 @@ const UI = {
           redTurn = false;
           played = true;
           playCounter++;
-          UI.checkForWinner(e)
+          UI.checkForWinner(e);
         } else {
           $(e.currentTarget).attr('class', 'blackChip').addClass('played').removeClass('emptySpace');
           redTurn = true;
