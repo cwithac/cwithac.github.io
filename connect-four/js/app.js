@@ -90,55 +90,113 @@ const UI = {
         const $downLeftSpaceTwo = $('#' + ($targetID + 12));
         const $downLeftSpaceThree = $('#' + ($targetID + 18));
 
+      //Array of possible winning positions delcared in checks
         const arrayOfWinning = [$playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace, $leftThreeSpace, $leftTwoSpace, $leftOneSpace, $downOneSpace, $downTwoSpace, $downThreeSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
 
+      //Apply if winning condition is met
+        //Sets winner of game based on condition
+          //Highlights winner's play
         for (let i = 0; i < arrayOfWinning.length; i++) {
           if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[1].hasClass('redChip')) && (arrayOfWinning[2].hasClass('redChip')) && (arrayOfWinning[3].hasClass('redChip'))) {
             // console.log('Red Wins Row');
             redWinsGame = true;
             blackWinsGame = false;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[1].attr('class', 'highlightWinner');
+                  arrayOfWinning[2].attr('class', 'highlightWinner');
+                  arrayOfWinning[3].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[4].hasClass('redChip')) && (arrayOfWinning[5].hasClass('redChip')) && (arrayOfWinning[6].hasClass('redChip'))) {
             // console.log('Red Wins Row');
             redWinsGame = true;
             blackWinsGame = false;
 
-            // arrayOfWinning[0].attr('class', 'makeBlue')
-            // arrayOfWinning[4].attr('class', 'makeBlue')
-            // arrayOfWinning[5].attr('class', 'makeBlue')
-            // arrayOfWinning[6].attr('class', 'makeBlue')
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[4].attr('class', 'highlightWinner');
+                  arrayOfWinning[5].attr('class', 'highlightWinner');
+                  arrayOfWinning[6].attr('class', 'highlightWinner');
 
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[1].hasClass('blackChip')) && (arrayOfWinning[2].hasClass('blackChip')) && (arrayOfWinning[3].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
             redWinsGame = false;
             blackWinsGame = true;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[1].attr('class', 'highlightWinner');
+                  arrayOfWinning[2].attr('class', 'highlightWinner');
+                  arrayOfWinning[3].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[4].hasClass('blackChip')) && (arrayOfWinning[5].hasClass('blackChip')) && (arrayOfWinning[6].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
             redWinsGame = false;
             blackWinsGame = true;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[4].attr('class', 'highlightWinner');
+                  arrayOfWinning[5].attr('class', 'highlightWinner');
+                  arrayOfWinning[6].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[7].hasClass('redChip')) && (arrayOfWinning[8].hasClass('redChip')) && (arrayOfWinning[9].hasClass('redChip'))) {
             // console.log('Red Wins Col');
             redWinsGame = true;
             blackWinsGame = false;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[7].attr('class', 'highlightWinner');
+                  arrayOfWinning[8].attr('class', 'highlightWinner');
+                  arrayOfWinning[9].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[7].hasClass('blackChip')) && (arrayOfWinning[8].hasClass('blackChip')) && (arrayOfWinning[9].hasClass('blackChip'))) {
             // console.log('Black Wins Col');
             redWinsGame = false;
             blackWinsGame = true;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[7].attr('class', 'highlightWinner');
+                  arrayOfWinning[8].attr('class', 'highlightWinner');
+                  arrayOfWinning[9].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[10].hasClass('redChip')) && (arrayOfWinning[11].hasClass('redChip')) && (arrayOfWinning[12].hasClass('redChip'))) {
             // console.log('Red Wins Diag');
             redWinsGame = true;
             blackWinsGame = false;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[10].attr('class', 'highlightWinner');
+                  arrayOfWinning[11].attr('class', 'highlightWinner');
+                  arrayOfWinning[12].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[10].hasClass('blackChip')) && (arrayOfWinning[11].hasClass('blackChip')) && (arrayOfWinning[12].hasClass('blackChip'))) {
             // console.log('Black Wins Diag');
             redWinsGame = false;
             blackWinsGame = true;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[10].attr('class', 'highlightWinner');
+                  arrayOfWinning[11].attr('class', 'highlightWinner');
+                  arrayOfWinning[12].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[13].hasClass('redChip')) && (arrayOfWinning[14].hasClass('redChip')) && (arrayOfWinning[15].hasClass('redChip'))) {
             // console.log('Red Wins Daig');
             redWinsGame = true;
             blackWinsGame = false;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[13].attr('class', 'highlightWinner');
+                  arrayOfWinning[14].attr('class', 'highlightWinner');
+                  arrayOfWinning[15].attr('class', 'highlightWinner');
+
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[13].hasClass('blackChip')) && (arrayOfWinning[14].hasClass('blackChip')) && (arrayOfWinning[15].hasClass('blackChip'))) {
             // console.log('Black Wins Diag');
             redWinsGame = false;
             blackWinsGame = true;
+
+                  arrayOfWinning[0].attr('class', 'highlightWinner');
+                  arrayOfWinning[13].attr('class', 'highlightWinner');
+                  arrayOfWinning[14].attr('class', 'highlightWinner');
+                  arrayOfWinning[15].attr('class', 'highlightWinner');
+
           }
         };
 
