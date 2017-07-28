@@ -240,25 +240,22 @@ const UI = {
       if (redWinsGame) {
         $('#whose-turn').text('Red Wins');
         redScore++;
-        rounds++;
-        $roundCounter.text('Round: ' + rounds);
+        this.keepScore();
       } else if (blackWinsGame) {
         $('#whose-turn').text('Black Wins');
         blackScore++;
-        rounds++;
-        $roundCounter.text('Round: ' + rounds);
+        this.keepScore();
       }
+
     };
-      this.keepScore();
     },
     keepScore() {
       //Tracks score after game win
       const $redScore = $('#red-score');
       const $blackScore = $('#black-score');
-      const $roundCounter = $('#round-counter').text('Rounds: ' + rounds);
       $redScore.text(redScore);
       $blackScore.text(blackScore)
-      $roundCounter.text('Round: ' + rounds);
+      $('#round-counter').text('Round: ' + rounds);
     },
     playAgain() {
       //resets board, does not reset score
@@ -267,6 +264,7 @@ const UI = {
       legalMove = false;
       redWinsGame = false;
       blackWinsGame = false;
+      rounds++;
       $('#gameboard').empty();
       UI.createGameBoard();
     },
@@ -279,7 +277,8 @@ const UI = {
       blackWinsGame = false;
       redScore = 0;
       blackScore = 0;
-      // redTurn = true;
+      rounds = 1;
+      redTurn = true;
       $('#gameboard').empty();
       UI.createGameBoard();
     }
