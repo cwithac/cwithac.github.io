@@ -8,6 +8,7 @@ console.log('connect four app.js');
 $(() => { // Window Onload
 
   UI.createGameBoard();
+  PA.resetGame();
 
 }); //End of Window Onload
 
@@ -215,6 +216,7 @@ const UI = {
             this.announceTheWinner();
           } else if (!redWinsGame && !blackWinsGame) {
               // console.log('Game Continues');
+            this.whoseTurnIsIt();
           } else if (redWinsGame && !blackWinsGame) {
             console.log('Red Wins Game');
             this.announceTheWinner();
@@ -251,6 +253,29 @@ const UI = {
 
       $redScore.text(redScore);
       $blackScore.text(blackScore)
+    },
+    playAgain() {
+      //resets board, does not reset score
+      playCounter = 0;
+      played = false;
+      legalMove = false;
+      redWinsGame = false;
+      blackWinsGame = false;
+      $('#gameboard').empty();
+      UI.createGameBoard();
+    },
+    startOver() {
+      //resets board and score
+      playCounter = 0;
+      played = false;
+      legalMove = false;
+      redWinsGame = false;
+      blackWinsGame = false;
+      redScore = 0;
+      blackScore = 0;
+      // redTurn = true;
+      $('#gameboard').empty();
+      UI.createGameBoard();
     }
   }; //End UI object
 
@@ -278,5 +303,12 @@ const UI = {
           UI.checkForWinner(e)
         };
       }
+    },
+    resetGame() {
+      const $playAgain = $('#playAgain');
+      $playAgain.on('click', UI.playAgain);
+
+      const $startOver = $('#startOver');
+      $startOver.on('click', UI.startOver);
     }
   }; //End PA Object
