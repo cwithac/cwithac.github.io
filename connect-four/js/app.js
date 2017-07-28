@@ -24,6 +24,7 @@ $(() => { // Window Onload
   let blackWinsGame = false;
   let redScore = 0;
   let blackScore = 0;
+  let rounds = 1;
 
 //---------------------------------------------------------//
 
@@ -239,9 +240,13 @@ const UI = {
       if (redWinsGame) {
         $('#whose-turn').text('Red Wins');
         redScore++;
+        rounds++;
+        $roundCounter.text('Round: ' + rounds);
       } else if (blackWinsGame) {
         $('#whose-turn').text('Black Wins');
         blackScore++;
+        rounds++;
+        $roundCounter.text('Round: ' + rounds);
       }
     };
       this.keepScore();
@@ -250,9 +255,10 @@ const UI = {
       //Tracks score after game win
       const $redScore = $('#red-score');
       const $blackScore = $('#black-score');
-
+      const $roundCounter = $('#round-counter').text('Rounds: ' + rounds);
       $redScore.text(redScore);
       $blackScore.text(blackScore)
+      $roundCounter.text('Round: ' + rounds);
     },
     playAgain() {
       //resets board, does not reset score
