@@ -49,9 +49,11 @@ const UI = {
       //Informs user if it is red turn or black turn
       const $whoseTurn = $('#whose-turn')
       if (redTurn) {
-        $whoseTurn.text("It is the red player's turn!");
+        $whoseTurn.attr('class', 'redPlayer');
+        // $whoseTurn.text("It is the red player's turn!");
       } else {
-        $whoseTurn.text("It is the black player's turn!");
+        $whoseTurn.attr('class', 'blackPlayer');
+        // $whoseTurn.text("It is the black player's turn!");
       }
     },
     checkForLegalMove(e) {
@@ -231,6 +233,7 @@ const UI = {
     announceTheWinner() {
       //Updates winner and shuts off game
     if (playCounter === 42) {
+      $('#whose-turn').removeClass('blackPlayer').removeClass('redPlayer');
       $('#whose-turn').text('The Game is a Draw')
     } else {
       //turn off future possible plays
@@ -238,10 +241,12 @@ const UI = {
 
       //notify winner
       if (redWinsGame) {
+        $('#whose-turn').removeClass('blackPlayer').removeClass('redPlayer');
         $('#whose-turn').text('Red Wins');
         redScore++;
         this.keepScore();
       } else if (blackWinsGame) {
+        $('#whose-turn').removeClass('blackPlayer').removeClass('redPlayer');
         $('#whose-turn').text('Black Wins');
         blackScore++;
         this.keepScore();
