@@ -196,6 +196,7 @@ button {
   display: inline;
   padding: 0;
   color: white;
+
 }
 
 .starsH2 {
@@ -214,6 +215,7 @@ button {
   display: inline;
   padding: 0;
   color: black;
+  cursor: pointer;
 }
 
 .correctP1, .correctP2 {
