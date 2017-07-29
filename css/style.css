@@ -91,11 +91,6 @@ nav h1 {
 
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
 .bio {
   padding: 1vh 1vw;
   font-size: .75em;
@@ -109,6 +104,9 @@ main {
 
 main h1 {
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: .05em;
 }
 
 main a {
@@ -156,8 +154,49 @@ p {
   display: none;
 }
 
-/*RESPONSIVE*/
+/*ANIMATIONS*/
 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+#creativejuices-header {
+  animation: typing 7s steps(80, end);
+  animation-delay: .5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+#perfectexcuse-header {
+  animation: typing 7s steps(80, end);
+  animation-delay: 1.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+#beerswall-header {
+  animation: typing 7s steps(80, end);
+  animation-delay: 2.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+#disneyvault-header {
+  animation: typing 7s steps(80, end);
+  animation-delay: 3.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+#lyrics-header {
+  animation: typing 7s steps(80, end);
+  animation-delay: 4.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+/*RESPONSIVE*/
 
 @media (max-width: 780px) {
   .container {
