@@ -270,6 +270,8 @@ const UI = {
       redWinsGame = false;
       blackWinsGame = false;
       rounds++;
+      redTurn = false;
+      $('#whose-turn').empty();
       $('#gameboard').empty();
       UI.createGameBoard();
     },
@@ -283,7 +285,7 @@ const UI = {
       redScore = 0;
       blackScore = 0;
       rounds = 1;
-      redTurn = true;
+      $('#whose-turn').empty();
       $('#gameboard').empty();
       UI.createGameBoard();
     }
