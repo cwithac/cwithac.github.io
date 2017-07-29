@@ -209,8 +209,8 @@ p {
     min-height: 0;
   }
   nav h1 {
-    font-size: 1.5em;
-    margin: 2% 0 0 0;
+    font-size: 20px;
+    margin: 2% 0 0 -6%;
   }
   nav div {
     margin: 0;
@@ -230,7 +230,9 @@ p {
     margin-bottom: 15%;
   }
   .photo {
-    max-width: 25%;
+    width: 25%;
+    height: 25%;
+    margin: 2% 0 0 0;
   }
   .bio {
     /*text-align: justify;*/
@@ -245,10 +247,28 @@ p {
   .tag-box {
     margin-top: 3%;
   }
+  #name {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo {
+    margin: 2% 0 0 0;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #name {
+    display: inline;
+  }
 }
 
 @media (max-width: 500px) {
   .photo {
     max-width: 40%;
+  }
+  .logo {
+    font-size: 1.5em;
   }
 }
