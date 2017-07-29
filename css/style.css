@@ -262,6 +262,9 @@ p {
   #name {
     display: inline;
   }
+  nav h1 {
+    margin: 2% 0 0 0;
+  }
 }
 
 @media (max-width: 500px) {
@@ -270,5 +273,11 @@ p {
   }
   .logo {
     font-size: 1.5em;
+  }
+  nav h1 {
+    font-size: 1em;
+  }
+  #text-bio {
+    font-size: .5em;
   }
 }
