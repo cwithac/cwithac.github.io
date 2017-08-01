@@ -44,6 +44,7 @@ const UI = {
         };
         this.whoseTurnIsIt();
         this.keepScore();
+        this.howToPlayModal();
       },
     whoseTurnIsIt() {
       //Informs user if it is red turn or black turn
@@ -55,6 +56,22 @@ const UI = {
         $whoseTurn.attr('class', 'blackPlayer');
         // $whoseTurn.text("It is the black player's turn!");
       }
+    },
+    howToPlayModal(){
+      //Functionality of how to play modal
+      const $howToButton = $('#howToPlay');
+      const $howToModal = $('#modal');
+      const $closeButton = $('#close');
+
+      const openHowTo = () => {
+        $howToModal.css('display', 'block');
+      };
+      const closeHowTo = () => {
+        $howToModal.css('display', 'none');
+      };
+
+      $howToButton.on('click', openHowTo);
+      $closeButton.on('click', closeHowTo);
     },
     checkForLegalMove(e) {
       //Confirms 'gravity', fill from bottom to top
