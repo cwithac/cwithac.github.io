@@ -1,3 +1,5 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
 * {
   /*border: 1px solid gray;*/
 }
@@ -5,11 +7,26 @@
 nav {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
 }
 
 h1 {
   text-align: center;
+}
+
+#user-play, #score-round, #players-turn {
+  border: 1px solid black;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#players-turn {
+  justify-content: space-around;
 }
 
 #gameboard {
@@ -58,13 +75,13 @@ h1 {
 }
 
 .canBePlayed:hover {
-    display: inline-block;
-    border: 5px solid yellow;
-    background-color: lightgray;
-    height: 75px;
-    width: 75px;
-    border-radius: 50px;
-    vertical-align: middle;
+  display: inline-block;
+  border: 5px solid yellow;
+  background-color: lightgray;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  vertical-align: middle;
 }
 
 .highlightWinner {
@@ -77,23 +94,23 @@ h1 {
   vertical-align: middle;
 }
 
-.redPlayer {
+.redPlayer, .blackPlayer {
   display: inline-block;
-  background-color: red;
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
   border-radius: 50px;
   vertical-align: middle;
 }
 
-.blackPlayer {
-  display: inline-block;
-  background-color: black;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  vertical-align: middle;
+.redPlayer {
+  background-color: red;
 }
+
+.blackPlayer {
+  background-color: black;
+}
+
+
 
 /*HOW TO MODAL*/
 
@@ -111,9 +128,21 @@ h1 {
 
 #modal-text-box {
 	background-color: white;
-	height: 350px;
-	width: 550px;
+	height: 210px;
+	width: 500px;
 	border-radius: 2px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 1%;
+  padding: 1.5%;
+}
+
+.highlight-word {
+  color: red;
+}
+
+#close {
+  text-align: right;
+  font-size: 2em;
+  margin-bottom: -10%;
 }

@@ -5,6 +5,7 @@
     <title>Connect Four</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/bf46144db9.js"></script>
     <!-- JS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -18,7 +19,7 @@
       <h1>Connect Four</h1>
     </header>
     <nav>
-      <section>
+      <section id="score-round">
         <div id="round-counter"></div>
         <div>
           Red: <span id="red-score"></span>
@@ -27,8 +28,10 @@
           Black: <span id="black-score"></span>
         </div>
       </section>
-              <div id="whose-turn"></div>
-      <section>
+      <section id="players-turn">
+        Player's Turn: <div id="whose-turn"></div>
+      </section>
+      <section id="user-play">
         <div id="howToPlay">How To Play</div>
         <div id="playAgain">Play Again</div>
         <div id="startOver">Start Over</div>
@@ -37,8 +40,10 @@
     <section>
       <div id="modal">
         <div id="modal-text-box">
-          <div id="close">Close</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div id="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+          <h3>HOW TO PLAY</h3>
+          <p>Two players alternate turns playing a red chip or a black chip by clicking on an empty space.  Plays must be made from the bottom of the game board upward, as if chips would fall due to gravity.  Available spaces to play will highlight in gray.  The round ends when either player achieves four discs in a row, column, or diagonally. If the game board fills before either player achieves four in a row, then the game is a draw.</p>
+          <p>Choose <span class="highlight-word">play again</span> to keep the score tally running but play a new game.  Choose <span class="highlight-word">start over</span> to reset both the gameboard and scoreboard.</p>
         </div>
       </div>
     </section>
