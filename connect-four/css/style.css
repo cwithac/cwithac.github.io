@@ -10,7 +10,7 @@ body {
 nav {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 h1 {
@@ -39,16 +39,16 @@ h1 {
 #gameboard {
   height: 510px;
   width: 600px;
-  background-color: yellow;
+  background-color: #FFFF00;
   text-align: center;
   margin: 0 auto;
-  border: 5px solid yellow;
+  border: 5px solid #FFFF00;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .emptySpace {
   display: inline-block;
-  border: 5px solid yellow;
+  border: 5px solid #FFFF00;
   background-color: #FFFFFF;
   height: 75px;
   width: 75px;
@@ -61,8 +61,8 @@ h1 {
 
 .redChip {
   display: inline-block;
-  border: 5px solid yellow;
-  background-color: red;
+  border: 5px solid #FFFF00;
+  background-color: #FF0000;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -72,7 +72,7 @@ h1 {
 
 .blackChip {
   display: inline-block;
-  border: 5px solid yellow;
+  border: 5px solid #FFFF00;
   background-color: #000000;
   height: 75px;
   width: 75px;
@@ -83,7 +83,7 @@ h1 {
 
 .canBePlayed:hover {
   display: inline-block;
-  border: 5px solid yellow;
+  border: 5px solid #FFFF00;
   background-color: lightgray;
   height: 75px;
   width: 75px;
@@ -91,14 +91,23 @@ h1 {
   vertical-align: middle;
 }
 
-.highlightWinner {
+.highlightWinnerRed {
   display: inline-block;
-  border: 5px solid yellow;
-  background-color: blue;
+  border: 5px solid #FFFF00;
   height: 75px;
   width: 75px;
   border-radius: 50px;
   vertical-align: middle;
+  animation: blinkingRed 1s infinite;
+}
+
+@keyframes blinkingRed {
+  from {
+    background-color: #FF0000;
+  }
+  to {
+    background-color: lightgray;
+  }
 }
 
 .redPlayer, .blackPlayer {
@@ -110,11 +119,51 @@ h1 {
 }
 
 .redPlayer {
-  background-color: red;
+  background-color: #FF0000;
 }
 
 .blackPlayer {
   background-color: #000000;
+}
+
+/*HIGHLIGHT WINNER*/
+
+.highlightWinnerRed {
+  display: inline-block;
+  border: 5px solid #FFFF00;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  vertical-align: middle;
+  animation: blinkingRed 1s infinite;
+}
+
+@keyframes blinkingRed {
+  from {
+    background-color: #FF0000;
+  }
+  to {
+    background-color: lightgray;
+  }
+}
+
+.highlightWinnerBlack {
+  display: inline-block;
+  border: 5px solid #FFFF00;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  vertical-align: middle;
+  animation: blinkingBlack 1s infinite;
+}
+
+@keyframes blinkingBlack {
+  from {
+    background-color: #000000;
+  }
+  to {
+    background-color: lightgray;
+  }
 }
 
 /*HOW TO MODAL*/
@@ -143,7 +192,7 @@ h1 {
 }
 
 .highlight-word {
-  color: red;
+  color: #FF0000;
 }
 
 #close {
