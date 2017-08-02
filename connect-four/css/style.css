@@ -7,10 +7,17 @@ body {
   background-color: #F2EEE3;
 }
 
+main {
+  display: flex;
+    justify-content: center;
+    margin-left: -10%;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   margin-bottom: 4%;
+  flex-direction: column;
 }
 
 h1 {
@@ -28,8 +35,13 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#howToPlay:hover, #playAgain:hover, #startOver:hover {
+  cursor: pointer;
+  color: #5F6B8F;
 }
 
 #players-turn {
@@ -41,7 +53,7 @@ h1 {
   width: 600px;
   background-color: #FFFF00;
   text-align: center;
-  margin: 0 auto;
+  margin-left: 15%;
   border: 5px solid #FFFF00;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -89,25 +101,6 @@ h1 {
   width: 75px;
   border-radius: 50px;
   vertical-align: middle;
-}
-
-.highlightWinnerRed {
-  display: inline-block;
-  border: 5px solid #FFFF00;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  vertical-align: middle;
-  animation: blinkingRed 1s infinite;
-}
-
-@keyframes blinkingRed {
-  from {
-    background-color: #FF0000;
-  }
-  to {
-    background-color: lightgray;
-  }
 }
 
 .redPlayer, .blackPlayer {
@@ -203,4 +196,5 @@ h1 {
 
 #close:hover {
   cursor: pointer;
+  color: #5F6B8F;
 }
