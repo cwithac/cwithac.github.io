@@ -1,7 +1,10 @@
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
-* {
-  /*border: 1px solid gray;*/
+body {
+  font-family: 'Inconsolata';
+  background-color: #F2EEE3;
 }
 
 nav {
@@ -12,12 +15,16 @@ nav {
 
 h1 {
   text-align: center;
+  font-family: 'Montserrat Subrayada';
+  font-size: 5em;
+  margin: 1% auto;
 }
 
 #user-play, #score-round, #players-turn {
-  border: 1px solid black;
-  width: 110px;
-  height: 110px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  width: 125px;
+  height: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +49,7 @@ h1 {
 .emptySpace {
   display: inline-block;
   border: 5px solid yellow;
-  background-color: white;
+  background-color: #FFFFFF;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -66,7 +73,7 @@ h1 {
 .blackChip {
   display: inline-block;
   border: 5px solid yellow;
-  background-color: black;
+  background-color: #000000;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -96,8 +103,8 @@ h1 {
 
 .redPlayer, .blackPlayer {
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   border-radius: 50px;
   vertical-align: middle;
 }
@@ -107,10 +114,8 @@ h1 {
 }
 
 .blackPlayer {
-  background-color: black;
+  background-color: #000000;
 }
-
-
 
 /*HOW TO MODAL*/
 
@@ -127,8 +132,8 @@ h1 {
 }
 
 #modal-text-box {
-	background-color: white;
-	height: 210px;
+	background-color: #FFFFFF;
+	height: 225px;
 	width: 500px;
 	border-radius: 2px;
 	margin: 150px auto;
@@ -145,4 +150,8 @@ h1 {
   text-align: right;
   font-size: 2em;
   margin-bottom: -10%;
+}
+
+#close:hover {
+  cursor: pointer;
 }
