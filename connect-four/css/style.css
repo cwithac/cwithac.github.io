@@ -54,6 +54,7 @@ h1 {
   width: 75px;
   border-radius: 50px;
   vertical-align: middle;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 .canBePlayed:hover {
