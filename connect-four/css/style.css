@@ -13,12 +13,13 @@ h1 {
 }
 
 #gameboard {
-    height: 510px;
-    width: 600px;
-    background-color: yellow;
-    text-align: center;
-    margin: 0 auto;
-    border: 5px solid yellow;
+  height: 510px;
+  width: 600px;
+  background-color: yellow;
+  text-align: center;
+  margin: 0 auto;
+  border: 5px solid yellow;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .emptySpace {
@@ -31,6 +32,7 @@ h1 {
   line-height: 75px;
   vertical-align: middle;
   text-align: center;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 .redChip {
@@ -41,6 +43,7 @@ h1 {
   width: 75px;
   border-radius: 50px;
   vertical-align: middle;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 .blackChip {
