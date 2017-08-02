@@ -2,6 +2,16 @@
   /*border: 1px solid gray;*/
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+
+h1 {
+  text-align: center;
+}
+
 #gameboard {
     height: 510px;
     width: 600px;
