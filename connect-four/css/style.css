@@ -111,14 +111,21 @@ h1 {
 
 /*HIGHLIGHT WINNER*/
 
-.highlightWinnerRed {
+.highlightWinnerRed, .highlightWinnerBlack {
   display: inline-block;
   border: 5px solid #FFF700;
   height: 75px;
   width: 75px;
   border-radius: 50px;
   vertical-align: middle;
+}
+
+.highlightWinnerRed {
   animation: blinkingRed 1s infinite;
+}
+
+.highlightWinnerBlack {
+  animation: blinkingBlack 1s infinite;
 }
 
 @keyframes blinkingRed {
@@ -128,16 +135,6 @@ h1 {
   to {
     background-color: #DDDDDD;
   }
-}
-
-.highlightWinnerBlack {
-  display: inline-block;
-  border: 5px solid #FFF700;
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  vertical-align: middle;
-  animation: blinkingBlack 1s infinite;
 }
 
 @keyframes blinkingBlack {
@@ -211,15 +208,59 @@ h1 {
   #gameboard {
     height: 360px;
     width: 430px;
+    margin: 0 auto;
   }
-  .emptySpace {
+  .redChip, .blackChip, .emptySpace {
     height: 50px;
     width: 50px;
-    border-radius: 50px;
-    line-height: 75px;
   }
-  .redChip, .blackChip {
+  #user-play, #score-round, #players-turn {
+    width: 100px;
+    height: 100px;
+  }
+  .redPlayer, .blackPlayer {
     height: 50px;
     width: 50px;
+  }
+  .highlightWinnerRed, .highlightWinnerBlack {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-width:690px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+
+/*MOBILE*/
+
+@media (max-width:570px) {
+  h1 {
+    font-size: 2em;
+  }
+  #gameboard {
+    height: 210px;
+    width: 245px;
+    margin: 0 auto;
+  }
+  .redChip, .blackChip, .emptySpace {
+    height: 25px;
+    width: 25px;
+  }
+
+  #user-play, #score-round, #players-turn {
+    width: 75px;
+    height: 75px;
+    font-size: .75em;
+  }
+  .redPlayer, .blackPlayer {
+    height: 25px;
+    width: 25px;
+  }
+  .highlightWinnerRed, .highlightWinnerBlack {
+    height: 25px;
+    width: 25px;
   }
 }
