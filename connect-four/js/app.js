@@ -529,6 +529,7 @@ const UI = {
       redScore = 0;
       blackScore = 0;
       rounds = 1;
+      redTurn = true;
       winningFourPieces = [];
       containsEdges = [];
       $('#whose-turn').empty();
