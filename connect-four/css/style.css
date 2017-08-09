@@ -7,8 +7,6 @@ body {
 }
 
 #container {
-  border: 20px solid #111111;
-  background-color: #F2EEE3;
   width: 80%;
   padding-bottom: 5%;
   margin: 5% auto;
