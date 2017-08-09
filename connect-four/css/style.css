@@ -265,5 +265,6 @@ h1 {
   #modal-text-box {
     height: 415px;
     width: 80%;
+    margin: 60px auto;
   }
 }
