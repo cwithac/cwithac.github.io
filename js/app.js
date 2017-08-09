@@ -26,6 +26,18 @@ $( () => {
   $perfectexcuseHeader.on('mouseover', displayPerfectExcuse);
   $perfectexcuseHeader.on('mouseout', hidePerfectExcuse);
 
+//Connect Four
+  const $connectfourHeader = $('#connectfour-header');
+  const $connectfourDescription = $('#connectfour-description');
+  const displayConnectFour = () => {
+    $connectfourDescription.css('display', 'inherit');
+  }
+  const hideConnectFour = () => {
+    $connectfourDescription.css('display', 'none');
+  }
+  $connectfourHeader.on('mouseover', displayConnectFour);
+  $connectfourHeader.on('mouseout', hideConnectFour);
+
 //99 Bottles of Beer on the Wall
   const $beerswallHeader = $('#beerswall-header');
   const $beerswallDescription = $('#beerswall-description');
