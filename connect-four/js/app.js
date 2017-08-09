@@ -154,7 +154,7 @@ const UI = {
                                   //*** *** ***//
 
       //Apply if winning condition is met
-      //Verifies whether or not an edge case is not creating a false win (row/diag)
+      //Verifies whether or not an edge case is not creating a false win (row/diag) or all edge (column)
         //Sets winner of game based on condition
           //Highlights winner's play
         for (let i = 0; i < arrayOfWinning.length; i++) {
@@ -285,7 +285,7 @@ const UI = {
               }
             };
 
-            if (containsEdges.length < 2) {
+            if (containsEdges.length < 2 || containsEdges.length === 4) {
                 redWinsGame = true;
                 blackWinsGame = false;
 
@@ -314,7 +314,7 @@ const UI = {
               }
             };
 
-            if (containsEdges.length < 2) {
+            if (containsEdges.length < 2 || containsEdges.length === 4) {
                 redWinsGame = false;
                 blackWinsGame = true;
 
