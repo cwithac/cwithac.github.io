@@ -32,7 +32,7 @@ const UI = {
   createGameBoard(){
     //Generates 6x7 game board of squares
 
-    //GAME BOARD
+    //GAME BOARD - Numbers represent applied #id upon creation
     //  0  1  2  3  4  5  6
     //  7  8  9 10 11 12 13
     // 14 15 16 17 18 19 20
@@ -44,11 +44,12 @@ const UI = {
           const $gameBoard = $('#gameboard');
           const $square = $('<div>').attr('class', 'emptySpace').attr('id', i);
           $gameBoard.append($square).eq(i);
+          //identifies lowest row as a legal move
             if (i > 34) {
               $square.addClass('canBePlayed');
             }
 
-            //Edge Columns (far right, far left)
+            //Edge Columns (far right, far left), setting for win scenarios with 'wrap around'
             const $zero = $('#0');
             const $seven = $('#7');
             const $fourteen = $('#14');
@@ -146,18 +147,12 @@ const UI = {
       //Array of possible winning positions delcared in checks
         const arrayOfWinning = [$playedSpace, $rightOneSpace, $rightTwoSpace, $rightThreeSpace, $leftThreeSpace, $leftTwoSpace, $leftOneSpace, $downOneSpace, $downTwoSpace, $downThreeSpace, $downRightSpaceOne, $downRightSpaceTwo, $downRightSpaceThree, $downLeftSpaceOne, $downLeftSpaceTwo, $downLeftSpaceThree];
 
-        // const arrayOfWinningOptions = [
-        //   [arrayOfWinning[0], arrayOfWinning[1], arrayOfWinning[2], arrayOfWinning[3]],
-        //   [arrayOfWinning[0], arrayOfWinning[4], arrayOfWinning[5], arrayOfWinning[6]],
-        //   [arrayOfWinning[0], arrayOfWinning[7], arrayOfWinning[8], arrayOfWinning[9]],
-        //   [arrayOfWinning[0], arrayOfWinning[10], arrayOfWinning[11], arrayOfWinning[12]],
-        //   [arrayOfWinning[0], arrayOfWinning[13], arrayOfWinning[14], arrayOfWinning[15]],
-        // ];
-
+      //Edge cases, to prevent wrap around from '+ #' checks for row and diag wins.
         const winningFourPieces = [];
         const containsEdges = [];
 
       //Apply if winning condition is met
+      //Verifies whether or not an edge case is not creating a false win (row/diag)
         //Sets winner of game based on condition
           //Highlights winner's play
         for (let i = 0; i < arrayOfWinning.length; i++) {
@@ -173,15 +168,20 @@ const UI = {
                   containsEdges.push(winningFourPieces[i]);
               }
             };
-            console.log(containsEdges.length);
 
-            redWinsGame = true;
-            blackWinsGame = false;
+            if (containsEdges.length < 2) {
+                redWinsGame = true;
+                blackWinsGame = false;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[1].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[2].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[3].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[0].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[1].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[2].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[3].attr('class', 'highlightWinnerRed');
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
 
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[4].hasClass('redChip')) && (arrayOfWinning[5].hasClass('redChip')) && (arrayOfWinning[6].hasClass('redChip'))) {
             // console.log('Red Wins Row');
@@ -335,6 +335,8 @@ const UI = {
       blackWinsGame = false;
       rounds++;
       redTurn = false;
+      winningFourPieces = [];
+      containsEdges = [];
       $('#whose-turn').empty();
       $('#gameboard').empty();
       UI.createGameBoard();
@@ -349,6 +351,8 @@ const UI = {
       redScore = 0;
       blackScore = 0;
       rounds = 1;
+      winningFourPieces = [];
+      containsEdges = [];
       $('#whose-turn').empty();
       $('#gameboard').empty();
       UI.createGameBoard();
