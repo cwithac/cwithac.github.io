@@ -151,11 +151,15 @@ const UI = {
         const winningFourPieces = [];
         const containsEdges = [];
 
+                                  //*** *** ***//
+
       //Apply if winning condition is met
       //Verifies whether or not an edge case is not creating a false win (row/diag)
         //Sets winner of game based on condition
           //Highlights winner's play
         for (let i = 0; i < arrayOfWinning.length; i++) {
+
+//RED ROW CHECK 1
           if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[1].hasClass('redChip')) && (arrayOfWinning[2].hasClass('redChip')) && (arrayOfWinning[3].hasClass('redChip'))) {
             // console.log('Red Wins Row');
 
@@ -183,98 +187,272 @@ const UI = {
               this.whoseTurnIsIt();
             }
 
+//RED ROW CHECK 2
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[4].hasClass('redChip')) && (arrayOfWinning[5].hasClass('redChip')) && (arrayOfWinning[6].hasClass('redChip'))) {
             // console.log('Red Wins Row');
-            redWinsGame = true;
-            blackWinsGame = false;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[4].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[5].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[6].attr('class', 'highlightWinnerRed');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[4], arrayOfWinning[5], arrayOfWinning[6]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = true;
+                blackWinsGame = false;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[4].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[5].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[6].attr('class', 'highlightWinnerRed');
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//BLACK ROW CHECK 1
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[1].hasClass('blackChip')) && (arrayOfWinning[2].hasClass('blackChip')) && (arrayOfWinning[3].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
-            redWinsGame = false;
-            blackWinsGame = true;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[1].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[2].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[3].attr('class', 'highlightWinnerBlack');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[1], arrayOfWinning[2], arrayOfWinning[3]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = false;
+                blackWinsGame = true;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[1].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[2].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[3].attr('class', 'highlightWinnerBlack');
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//BLACK ROW CHECK 2
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[4].hasClass('blackChip')) && (arrayOfWinning[5].hasClass('blackChip')) && (arrayOfWinning[6].hasClass('blackChip'))) {
             // console.log('Black Wins Row');
-            redWinsGame = false;
-            blackWinsGame = true;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[4].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[5].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[6].attr('class', 'highlightWinnerBlack');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[4], arrayOfWinning[5], arrayOfWinning[6]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = false;
+                blackWinsGame = true;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[4].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[5].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[6].attr('class', 'highlightWinnerBlack');
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//RED COL CHECK
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[7].hasClass('redChip')) && (arrayOfWinning[8].hasClass('redChip')) && (arrayOfWinning[9].hasClass('redChip'))) {
             // console.log('Red Wins Col');
-            redWinsGame = true;
-            blackWinsGame = false;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[7].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[8].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[9].attr('class', 'highlightWinnerRed');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[7], arrayOfWinning[8], arrayOfWinning[9]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = true;
+                blackWinsGame = false;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[7].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[8].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[9].attr('class', 'highlightWinnerRed');
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//BLACK COL CHECK
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[7].hasClass('blackChip')) && (arrayOfWinning[8].hasClass('blackChip')) && (arrayOfWinning[9].hasClass('blackChip'))) {
             // console.log('Black Wins Col');
-            redWinsGame = false;
-            blackWinsGame = true;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[7].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[8].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[9].attr('class', 'highlightWinnerBlack');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[7], arrayOfWinning[8], arrayOfWinning[9]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = false;
+                blackWinsGame = true;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[7].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[8].attr('class', 'highlightWinnerBlack');
+                      arrayOfWinning[9].attr('class', 'highlightWinnerBlack');
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//RED DIAG CHECK 1
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[10].hasClass('redChip')) && (arrayOfWinning[11].hasClass('redChip')) && (arrayOfWinning[12].hasClass('redChip'))) {
             // console.log('Red Wins Diag');
-            redWinsGame = true;
-            blackWinsGame = false;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[10].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[11].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[12].attr('class', 'highlightWinnerRed');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[10], arrayOfWinning[11], arrayOfWinning[12]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+                redWinsGame = true;
+                blackWinsGame = false;
+
+                      arrayOfWinning[0].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[10].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[11].attr('class', 'highlightWinnerRed');
+                      arrayOfWinning[12].attr('class', 'highlightWinnerRed');
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+
+//BLACK DIAG CHECK 1
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[10].hasClass('blackChip')) && (arrayOfWinning[11].hasClass('blackChip')) && (arrayOfWinning[12].hasClass('blackChip'))) {
             // console.log('Black Wins Diag');
-            redWinsGame = false;
-            blackWinsGame = true;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[10].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[11].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[12].attr('class', 'highlightWinnerBlack');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[10], arrayOfWinning[11], arrayOfWinning[12]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+              redWinsGame = false;
+              blackWinsGame = true;
+
+                    arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[10].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[11].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[12].attr('class', 'highlightWinnerBlack');
+
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+
+//RED DIAG CHECK 2
           } else if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[13].hasClass('redChip')) && (arrayOfWinning[14].hasClass('redChip')) && (arrayOfWinning[15].hasClass('redChip'))) {
             // console.log('Red Wins Daig');
-            redWinsGame = true;
-            blackWinsGame = false;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[13].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[14].attr('class', 'highlightWinnerRed');
-                  arrayOfWinning[15].attr('class', 'highlightWinnerRed');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[13], arrayOfWinning[14], arrayOfWinning[15]);
 
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+              redWinsGame = true;
+              blackWinsGame = false;
+
+                    arrayOfWinning[0].attr('class', 'highlightWinnerRed');
+                    arrayOfWinning[13].attr('class', 'highlightWinnerRed');
+                    arrayOfWinning[14].attr('class', 'highlightWinnerRed');
+                    arrayOfWinning[15].attr('class', 'highlightWinnerRed');
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
+
+//BLACK DIAG CHECK 2
           } else if ((arrayOfWinning[0].hasClass('blackChip')) && (arrayOfWinning[13].hasClass('blackChip')) && (arrayOfWinning[14].hasClass('blackChip')) && (arrayOfWinning[15].hasClass('blackChip'))) {
             // console.log('Black Wins Diag');
-            redWinsGame = false;
-            blackWinsGame = true;
 
-                  arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[13].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[14].attr('class', 'highlightWinnerBlack');
-                  arrayOfWinning[15].attr('class', 'highlightWinnerBlack');
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[13], arrayOfWinning[14], arrayOfWinning[15]);
+
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+
+            if (containsEdges.length < 2) {
+              redWinsGame = false;
+              blackWinsGame = true;
+
+                    arrayOfWinning[0].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[13].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[14].attr('class', 'highlightWinnerBlack');
+                    arrayOfWinning[15].attr('class', 'highlightWinnerBlack');
+
+            } else {
+              // console.log('Not a legal win, contains an edge case wrap around');
+              // console.log('Game Continues');
+              this.whoseTurnIsIt();
+            }
 
           }
         };
+
+                                //*** *** ***//
+
 
       //WINNER DEFINED
 
@@ -359,6 +537,7 @@ const UI = {
     }
   }; //End UI object
 
+//---------------------------------------------------------//
 //---------------------------------------------------------//
 
 //Player Action Objects
