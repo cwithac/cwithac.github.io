@@ -267,4 +267,7 @@ h1 {
     width: 80%;
     margin: 60px auto;
   }
+  .canBePlayed {
+    background-color: #CDCDCD;
+  }
 }
