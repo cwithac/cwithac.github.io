@@ -60,7 +60,9 @@ h1 {
   background-color: #FFF700;
   text-align: center;
   margin-left: 15%;
-  border: 5px solid #FFF700;
+  padding: 5px;
+  border-left: 20px solid #0074D9;
+  border-right: 20px solid #0074D9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 

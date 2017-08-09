@@ -279,19 +279,19 @@ const UI = {
       //WINNER DEFINED
 
           if (!redWinsGame && !blackWinsGame && (playCounter === 42)) {
-            console.log('Game is a Draw');
+            // console.log('Game is a Draw');
             this.announceTheWinner();
           } else if (!redWinsGame && !blackWinsGame) {
               // console.log('Game Continues');
             this.whoseTurnIsIt();
           } else if (redWinsGame && !blackWinsGame) {
-            console.log('Red Wins Game');
+            // console.log('Red Wins Game');
             this.announceTheWinner();
           } else if (!redWinsGame && blackWinsGame) {
-            console.log('Black Wins Game');
+            // console.log('Black Wins Game');
             this.announceTheWinner();
           } else {
-            console.log('Error');
+            // console.log('Error in Winner Defined');
           }
     },
     announceTheWinner() {
