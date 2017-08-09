@@ -31,6 +31,15 @@ $(() => { // Window Onload
 const UI = {
   createGameBoard(){
     //Generates 6x7 game board of squares
+
+    //GAME BOARD
+    //  0  1  2  3  4  5  6
+    //  7  8  9 10 11 12 13
+    // 14 15 16 17 18 19 20
+    // 21 22 23 24 25 26 27
+    // 28 29 30 31 32 33 34
+    // 35 36 37 38 39 40 41
+
       for (let i = 0; i < 42; i++) {
           const $gameBoard = $('#gameboard');
           const $square = $('<div>').attr('class', 'emptySpace').attr('id', i);
@@ -38,6 +47,31 @@ const UI = {
             if (i > 34) {
               $square.addClass('canBePlayed');
             }
+
+            //Edge Columns (far right, far left)
+            const $zero = $('#0');
+            const $seven = $('#7');
+            const $fourteen = $('#14');
+            const $twentyone = $('#21');
+            const $twentyeight = $('#28');
+            const $thirtyfive = $('#35');
+            const $six = $('#6');
+            const $thirteen = $('#13');
+            const $twenty = $('#20');
+            const $twentyseven = $('#27');
+            const $thirtyfour = $('#34');
+            const $fortyone = $('#41');
+
+            const farLeftCol = [$zero, $seven, $fourteen, $twentyone, $twentyeight, $thirtyfive];
+            const farRightCol = [$six, $thirteen, $twenty, $twentyseven, $thirtyfour, $fortyone];
+
+            for (let i = 0; i < farLeftCol.length; i++) {
+              farLeftCol[i].addClass('farLeftCol');
+            }
+            for (let i = 0; i < farRightCol.length; i++) {
+              farRightCol[i].addClass('farRightCol');
+            }
+
           $square.on('click', PA.playPiece);
         };
         this.whoseTurnIsIt();
@@ -317,13 +351,13 @@ const UI = {
       if (legalMove) {
         played = false;
         if (redTurn && !played) {
-          $(e.currentTarget).attr('class', 'redChip').addClass('played').removeClass('emptySpace');
+          $(e.currentTarget).addClass('redChip').addClass('played').removeClass('emptySpace').removeClass('canBePlayed');
           redTurn = false;
           played = true;
           playCounter++;
           UI.checkForWinner(e);
         } else {
-          $(e.currentTarget).attr('class', 'blackChip').addClass('played').removeClass('emptySpace');
+          $(e.currentTarget).addClass('blackChip').addClass('played').removeClass('emptySpace').removeClass('canBePlayed');
           redTurn = true;
           played = true;
           playCounter++;
