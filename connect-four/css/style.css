@@ -101,10 +101,10 @@ h1 {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
-.canBePlayed:hover {
+.canBePlayed {
   display: inline-block;
   border: 5px solid #FFF700;
-  background-color: #DDDDDD;
+  background-color: #EFEFEF;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -183,7 +183,7 @@ h1 {
 
 #modal-text-box {
 	background-color: #FFFFFF;
-	height: 225px;
+	height: 250px;
 	width: 500px;
 	border-radius: 2px;
 	margin: 150px auto;
@@ -193,7 +193,7 @@ h1 {
 }
 
 .highlight-word {
-  color: #FF4136;
+  color: #AAAAAA;
 }
 
 #close {
