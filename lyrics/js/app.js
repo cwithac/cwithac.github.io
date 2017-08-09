@@ -41,7 +41,7 @@ $(function() {
     //HOW TO PLAY CONTENT
       $howToPlayBox = $('<div>').attr('id', 'howTo');
       $howToPlayHeader = $('<h4>').text("Finish the Hamilton Lyric...");
-      $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point.  The game will last for ten rounds, each round consisting of a turn for each player.  The winner is determined by the highest score at the end of the game.");
+      $howToPlayText = $('<p>').text("Select the next lyric in the song from the choices available.  Each correct answer will earn one point, each round consisting of a turn for both players.  The winner is determined by the highest score at the end of the game.");
       $levelsDefinedText = $('<p>').text("Choose a \u2605 to select a number of rounds, from \u2605 three rounds up to \u2605 \u2605 \u2605 \u2605 \u2605 twenty.  There will be six rounds if no selection is made.");
       $closeButton = $('<div>').attr('id', 'close').text("close");
 
