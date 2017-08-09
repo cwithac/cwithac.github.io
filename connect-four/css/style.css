@@ -7,7 +7,7 @@ body {
 }
 
 #container {
-  border: 20px solid black;
+  border: 20px solid #111111;
   background-color: #F2EEE3;
   width: 80%;
   padding-bottom: 5%;
@@ -37,7 +37,7 @@ h1 {
 
 #user-play, #score-round, #players-turn {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #111111;
   width: 125px;
   height: 125px;
   display: flex;
@@ -59,16 +59,16 @@ h1 {
 #gameboard {
   height: 510px;
   width: 600px;
-  background-color: #FFFF00;
+  background-color: #FFF700;
   text-align: center;
   margin-left: 15%;
-  border: 5px solid #FFFF00;
+  border: 5px solid #FFF700;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .emptySpace {
   display: inline-block;
-  border: 5px solid #FFFF00;
+  border: 5px solid #FFF700;
   background-color: #FFFFFF;
   height: 75px;
   width: 75px;
@@ -81,8 +81,8 @@ h1 {
 
 .redChip {
   display: inline-block;
-  border: 5px solid #FFFF00;
-  background-color: #FF0000;
+  border: 5px solid #FFF700;
+  background-color: #FF4136;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -92,8 +92,8 @@ h1 {
 
 .blackChip {
   display: inline-block;
-  border: 5px solid #FFFF00;
-  background-color: #000000;
+  border: 5px solid #FFF700;
+  background-color: #111111;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -103,8 +103,8 @@ h1 {
 
 .canBePlayed:hover {
   display: inline-block;
-  border: 5px solid #FFFF00;
-  background-color: lightgray;
+  border: 5px solid #FFF700;
+  background-color: #DDDDDD;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -120,18 +120,18 @@ h1 {
 }
 
 .redPlayer {
-  background-color: #FF0000;
+  background-color: #FF4136;
 }
 
 .blackPlayer {
-  background-color: #000000;
+  background-color: #111111;
 }
 
 /*HIGHLIGHT WINNER*/
 
 .highlightWinnerRed {
   display: inline-block;
-  border: 5px solid #FFFF00;
+  border: 5px solid #FFF700;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -141,16 +141,16 @@ h1 {
 
 @keyframes blinkingRed {
   from {
-    background-color: #FF0000;
+    background-color: #FF4136;
   }
   to {
-    background-color: lightgray;
+    background-color: #DDDDDD;
   }
 }
 
 .highlightWinnerBlack {
   display: inline-block;
-  border: 5px solid #FFFF00;
+  border: 5px solid #FFF700;
   height: 75px;
   width: 75px;
   border-radius: 50px;
@@ -160,10 +160,10 @@ h1 {
 
 @keyframes blinkingBlack {
   from {
-    background-color: #000000;
+    background-color: #111111;
   }
   to {
-    background-color: lightgray;
+    background-color: #DDDDDD;
   }
 }
 
@@ -193,7 +193,7 @@ h1 {
 }
 
 .highlight-word {
-  color: #FF0000;
+  color: #FF4136;
 }
 
 #close {
