@@ -154,12 +154,27 @@ const UI = {
         //   [arrayOfWinning[0], arrayOfWinning[13], arrayOfWinning[14], arrayOfWinning[15]],
         // ];
 
+        const winningFourPieces = [];
+        const containsEdges = [];
+
       //Apply if winning condition is met
         //Sets winner of game based on condition
           //Highlights winner's play
         for (let i = 0; i < arrayOfWinning.length; i++) {
           if ((arrayOfWinning[0].hasClass('redChip')) && (arrayOfWinning[1].hasClass('redChip')) && (arrayOfWinning[2].hasClass('redChip')) && (arrayOfWinning[3].hasClass('redChip'))) {
             // console.log('Red Wins Row');
+
+            winningFourPieces.push(arrayOfWinning[0], arrayOfWinning[1], arrayOfWinning[2], arrayOfWinning[3]);
+
+            for (let i = 0; i < winningFourPieces.length; i++) {
+              if (winningFourPieces[i].hasClass('farLeftCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              } else if (winningFourPieces[i].hasClass('farRightCol')) {
+                  containsEdges.push(winningFourPieces[i]);
+              }
+            };
+            console.log(containsEdges.length);
+
             redWinsGame = true;
             blackWinsGame = false;
 
