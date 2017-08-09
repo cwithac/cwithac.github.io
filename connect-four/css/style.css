@@ -10,14 +10,13 @@ body {
 
 #container {
   width: 80%;
-  padding-bottom: 5%;
   margin: 5% auto;
 }
 
 main {
   display: flex;
-    justify-content: center;
-    margin-left: -10%;
+  justify-content: center;
+  margin-left: -10%;
 }
 
 nav {
@@ -207,4 +206,39 @@ h1 {
 #close:hover {
   cursor: pointer;
   color: #5F6B8F;
+}
+
+/*RESPONSIVE */
+
+@media (max-width:1010px) {
+  h1 {
+    font-size: 4em;
+  }
+  #gameboard {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width:880px) {
+  main {
+    display: block;
+    margin: 0;
+  }
+  nav {
+    flex-direction: row;
+  }
+  #gameboard {
+    height: 360px;
+    width: 430px;
+  }
+  .emptySpace {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    line-height: 75px;
+  }
+  .redChip, .blackChip {
+    height: 50px;
+    width: 50px;
+  }
 }
