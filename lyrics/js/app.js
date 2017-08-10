@@ -694,7 +694,7 @@ var resetGame = function() {
   $player2Name.html("Player 2's Score");
   $startGame.on('click', startGame);
   $levelStars.remove();
-  $('main').prepend($levelStars)
+  $levelStars.insertAfter('#nav');
   $star1.removeClass('starsEnd');
   $star2.removeClass('starsEnd');
   $star3.removeClass('starsEnd');
