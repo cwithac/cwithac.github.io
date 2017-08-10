@@ -4,6 +4,8 @@
 
 ## GitHub Repository: https://github.com/cwithac/cwithac.github.io/tree/master/lyrics
 
+![](http://i.imgur.com/BtV9D7n.jpg)
+
 ### Technologies Used:
 HTML, CSS, JavaScript, jQuery
 
@@ -15,7 +17,7 @@ Two player trivia game with multiple choice answers.  Five level options for num
 Enter player names and select a level.  Press 'start game' to begin a new game.  Default player names and levels will run if no specifications made.
 
 ### Possible Improvements:
-- Different quizzes within a generic layout. 
+- Different quizzes within a generic layout.
 - Initial layout for better responsive design.  
 - Allow game reset with less restrictions.
 - Allow name input at any time.
