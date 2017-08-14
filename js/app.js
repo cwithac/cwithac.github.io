@@ -3,75 +3,57 @@
 $( () => {
 
 //Creative Juices
-	const $creativejuicesHeader = $('#creativejuices-header');
-	const $creativejuicesDescription = $('#creativejuices-description');
-  const displayCreativeJuices = () => {
-    $creativejuicesDescription.css('display', 'inherit');
-  }
-  const hideCreativeJuices = () => {
-    $creativejuicesDescription.css('display', 'none');
-  }
-  $creativejuicesHeader.on('mouseover', displayCreativeJuices);
-  $creativejuicesHeader.on('mouseout', hideCreativeJuices);
+	$('#creativejuices-header').on('mouseover', () => {
+		$('#creativejuices-description').css('display', 'inherit');
+	});
+
+	$('#creativejuices-header').on('mouseout', () => {
+		$('#creativejuices-description').css('display', 'none');
+	});
 
 //The Perfect Excuse
-  const $perfectexcuseHeader = $('#perfectexcuse-header');
-  const $perfectexcuseDescription = $('#perfectexcuse-description');
-  const displayPerfectExcuse = () => {
-    $perfectexcuseDescription.css('display', 'inherit');
-  }
-  const hidePerfectExcuse = () => {
-    $perfectexcuseDescription.css('display', 'none');
-  }
-  $perfectexcuseHeader.on('mouseover', displayPerfectExcuse);
-  $perfectexcuseHeader.on('mouseout', hidePerfectExcuse);
+	$('#perfectexcuse-header').on('mouseover', () => {
+		$('#perfectexcuse-description').css('display', 'inherit');
+	});
+
+	$('#perfectexcuse-header').on('mouseout', () => {
+		$('#perfectexcuse-description').css('display', 'none');
+	});
 
 //Connect Four
-  const $connectfourHeader = $('#connectfour-header');
-  const $connectfourDescription = $('#connectfour-description');
-  const displayConnectFour = () => {
-    $connectfourDescription.css('display', 'inherit');
-  }
-  const hideConnectFour = () => {
-    $connectfourDescription.css('display', 'none');
-  }
-  $connectfourHeader.on('mouseover', displayConnectFour);
-  $connectfourHeader.on('mouseout', hideConnectFour);
+	$('#connectfour-header').on('mouseover', () => {
+		$('#connectfour-description').css('display', 'inherit');
+	});
+
+	$('#connectfour-header').on('mouseout', () => {
+		$('#connectfour-description').css('display', 'none');
+	});
 
 //99 Bottles of Beer on the Wall
-  const $beerswallHeader = $('#beerswall-header');
-  const $beerswallDescription = $('#beerswall-description');
-  const displayBeersWall = () => {
-    $beerswallDescription.css('display', 'inherit');
-  }
-  const hideBeersWall = () => {
-    $beerswallDescription.css('display', 'none');
-  }
-  $beerswallHeader.on('mouseover', displayBeersWall);
-  $beerswallHeader.on('mouseout', hideBeersWall);
+	$('#beerswall-header').on('mouseover', () => {
+		$('#beerswall-description').css('display', 'inherit');
+	});
+
+	$('#beerswall-header').on('mouseout', () => {
+		$('#beerswall-description').css('display', 'none');
+	});
 
 //The Disney Vault
-const $disneyvaultHeader = $('#disneyvault-header');
-const $disneyvaultDescription = $('#disneyvault-description');
-const displayDisneyVault = () => {
-  $disneyvaultDescription.css('display', 'inherit');
-}
-const hideDisneyVault = () => {
-  $disneyvaultDescription.css('display', 'none');
-}
-$disneyvaultHeader.on('mouseover', displayDisneyVault);
-$disneyvaultHeader.on('mouseout', hideDisneyVault);
+	$('#disneyvault-header').on('mouseover', () => {
+		$('#disneyvault-description').css('display', 'inherit');
+	});
+
+	$('#disneyvault-header').on('mouseout', () => {
+		$('#disneyvault-description').css('display', 'none');
+	});
 
 //Lyrics
-  const $lyricsHeader = $('#lyrics-header');
-  const $lyricsDescription = $('#lyrics-description');
-  const displayLyrics = () => {
-    $lyricsDescription.css('display', 'inherit');
-  }
-  const hideLyrics = () => {
-    $lyricsDescription.css('display', 'none');
-  }
-  $lyricsHeader.on('mouseover', displayLyrics);
-  $lyricsHeader.on('mouseout', hideLyrics);
+	$('#lyrics-header').on('mouseover', () => {
+		$('#lyrics-description').css('display', 'inherit');
+	});
+
+	$('#lyrics-header').on('mouseout', () => {
+		$('#lyrics-description').css('display', 'none');
+	});
 
 });
