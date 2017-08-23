@@ -161,7 +161,7 @@ p {
   to { width: 100% }
 }
 
-#creativejuices-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
+#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
   animation: typing 7s steps(80, end);
   width: 0;
   animation-fill-mode: forwards;
@@ -171,12 +171,16 @@ p {
   animation-delay: 1s;
 }
 
-#connectfour-header {
+#colorthes-header {
   animation-delay: 2s;
 }
 
-#perfectexcuse-header {
+#connectfour-header {
   animation-delay: 3s;
+}
+
+#perfectexcuse-header {
+  animation-delay: 3.5s;
 }
 
 #beerswall-header {
@@ -184,11 +188,11 @@ p {
 }
 
 #disneyvault-header {
-  animation-delay: 6s;
+  animation-delay: 4.5s;
 }
 
 #lyrics-header {
-  animation-delay: 7s;
+  animation-delay: 5s;
 }
 
 /*RESPONSIVE*/
