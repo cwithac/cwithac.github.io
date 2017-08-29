@@ -269,6 +269,10 @@ p {
   nav h1 {
     margin: 2% 0 0 0;
   }
+  nav .social {
+    font-size: 25px;
+    margin-bottom: 5%;
+  }
 }
 
 @media (max-width: 500px) {
