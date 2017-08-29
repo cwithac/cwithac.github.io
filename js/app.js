@@ -2,7 +2,7 @@
 
 $( () => {
 
-	const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header'];
+	const headers = ['#creativejuices-icon', '#colorthes-icon', '#perfectexcuse-icon', '#connectfour-icon', '#beerswall-icon', '#disneyvault-icon', '#lyrics-icon'];
 	const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description'];
 
 	for (let i = 0; i < headers.length; i++){
