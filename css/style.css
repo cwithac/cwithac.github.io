@@ -44,6 +44,15 @@ nav h1 {
   color: white;
 }
 
+.preview {
+  max-width: 80%;
+  max-height: 40%;
+  display: block;
+  margin: 2% auto;
+  margin-bottom: 5%;
+  box-shadow: 5px 5px 10px #888888;
+}
+
 #text-bio {
   margin-top: 5%;
   display: flex;
@@ -304,5 +313,8 @@ p {
   #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
     animation: none;
     display: inherit;
+  }
+  .preview {
+    margin-bottom: 10%;
   }
 }
