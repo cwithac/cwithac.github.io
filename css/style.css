@@ -294,4 +294,7 @@ p {
   .body-box {
     padding: 1%;
   }
+  .description {
+    display: inherit;
+  }
 }
