@@ -2,17 +2,15 @@
 
 $( () => {
 
-	const headers = ['#creativejuices-icon', '#colorthes-icon', '#perfectexcuse-icon', '#connectfour-icon', '#beerswall-icon', '#disneyvault-icon', '#lyrics-icon'];
+	const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header'];
 	const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description'];
 
 	for (let i = 0; i < headers.length; i++){
 		$(headers[i]).on('mouseover', () => {
 			$(descriptions[i]).css('display', 'inherit');
-			$(headers[i]).css('transform', 'rotate(90deg)')
 		});
 		$(headers[i]).on('mouseout', () => {
 			$(descriptions[i]).css('display', 'none');
-			$(headers[i]).css('transform', 'rotate(0deg)')
 		});
 	};
 
