@@ -8,11 +8,11 @@ $( () => {
 	for (let i = 0; i < headers.length; i++){
 		$(headers[i]).on('mouseover', () => {
 			$(descriptions[i]).css('display', 'inherit');
-			$(headers[i]).css('transform', 'rotate(45deg)')
+			$(headers[i]).css('transform', 'rotate(90deg)')
 		});
 		$(headers[i]).on('mouseout', () => {
 			$(descriptions[i]).css('display', 'none');
-			$(headers[i]).css('transform', 'rotate(90deg)')
+			$(headers[i]).css('transform', 'rotate(0deg)')
 		});
 	};
 

@@ -126,6 +126,7 @@ main a {
 main a:hover {
   color: dimgray;
   text-decoration: none;
+  transition: .5s ease-in;
 }
 
 .photo {
@@ -161,9 +162,16 @@ p {
 .description {
   text-align: justify;
   display: none;
+  animation: fade 2.5s;
+  opacity: 1;
 }
 
 /*ANIMATIONS*/
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
 
 @keyframes typing {
   from { width: 0 }
