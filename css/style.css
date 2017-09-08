@@ -279,6 +279,19 @@ p {
   }
 }
 
+@media (max-width: 667px) {
+  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
+    animation: none !important;
+    display: inherit !important;
+  }
+  .description {
+    display: inherit;
+  }
+  .tag {
+    padding: 1.1%;
+  }
+}
+
 @media (max-width: 600px) {
   #name {
     display: inline;
@@ -293,9 +306,6 @@ p {
 }
 
 @media (max-width: 500px) {
-  .tag {
-    padding: 1.1%;
-  }
   .photo {
     max-width: 40%;
   }
@@ -317,13 +327,6 @@ p {
   }
   .body-box {
     padding: 1%;
-  }
-  .description {
-    display: inherit;
-  }
-  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
-    animation: none !important;
-    display: inherit !important;
   }
   .preview {
     margin-bottom: 10%;
