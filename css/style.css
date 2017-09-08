@@ -319,8 +319,8 @@ p {
     display: inherit;
   }
   #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
-    animation: none;
-    display: inherit;
+    animation: none !important;
+    display: inherit !important;
   }
   .preview {
     margin-bottom: 10%;
