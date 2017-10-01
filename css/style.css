@@ -178,21 +178,22 @@ p {
   to { width: 100% }
 }
 
-#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header {
+#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header {
   animation: typing 7s steps(80, end);
   width: 0;
   animation-fill-mode: forwards;
 }
 
+/*APPS*/
 #creativejuices-header {
   animation-delay: 1s;
 }
 
-#colorthes-header {
+#notable-header {
   animation-delay: 2s;
 }
 
-#connectfour-header {
+#colorthes-header {
   animation-delay: 3s;
 }
 
@@ -208,8 +209,14 @@ p {
   animation-delay: 4.5s;
 }
 
+
+/*GAMES*/
+#connectfour-header {
+  animation-delay: 1s;
+}
+
 #lyrics-header {
-  animation-delay: 5s;
+  animation-delay: 2s;
 }
 
 /*RESPONSIVE*/
