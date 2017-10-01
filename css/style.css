@@ -56,6 +56,10 @@ nav h1 {
   color: white;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 .preview {
   max-width: 80%;
   max-height: 40%;
