@@ -1,5 +1,12 @@
 // console.log('Landscaper Game app.js is attached to index.html');
 
+$( () => {
+
+  //Page Load Invocation
+  startGame();
+
+}); // closes window onload
+
 // Variable Setup
 let tool;
 let money;
@@ -124,7 +131,3 @@ const startGame = () => {
 //   alert("You have purchased " + tool + "!  Using this tool will earn you $250 each day!")
 //   askForAction();
 // };
-
-
-//Page Load Invocation
-startGame();
