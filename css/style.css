@@ -95,7 +95,7 @@ nav a {
 
 .tag {
   margin-left: 1%;
-  padding: 1%;
+  padding: 1.5%;
   color: #111111;
   background-color: darkgray;
   border-radius: 50px;
@@ -286,7 +286,7 @@ p {
     width: 90%;
   }
   .tag {
-    padding: 3%;
+    padding: 2%;
   }
   .tag-box {
     margin-top: 3%;
