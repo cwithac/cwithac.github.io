@@ -1,20 +1,32 @@
-console.log('Landscaper Game app.js is attached to index.html');
+// console.log('Landscaper Game app.js is attached to index.html');
 
-let tool = '';
-let money = 0;
+// Variable Setup
+let tool;
+let money;
 
-const start = function() {
+const resetVariables = () => {
+  tool = '';
+  money = 0;
+};
+
+const levelOneVariableSetup = () => {
   tool = "your teeth";
   money = 1;
+};
+
+// Game Functionality
+const startGame = () => {
+  resetVariables();
+  levelOneVariableSetup();
   alert("Welcome to the game!  You are starting a landscaping business.  Use your tools to earn more money!")
   askForAction();
 };
 
-const showStatus = function() {
+const showStatus = () => {
   alert("You have $" + money + ".  Your tool is " + tool + ".")
 };
 
-const askForAction = function() {
+const askForAction = () => {
   showStatus();
   const choice = prompt("What do you want to do?", "landscape/buy tools");
     if (choice === "landscape") {
@@ -29,7 +41,7 @@ const askForAction = function() {
 };
 
 
-const landscape = function() {
+const landscape = () => {
   if (tool === "your teeth") {
     alert("Using " + tool + " will earn you $1 each day!")
     money += 1;
@@ -63,7 +75,7 @@ const checkTool = function () {
   }
 };
 
-const buyTool = function() {
+const buyTool = () => {
   if ((money >= 5) && (tool === "your teeth")) {
     alert("You can afford to buy a new tool!")
     buyScissors();
@@ -82,7 +94,7 @@ const buyTool = function() {
   }
 };
 
-const buyScissors = function() {
+const buyScissors = () => {
   alert("You can buy a pair of rusty scissors for $5.")
   money -= 5;
   tool = "a pair of rusty scissors";
@@ -90,7 +102,7 @@ const buyScissors = function() {
   askForAction();
 };
 
-const buyOldTimey = function() {
+const buyOldTimey = () => {
   alert("You can buy an old-timey push lawnmower for $25.")
   money -= 25;
   tool = "an old-timey push lawnmower";
@@ -98,7 +110,7 @@ const buyOldTimey = function() {
   askForAction();
 };
 
-const buyFancyBattery = function() {
+const buyFancyBattery = () => {
   alert("You can buy a fancy battery-powered lawnmower for $250.")
   money -= 250;
   tool = "a fancy battery-powered lawnmower";
@@ -106,7 +118,7 @@ const buyFancyBattery = function() {
   askForAction();
 };
 
-const buyTeamOfStudents = function() {
+const buyTeamOfStudents = () => {
   alert("You can hire a team of starving students for $500.")
   money -= 500;
   tool = "a team of starving students";
@@ -114,4 +126,7 @@ const buyTeamOfStudents = function() {
   askForAction();
 };
 
-start();
+
+//Page Load Invocation
+
+startGame();
