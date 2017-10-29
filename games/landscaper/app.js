@@ -24,6 +24,7 @@ const $exitButton = $('<div>End Game</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 const $infoStatus = $('<div>').attr('id', 'infoStatus');
 const $question = $('<div>').attr('id', 'questionBox');
+const $scoreStats = $('<div>').attr('id', 'scoreBox');
 
 const loadGame = () => {
   $('body').append($container);
@@ -40,7 +41,13 @@ const startGame = () => {
   $startButton.empty();
   initializeLevel();
   showStatus();
+  scoreBoxInfo();
 };
+
+const scoreBoxInfo = () => {
+  $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+  $container.prepend($scoreStats);
+}
 
 const showStatus = () => {
   $infoStatus.text("You have $" + money + ".  Your tool is " + tool + ".");
@@ -56,6 +63,27 @@ const questionPrompt = () => {
 
 const runLandscape = () => {
   console.log('landscape');
+  // if (tool === "your teeth") {
+  //   $infoStatus.text("Using " + tool + " will earn you $1 each day!");
+  //   money += 1;
+  // } else if (tool === "a pair of rusty scissors") {
+  //   money += 5;
+  //   askForAction();
+  // } else if (tool === "an old-timey push lawnmower") {
+  //   money += 50;
+  //   askForAction();
+  // } else if (tool === "a fancy battery-powered lawnmower") {
+  //   money += 100;
+  //   askForAction();
+  // } else if (tool === "a team of starving students") {
+  //   money += 250;
+  //     if (money <1000 ) {
+  //       askForAction();
+  //     } else {
+  //       //Game Ends
+  //       alert("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!")
+  //     }
+  // }
 };
 
 const buySomeTools = () => {
