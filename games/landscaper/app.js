@@ -23,6 +23,7 @@ const $restartButton = $('<div>Restart</div>').attr('class', 'button');
 const $exitButton = $('<div>End Game</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 const $infoStatus = $('<div>').attr('id', 'infoStatus');
+const $question = $('<div>').attr('id', 'questionBox');
 
 const loadGame = () => {
   $('body').append($container);
@@ -44,11 +45,13 @@ const startGame = () => {
 const showStatus = () => {
   $infoStatus.text("You have $" + money + ".  Your tool is " + tool + ".");
   $buttonRowPlay.append($landscapeButton, $buyToolsButton);
-  $container.append($infoStatus);
+  $infoStatus.insertBefore($buttonRowPlay);
+  questionPrompt();
 };
 
-const $questionPrompt = () => {
-
+const questionPrompt = () => {
+  $question.text("What do you want to do?");
+  $question.insertBefore($buttonRowPlay);
 };
 
 //Listeners
