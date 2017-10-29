@@ -49,6 +49,10 @@ const scoreBoxInfo = () => {
   $container.prepend($scoreStats);
 }
 
+const updateScoreStats = () => {
+  $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+};
+
 const showStatus = () => {
   $infoStatus.text("You have $" + money + ".  Your tool is " + tool + ".");
   $buttonRowPlay.append($landscapeButton, $buyToolsButton);
@@ -63,27 +67,25 @@ const questionPrompt = () => {
 
 const runLandscape = () => {
   console.log('landscape');
-  // if (tool === "your teeth") {
-  //   $infoStatus.text("Using " + tool + " will earn you $1 each day!");
-  //   money += 1;
-  // } else if (tool === "a pair of rusty scissors") {
-  //   money += 5;
-  //   askForAction();
-  // } else if (tool === "an old-timey push lawnmower") {
-  //   money += 50;
-  //   askForAction();
-  // } else if (tool === "a fancy battery-powered lawnmower") {
-  //   money += 100;
-  //   askForAction();
-  // } else if (tool === "a team of starving students") {
-  //   money += 250;
-  //     if (money <1000 ) {
-  //       askForAction();
-  //     } else {
-  //       //Game Ends
-  //       alert("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!")
-  //     }
-  // }
+  if (tool === "your teeth") {
+    $infoStatus.text("Using " + tool + " will earn you $1 each day!");
+    money += 1;
+    updateScoreStats();
+  } else if (tool === "a pair of rusty scissors") {
+    money += 5;
+  } else if (tool === "an old-timey push lawnmower") {
+    money += 50;
+  } else if (tool === "a fancy battery-powered lawnmower") {
+    money += 100;
+  } else if (tool === "a team of starving students") {
+    money += 250;
+      if (money <1000 ) {
+        console.log('not earned enough $');
+      } else {
+        //Game Ends
+        console.log("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
+      }
+  }
 };
 
 const buySomeTools = () => {
