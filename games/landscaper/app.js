@@ -25,14 +25,14 @@ const startGame = () => {
   $('body').append($container);
   $container.append($buttonRowInfo, $buttonRowPlay);
 
-
+  const $startButton = $('<div>Start</div>').attr('class', 'button');
   const $landscapeButton = $('<div>Landscape</div>').attr('class', 'button');
   const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
   const $restartButton = $('<div>Restart</div>').attr('class', 'button');
   const $exitButton = $('<div>End Game</div>').attr('class', 'button');
   const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 
-  $buttonRowInfo.append($restartButton, $exitButton, $howToPlayButton);
+  $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton, $exitButton);
   $buttonRowPlay.append($landscapeButton, $buyToolsButton);
 
   const $infoStatus = $('<div>').attr('id', 'infoStatus').text("You have $" + money + ".  Your tool is " + tool + ".");
