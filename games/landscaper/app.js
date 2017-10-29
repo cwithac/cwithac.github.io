@@ -1,7 +1,7 @@
 $( () => {
 
   //Page Load Invocation
-  startGame();
+  loadGame();
 
 }); //
 
@@ -13,32 +13,38 @@ let money;
 let cost;
 let choice;
 
-const startGame = () => {
-  tool = "your teeth";
-  money = 1;
-  // instructions();
-  // askForAction();
+const $container = $('<div>').attr('id', 'container');
+const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
+const $buttonRowPlay = $('<div>').attr('id', 'buttonRowPlay');
+const $startButton = $('<div>Start</div>').attr('class', 'button');
+const $landscapeButton = $('<div>Landscape</div>').attr('class', 'button');
+const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
+const $restartButton = $('<div>Restart</div>').attr('class', 'button');
+const $exitButton = $('<div>End Game</div>').attr('class', 'button');
+const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 
-  const $container = $('<div>').attr('id', 'container');
-  const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
-  const $buttonRowPlay = $('<div>').attr('id', 'buttonRowPlay');
+
+const loadGame = () => {
   $('body').append($container);
   $container.append($buttonRowInfo, $buttonRowPlay);
-
-  const $startButton = $('<div>Start</div>').attr('class', 'button');
-  const $landscapeButton = $('<div>Landscape</div>').attr('class', 'button');
-  const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
-  const $restartButton = $('<div>Restart</div>').attr('class', 'button');
-  const $exitButton = $('<div>End Game</div>').attr('class', 'button');
-  const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
-
   $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton, $exitButton);
   $buttonRowPlay.append($landscapeButton, $buyToolsButton);
+};
 
+const initializeLevel = () => {
+  tool = "your teeth";
+  money = 1;
+};
+
+const startGame = () => {
+  initializeLevel();
   const $infoStatus = $('<div>').attr('id', 'infoStatus').text("You have $" + money + ".  Your tool is " + tool + ".");
   $container.append($infoStatus);
 };
 
+//Listeners
+
+$startButton.on('click', startGame);
 
 
 // const instructions = () => {
