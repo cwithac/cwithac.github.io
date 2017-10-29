@@ -9,9 +9,9 @@ body {
 
 h1 {
   color: white;
-  font-size: 8em;
+  /*font-size: 8em;*/
   text-align: center;
-  margin-top: 20%;
+  /*margin-top: 20%;*/
   text-shadow: 5px 2px #000000;
   font-family: 'Joti One', cursive;
 }

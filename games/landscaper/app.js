@@ -18,7 +18,28 @@ const startGame = () => {
   money = 1;
   // instructions();
   // askForAction();
+
+  const $container = $('<div>').attr('id', 'container');
+  const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
+  const $buttonRowPlay = $('<div>').attr('id', 'buttonRowPlay');
+  $('body').append($container);
+  $container.append($buttonRowInfo, $buttonRowPlay);
+
+
+  const $landscapeButton = $('<div>').attr('class', 'button').text("Landscape");
+  const $buyToolsButton = $('<div>').attr('class', 'button').text("Buy Tools");
+  const $restartButton = $('<div>').attr('class', 'button').text("Restart");
+  const $exitButton = $('<div>').attr('class', 'button').text("Exit");
+  const $howToPlayButton = $('<div>').attr('class', 'button').text("How To Play");
+
+  $buttonRowInfo.append($restartButton, $exitButton, $howToPlayButton);
+  $buttonRowPlay.append($landscapeButton, $buyToolsButton);
+
+  const $infoStatus = $('<div>').attr('id', 'infoStatus').text("You have $" + money + ".  Your tool is " + tool + ".");
+  $container.append($infoStatus);
 };
+
+
 
 // const instructions = () => {
 //   alert("Welcome to the game!  You are starting a landscaping business.  Use your tools to earn more money!")
