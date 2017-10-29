@@ -66,17 +66,19 @@ const questionPrompt = () => {
 };
 
 const runLandscape = () => {
-  console.log('landscape');
   if (tool === "your teeth") {
     $infoStatus.text("Using " + tool + " will earn you $1 each day!");
     money += 1;
     updateScoreStats();
   } else if (tool === "a pair of rusty scissors") {
     money += 5;
+    updateScoreStats();
   } else if (tool === "an old-timey push lawnmower") {
     money += 50;
+    updateScoreStats();
   } else if (tool === "a fancy battery-powered lawnmower") {
     money += 100;
+    updateScoreStats();
   } else if (tool === "a team of starving students") {
     money += 250;
       if (money <1000 ) {
@@ -88,8 +90,64 @@ const runLandscape = () => {
   }
 };
 
+const checkForEnoughMoney = () => {
+  if ((money < 5) && (tool === "your teeth")) {
+      $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
+    } else if ((money >= 5) && (tool === "your teeth")) {
+        buyScissors();
+    } else if ((money >= 25) && (tool === "a pair of rusty scissors")) {
+        buyOldTimey();
+    } else if ((money >= 250) && (tool === "an old-timey push lawnmower")) {
+        buyFancyBattery();
+    } else if ((money >= 500) && (tool === "a fancy battery-powered lawnmower")) {
+        buyTeamOfStudents();
+    } else {
+        $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
+    }
+};
+
 const buySomeTools = () => {
-  console.log('tools');
+  checkForEnoughMoney();
+};
+
+const buyScissors = () => {
+  cost = 5;
+  money -= 5;
+  tool = "a pair of rusty scissors";
+  alertText();
+  updateScoreStats();
+};
+
+const buyOldTimey = () => {
+  cost = 25;
+  money -= 25;
+  tool = "an old-timey push lawnmower";
+  alertText();
+  updateScoreStats();
+};
+
+const buyFancyBattery = () => {
+  cost = 250;
+  money -= 250;
+  tool = "a fancy battery-powered lawnmower";
+  alertText();
+  updateScoreStats();
+};
+
+const buyTeamOfStudents = () => {
+  cost = 500;
+  money -= 500;
+  tool = "a team of students";
+  alertText();
+  updateScoreStats();
+};
+
+const alertText = () => {
+  if (tool === "a team of students") {
+    $infoStatus.text("You have hired " + tool + " for $" + cost +"!  Using this tool will earn you $" + cost + " each day!");
+  } else {
+    $infoStatus.text("You have purchased " + tool + " for $" + cost +"!  Using this tool will earn you $" + cost + " each day!");
+  }
 };
 
 //Listeners
@@ -99,117 +157,7 @@ $landscapeButton.on('click', runLandscape);
 $buyToolsButton.on('click', buySomeTools);
 
 
-// const promptQuestions = () => {
-//   choice = prompt("What do you want to do?", "landscape/buy tools");
-//     if (choice.toLowerCase() === "landscape") {
-//       landscape();
-//     } else if (choice.toLowerCase() === "buy tools") {
-//       checkTool();
-//     } else if (choice.toLowerCase() === "exit") {
-//       //exits game - option not shown to user
-//     } else if (choice.toLowerCase() === "restart") {
-//       //resets game - option not shown to user
-//       start();
-//     } else {
-//       alert("Please try that action again!")
-//       askForAction();
-//     }
-// };
-//
-// //LANDSCAPE ACTIONS
-// const landscape = () => {
-//   if (tool === "your teeth") {
-//     alert("Using " + tool + " will earn you $1 each day!")
-//     money += 1;
-//     askForAction();
-//   } else if (tool === "a pair of rusty scissors") {
-//     money += 5;
-//     askForAction();
-//   } else if (tool === "an old-timey push lawnmower") {
-//     money += 50;
-//     askForAction();
-//   } else if (tool === "a fancy battery-powered lawnmower") {
-//     money += 100;
-//     askForAction();
-//   } else if (tool === "a team of starving students") {
-//     money += 250;
-//       if (money <1000 ) {
-//         askForAction();
-//       } else {
-//         //Game Ends
-//         alert("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!")
-//       }
-//   }
-// };
-//
-//
-// //CHECK AND BUY TOOLS
-// const checkTool = function () {
-//   if (money < 5) {
-//     alert("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
-//     askForAction();
-//   } else {
-//     buyTool();
-//   }
-// };
-//
-// const buyTool = () => {
-//   if ((money >= 5) && (tool === "your teeth")) {
-//     alert("You can afford to buy a new tool!")
-//     buyScissors();
-//   } else if ((money >= 25) && (tool === "a pair of rusty scissors")) {
-//     alert("You can afford to buy a new tool!")
-//     buyOldTimey();
-//   } else if ((money >= 250) && (tool === "an old-timey push lawnmower")) {
-//     alert("You can afford to buy a new tool!")
-//     buyFancyBattery();
-//   } else if ((money >= 500) && (tool === "a fancy battery-powered lawnmower")) {
-//     alert("You can afford to buy a new tool!")
-//     buyTeamOfStudents();
-//   } else {
-//     alert("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
-//     askForAction();
-//   }
-// };
-//
-//
-// //BUY FUNCTIONS
-// const buyScissors = () => {
-//   cost = 5;
-//   money -= 5;
-//   tool = "a pair of rusty scissors";
-//   alertText();
-// };
-//
-// const buyOldTimey = () => {
-//   cost = 25;
-//   money -= 25;
-//   tool = "an old-timey push lawnmower";
-//   alertText();
-// };
-//
-// const buyFancyBattery = () => {
-//   cost = 250;
-//   money -= 250;
-//   tool = "a fancy battery-powered lawnmower";
-//   alertText();
-// };
-//
-// const buyTeamOfStudents = () => {
-//   cost = 500;
-//   money -= 500;
-//   tool = "a team of starving students";
-//   alertText();
-// };
-//
-// const alertText = () => {
-//   alert("You can buy " + tool + " for $" + cost + ".");
-//   alert("You have purchased " + tool + "!  Using this tool will earn you $" + cost + " each day!");
-//   askForAction();
-// };
-//
-// // PAGE LOAD FUNCTION CALL
-// startGame();
+
 
 //==============================================================================
 
