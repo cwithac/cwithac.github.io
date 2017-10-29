@@ -54,10 +54,19 @@ const questionPrompt = () => {
   $question.insertBefore($buttonRowPlay);
 };
 
+const runLandscape = () => {
+  console.log('landscape');
+};
+
+const buySomeTools = () => {
+  console.log('tools');
+};
+
 //Listeners
 
 $startButton.on('click', startGame);
-
+$landscapeButton.on('click', runLandscape);
+$buyToolsButton.on('click', buySomeTools);
 
 
 // const promptQuestions = () => {
