@@ -22,13 +22,12 @@ const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
 const $restartButton = $('<div>Restart</div>').attr('class', 'button');
 const $exitButton = $('<div>End Game</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
-
+const $infoStatus = $('<div>').attr('id', 'infoStatus');
 
 const loadGame = () => {
   $('body').append($container);
   $container.append($buttonRowInfo, $buttonRowPlay);
   $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton, $exitButton);
-  $buttonRowPlay.append($landscapeButton, $buyToolsButton);
 };
 
 const initializeLevel = () => {
@@ -37,9 +36,19 @@ const initializeLevel = () => {
 };
 
 const startGame = () => {
+  $startButton.empty();
   initializeLevel();
-  const $infoStatus = $('<div>').attr('id', 'infoStatus').text("You have $" + money + ".  Your tool is " + tool + ".");
+  showStatus();
+};
+
+const showStatus = () => {
+  $infoStatus.text("You have $" + money + ".  Your tool is " + tool + ".");
+  $buttonRowPlay.append($landscapeButton, $buyToolsButton);
   $container.append($infoStatus);
+};
+
+const $questionPrompt = () => {
+
 };
 
 //Listeners
@@ -47,23 +56,7 @@ const startGame = () => {
 $startButton.on('click', startGame);
 
 
-// const instructions = () => {
-//   alert("Welcome to the game!  You are starting a landscaping business.  Use your tools to earn more money!")
-//   alert("You win the game when you have a team of starving students helping and $1000.")
-//   alert("To start, the only tool you have are your teeth. Using just " + tool + ", you can spend the day cutting lawns and make $" + money + ".  You can do this as much as you want.");
-// };
-//
-// //USER INFORMATION
-// const showStatus = () => {
-//   alert("You have $" + money + ".  Your tool is " + tool + ".")
-// };
-//
-// //USER ACTIONS AND INPUT
-// const askForAction = () => {
-//   showStatus();
-//   promptQuestions();
-// };
-//
+
 // const promptQuestions = () => {
 //   choice = prompt("What do you want to do?", "landscape/buy tools");
 //     if (choice.toLowerCase() === "landscape") {
@@ -177,6 +170,13 @@ $startButton.on('click', startGame);
 // startGame();
 
 //==============================================================================
+
+// const instructions = () => {
+//   alert("Welcome to the game!  You are starting a landscaping business.  Use your tools to earn more money!")
+//   alert("You win the game when you have a team of starving students helping and $1000.")
+//   alert("To start, the only tool you have are your teeth. Using just " + tool + ", you can spend the day cutting lawns and make $" + money + ".  You can do this as much as you want.");
+// };
+
 
 // How to Play
 //
