@@ -79,8 +79,9 @@ const runLandscape = () => {
   } else if (tool === "a fancy battery-powered lawnmower") {
     money += 100;
     updateScoreStats();
-  } else if (tool === "a team of starving students") {
+  } else if (tool === "a team of students") {
     money += 250;
+    updateScoreStats();
       if (money <1000 ) {
         console.log('not earned enough $');
       } else {
@@ -114,32 +115,33 @@ const buyScissors = () => {
   cost = 5;
   money -= 5;
   tool = "a pair of rusty scissors";
-  alertText();
   updateScoreStats();
+  alertText();
 };
 
 const buyOldTimey = () => {
   cost = 25;
   money -= 25;
   tool = "an old-timey push lawnmower";
-  alertText();
   updateScoreStats();
+  alertText();
 };
 
 const buyFancyBattery = () => {
   cost = 250;
   money -= 250;
   tool = "a fancy battery-powered lawnmower";
-  alertText();
   updateScoreStats();
+  alertText();
 };
 
 const buyTeamOfStudents = () => {
   cost = 500;
   money -= 500;
   tool = "a team of students";
-  alertText();
   updateScoreStats();
+  alertText();
+  $buyToolsButton.empty();
 };
 
 const alertText = () => {
