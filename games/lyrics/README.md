@@ -1,16 +1,20 @@
 # Lyrics
 
-## Live Site: https://cwithac.github.io/lyrics/
+_Two player trivia game with multiple choice answers.  Five level options for number of rounds (P1 and P2 turn per round) including default Level 2.  Game database and styling dedicated to [Hamilton: An American Musical](http://www.hamiltonbroadway.com/)._
 
-## GitHub Repository: https://github.com/cwithac/cwithac.github.io/tree/master/lyrics
+## [Lyrics](https://cwithac.github.io/games/lyrics/) + [gitHub Repository](https://github.com/cwithac/cwithac.github.io/tree/master/games/lyrics)
 
 ![](http://i.imgur.com/BtV9D7n.jpg)
 
 ### Technologies Used:
-HTML, CSS, JavaScript, jQuery
+```
+HTML
+CSS
+JavaScript
+jQuery
+```
 
-### Description:
-Two player trivia game with multiple choice answers.  Five level options for number of rounds (P1 and P2 turn per round) including default Level 2.  Game database and styling dedicated to [Hamilton: An American Musical](https://en.wikipedia.org/wiki/Hamilton_(musical)).
+
 
 ### Installation Instructions:
 
@@ -45,7 +49,3 @@ Rotating interface between randomly inserted questions with visual direction to 
 - [Cinzel](https://fonts.google.com/specimen/Cinzel)
 
 <sub>*Some lyrics are not verbatim or have been uniquely created.  Star Logo modified in photoshop.*</sub>
-
-______
-
-**Created by Cathleen Wright for General Assembly WDIR 2017**
