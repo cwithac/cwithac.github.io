@@ -4,7 +4,7 @@ _Two player trivia game with multiple choice answers.  Five level options for nu
 
 ## [Lyrics](https://cwithac.github.io/games/lyrics/) + [gitHub Repository](https://github.com/cwithac/cwithac.github.io/tree/master/games/lyrics)
 
-![](http://i.imgur.com/BtV9D7n.jpg)
+![](https://i.imgur.com/FI4cWSH.png)
 
 ### Technologies Used:
 ```
