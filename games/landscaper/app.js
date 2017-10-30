@@ -107,10 +107,6 @@ const checkForEnoughMoney = () => {
     }
 };
 
-const buySomeTools = () => {
-  checkForEnoughMoney();
-};
-
 const buyScissors = () => {
   cost = 5;
   money -= 5;
@@ -156,7 +152,7 @@ const alertText = () => {
 
 $startButton.on('click', startGame);
 $landscapeButton.on('click', runLandscape);
-$buyToolsButton.on('click', buySomeTools);
+$buyToolsButton.on('click', checkForEnoughMoney);
 
 
 
