@@ -82,11 +82,8 @@ const runLandscape = () => {
   } else if (tool === "a team of students") {
     money += 250;
     updateScoreStats();
-      if (money <1000 ) {
-        console.log('not earned enough $');
-      } else {
-        //Game Ends
-        console.log("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
+      if (money >= 1000 ) {
+        alertWinner();
       }
   }
 };
@@ -146,6 +143,12 @@ const alertText = () => {
   } else {
     $infoStatus.text("You have purchased " + tool + " for $" + cost +"!  Using this tool will earn you $" + cost + " each day!");
   }
+};
+
+const alertWinner = () => {
+  $infoStatus.text("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
+  $question.empty();
+  $buttonRowPlay.empty();
 };
 
 //Listeners
