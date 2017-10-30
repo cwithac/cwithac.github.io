@@ -20,7 +20,6 @@ const $startButton = $('<div>Start</div>').attr('class', 'button');
 const $landscapeButton = $('<div>Landscape</div>').attr('class', 'button');
 const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
 const $restartButton = $('<div>Restart</div>').attr('class', 'button');
-const $exitButton = $('<div>End Game</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 const $infoStatus = $('<div>').attr('id', 'infoStatus');
 const $question = $('<div>').attr('id', 'questionBox');
@@ -29,7 +28,7 @@ const $scoreStats = $('<div>').attr('id', 'scoreBox');
 const loadGame = () => {
   $('body').append($container);
   $container.append($buttonRowInfo, $buttonRowPlay);
-  $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton, $exitButton);
+  $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton);
 };
 
 const initializeLevel = () => {
@@ -151,11 +150,25 @@ const alertWinner = () => {
   $buttonRowPlay.empty();
 };
 
+const resetGame = () => {
+  $scoreStats.empty();
+  $question.empty();
+  $infoStatus.empty();
+  $buttonRowPlay.empty();
+  $startButton.text('Start')
+  loadGame();
+  $landscapeButton.on('click', runLandscape);
+  $buyToolsButton.on('click', checkForEnoughMoney);
+}
+
 //Listeners
 
 $startButton.on('click', startGame);
+$restartButton.on('click', resetGame);
+
 $landscapeButton.on('click', runLandscape);
 $buyToolsButton.on('click', checkForEnoughMoney);
+
 
 
 
