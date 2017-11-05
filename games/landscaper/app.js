@@ -44,12 +44,12 @@ const toolOptions = {
   },
   fancyBattery: {
     tool: "a fancy battery-powered lawnmower",
-    moneyChange: 100,
+    moneyChange: 50,
     cost: 250
   },
   studentTeam: {
     tool: "a team of students",
-    moneyChange: 250,
+    moneyChange: 100,
     cost: 500
   }
 };
@@ -100,40 +100,51 @@ const gameSetup = {
     $buyToolsButton.show();
     $landscapeButton.on('click', gamePlay.runLandscape);
     $buyToolsButton.on('click', gamePlay.checkForEnoughMoney);
+  },
+  checkForWinner() {
+    if (money > 1000) {
+      gameInfo.alertWinner();
+    }
+  },
+  updateShowCheckFunction() {
+    gameSetup.updateScoreStats();
+    gameSetup.showStatus();
+    gameSetup.checkForWinner();
+  },
+  updateShowAlertFunction() {
+    gameSetup.updateScoreStats();
+    gameSetup.showStatus();
+    gameInfo.alertText();
   }
 };
 
 //GAME PLAY
 const gamePlay = {
   runLandscape() {
-    if (tool === toolOptions.yourTeeth.tool) {
-      money += toolOptions.yourTeeth.moneyChange;
-      amountEarned = toolOptions.yourTeeth.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-    } else if (tool === toolOptions.rustyScissors.tool) {
-      money += toolOptions.rustyScissors.moneyChange;
-      amountEarned = toolOptions.rustyScissors.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-    } else if (tool === toolOptions.oldTimey.tool) {
-      money += toolOptions.oldTimey.moneyChange;
-      amountEarned = toolOptions.oldTimey.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-    } else if (tool === toolOptions.fancyBattery.tool) {
-      money += toolOptions.fancyBattery.moneyChange;
-      amountEarned = toolOptions.fancyBattery.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-    } else if (tool === toolOptions.studentTeam.tool) {
-      money += toolOptions.studentTeam.moneyChange;
-      amountEarned = toolOptions.studentTeam.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-        if (money >= 1000) {
-          gameInfo.alertWinner();
-        }
+    if (money < 1000) {
+      if (tool === toolOptions.yourTeeth.tool) {
+        money += toolOptions.yourTeeth.moneyChange;
+        amountEarned = toolOptions.yourTeeth.moneyChange;
+        gameSetup.updateShowCheckFunction();
+      } else if (tool === toolOptions.rustyScissors.tool) {
+        money += toolOptions.rustyScissors.moneyChange;
+        amountEarned = toolOptions.rustyScissors.moneyChange;
+        gameSetup.updateShowCheckFunction();
+      } else if (tool === toolOptions.oldTimey.tool) {
+        money += toolOptions.oldTimey.moneyChange;
+        amountEarned = toolOptions.oldTimey.moneyChange;
+        gameSetup.updateShowCheckFunction();
+      } else if (tool === toolOptions.fancyBattery.tool) {
+        money += toolOptions.fancyBattery.moneyChange;
+        amountEarned = toolOptions.fancyBattery.moneyChange;
+        gameSetup.updateShowCheckFunction();
+      } else if (tool === toolOptions.studentTeam.tool) {
+        money += toolOptions.studentTeam.moneyChange;
+        amountEarned = toolOptions.studentTeam.moneyChange;
+        gameSetup.updateShowCheckFunction();
+      }
+    } else {
+      gameInfo.alertWinner();
     }
   },
   checkForEnoughMoney() {
@@ -155,36 +166,28 @@ const gamePlay = {
       money -= cost;
       tool = toolOptions.rustyScissors.tool;
       amountEarned = toolOptions.rustyScissors.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-      gameInfo.alertText();
+      gameSetup.updateShowAlertFunction();
     },
     buyOldTimey() {
       cost = toolOptions.oldTimey.cost;
       money -= cost;
       tool = toolOptions.oldTimey.tool;
       amountEarned = toolOptions.oldTimey.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-      gameInfo.alertText();
+      gameSetup.updateShowAlertFunction();
     },
     buyFancyBattery() {
       cost = toolOptions.fancyBattery.cost;
       money -= cost;
       tool = toolOptions.fancyBattery.tool;
       amountEarned = toolOptions.fancyBattery.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-      gameInfo.alertText();
+      gameSetup.updateShowAlertFunction();
     },
     buyTeamOfStudents() {
       cost = toolOptions.studentTeam.cost;
       money -= cost;
       tool = toolOptions.studentTeam.tool;
       amountEarned = toolOptions.studentTeam.moneyChange;
-      gameSetup.updateScoreStats();
-      gameSetup.showStatus();
-      gameInfo.alertText();
+      gameSetup.updateShowAlertFunction();
       $buyToolsButton.hide();
     }
   }
