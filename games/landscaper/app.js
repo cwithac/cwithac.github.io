@@ -1,13 +1,13 @@
 $( () => {
 
   //Page Load Invocation
-  loadGame();
+  gameSetup.loadGame();
 
 }); //
 
 // console.log('Landscaper Game app.js is attached to index.html');
 
-//INITIALIZE
+//INITIALIZE & GLOBAL VARIABLES
 let tool;
 let money;
 let cost;
@@ -26,153 +26,186 @@ const $infoStatus = $('<div>').attr('id', 'infoStatus');
 const $question = $('<div>').attr('id', 'questionBox');
 const $scoreStats = $('<div>').attr('id', 'scoreBox');
 
-const loadGame = () => {
-  $('body').append($container);
-  $container.append($buttonRowInfo, $buttonRowPlay);
-  $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton);
-};
-
-const initializeLevel = () => {
-  tool = "your teeth";
-  money = 1;
-  amountEarned = 1;
-};
-
-const startGame = () => {
-  $startButton.hide();
-  initializeLevel();
-  showStatus();
-  scoreBoxInfo();
-};
-
-const scoreBoxInfo = () => {
-  $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
-  $scoreStats.insertAfter($buttonRowInfo);
-}
-
-const updateScoreStats = () => {
-  $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
-};
-
-const showStatus = () => {
-  $infoStatus.empty();
-  $infoStatus.text("Using " + tool + " will earn you $" + amountEarned + " each day!");
-  $buttonRowPlay.append($landscapeButton, $buyToolsButton);
-  $infoStatus.insertBefore($buttonRowPlay);
-  questionPrompt();
-};
-
-const questionPrompt = () => {
-  $question.text("What do you want to do?");
-  $question.insertBefore($buttonRowPlay);
-};
-
-const runLandscape = () => {
-
-  if (tool === "your teeth") {
-    money += 1;
-    amountEarned = 1;
-  } else if (tool === "a pair of rusty scissors") {
-    money += 5;
-    amountEarned = 5;
-  } else if (tool === "an old-timey push lawnmower") {
-    money += 50;
-    amountEarned = 50;
-  } else if (tool === "a fancy battery-powered lawnmower") {
-    money += 100;
-    amountEarned = 100;
-  } else if (tool === "a team of students") {
-    money += 250;
-    amountEarned = 250;
-      if (money >= 1000 ) {
-        alertWinner();
-      }
+const toolOptions = {
+  yourTeeth: {
+    tool: "your teeth",
+    moneyChange: 1,
+    cost: 0
+  },
+  rustyScissors: {
+    tool: "a pair of rusty scissors",
+    moneyChange: 5,
+    cost: 5
+  },
+  oldTimey: {
+    tool: "an old-timey push lawnmower",
+    moneyChange: 50,
+    cost: 25
+  },
+  fancyBattery: {
+    tool: "a fancy battery-powered lawnmower",
+    moneyChange: 100,
+    cost: 250
+  },
+  studentTeam: {
+    tool: "a team of students",
+    moneyChange: 250,
+    cost: 500
   }
-  updateScoreStats();
-  showStatus();
 };
 
-const checkForEnoughMoney = () => {
-  if ((money < 5) && (tool === "your teeth")) {
-      $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
-    } else if ((money >= 5) && (tool === "your teeth")) {
-        buyScissors();
-    } else if ((money >= 25) && (tool === "a pair of rusty scissors")) {
-        buyOldTimey();
-    } else if ((money >= 250) && (tool === "an old-timey push lawnmower")) {
-        buyFancyBattery();
-    } else if ((money >= 500) && (tool === "a fancy battery-powered lawnmower")) {
-        buyTeamOfStudents();
-    } else {
-        $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
+//GAME SETUP
+const gameSetup = {
+  loadGame() {
+    $('body').append($container);
+    $container.append($buttonRowInfo, $buttonRowPlay);
+    $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton);
+  },
+  initializeLevel() {
+    tool = toolOptions.yourTeeth.tool;
+    money = 0;
+    amountEarned = toolOptions.yourTeeth.moneyChange;
+  },
+  startGame() {
+    $startButton.hide();
+    gameSetup.initializeLevel();
+    gameSetup.showStatus();
+    gameSetup.scoreBoxInfo();
+  },
+  scoreBoxInfo() {
+    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+    $scoreStats.insertAfter($buttonRowInfo);
+  },
+  updateScoreStats() {
+    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+  },
+  showStatus() {
+    $infoStatus.empty();
+    $infoStatus.text("Using " + tool + " will earn you $" + amountEarned + " each day!");
+    $buttonRowPlay.append($landscapeButton, $buyToolsButton);
+    $infoStatus.insertBefore($buttonRowPlay);
+    gameSetup.questionPrompt();
+  },
+  questionPrompt() {
+    $question.text("What do you want to do?");
+    $question.insertBefore($buttonRowPlay);
+  },
+  resetGame() {
+    $scoreStats.empty();
+    $question.empty();
+    $infoStatus.empty();
+    $buttonRowPlay.empty();
+    $startButton.show();
+    gameSetup.loadGame();
+    $landscapeButton.on('click', runLandscape);
+    $buyToolsButton.on('click', checkForEnoughMoney);
+  }
+};
+
+//GAME PLAY
+const gamePlay = {
+  runLandscape() {
+    if (tool === toolOptions.yourTeeth.tool) {
+      money += toolOptions.yourTeeth.moneyChange;
+      amountEarned = toolOptions.yourTeeth.moneyChange;
+    } else if (tool === toolOptions.rustyScissors.tool) {
+      money += toolOptions.rustyScissors.moneyChange;
+      amountEarned = toolOptions.rustyScissors.moneyChange;
+    } else if (tool === toolOptions.oldTimey.tool) {
+      money += toolOptions.oldTimey.moneyChange;
+      amountEarned = toolOptions.oldTimey.moneyChange;
+    } else if (tool === toolOptions.fancyBattery.tool) {
+      money += toolOptions.fancyBattery.moneyChange;
+      amountEarned = toolOptions.fancyBattery.moneyChange;
+    } else if (tool === toolOptions.studentTeam.tool) {
+      money += toolOptions.studentTeam.moneyChange;
+      amountEarned = toolOptions.studentTeam.moneyChange;
+        if (money >= 1000 ) {
+          alertWinner();
+        }
     }
-};
-
-const buyScissors = () => {
-  cost = 5;
-  money -= 5;
-  tool = "a pair of rusty scissors";
-  updateScoreStats();
-  alertText();
-};
-
-const buyOldTimey = () => {
-  cost = 25;
-  money -= 25;
-  tool = "an old-timey push lawnmower";
-  updateScoreStats();
-  alertText();
-};
-
-const buyFancyBattery = () => {
-  cost = 250;
-  money -= 250;
-  tool = "a fancy battery-powered lawnmower";
-  updateScoreStats();
-  alertText();
-};
-
-const buyTeamOfStudents = () => {
-  cost = 500;
-  money -= 500;
-  tool = "a team of students";
-  updateScoreStats();
-  alertText();
-  $buyToolsButton.empty();
-};
-
-const alertText = () => {
-  if (tool === "a team of students") {
-    $infoStatus.text("You have hired " + tool + " for $" + cost +"!  Using this tool will earn you $" + cost + " each day!");
-  } else {
-    $infoStatus.text("You have purchased " + tool + " for $" + cost +"!  Using this tool will earn you $" + cost + " each day!");
+    gameSetup.updateScoreStats();
+    gameSetup.showStatus();
+  },
+  checkForEnoughMoney() {
+    if (money >= toolOptions.studentTeam.cost) {
+        gamePlay.buyOptions.buyTeamOfStudents();
+    } else if ((money >= toolOptions.fancyBattery.cost) && (tool !== toolOptions.fancyBattery.tool)){
+        gamePlay.buyOptions.buyFancyBattery();
+    } else if ((money >= toolOptions.oldTimey.cost) && (tool !== toolOptions.oldTimey.tool)){
+        gamePlay.buyOptions.buyOldTimey();
+    } else if ((money >= toolOptions.rustyScissors.cost) && (tool !== toolOptions.rustyScissors.tool)) {
+        gamePlay.buyOptions.buyScissors();
+    } else {
+      $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
+    }
+  },
+  buyOptions: {
+    buyScissors() {
+      cost = toolOptions.rustyScissors.cost;
+      money -= cost;
+      tool = toolOptions.rustyScissors.tool;
+      amountEarned = toolOptions.rustyScissors.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
+      gameInfo.alertText();
+    },
+    buyOldTimey() {
+      cost = toolOptions.oldTimey.cost;
+      money -= cost;
+      tool = toolOptions.oldTimey.tool;
+      amountEarned = toolOptions.oldTimey.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
+      gameInfo.alertText();
+    },
+    buyFancyBattery() {
+      cost = toolOptions.fancyBattery.cost;
+      money -= cost;
+      tool = toolOptions.fancyBattery.tool;
+      amountEarned = toolOptions.fancyBattery.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
+      gameInfo.alertText();
+    },
+    buyTeamOfStudents() {
+      cost = toolOptions.studentTeam.cost;
+      money -= cost;
+      tool = toolOptions.studentTeam.tool;
+      amountEarned = toolOptions.studentTeam.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
+      gameInfo.alertText();
+      $buyToolsButton.empty();
+    }
   }
 };
 
-const alertWinner = () => {
-  $infoStatus.text("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
-  $question.empty();
-  $buttonRowPlay.empty();
+//GAME INFO
+const gameInfo = {
+  alertText() {
+    if (tool === toolOptions.studentTeam.tool) {
+      $infoStatus.text("You have hired " + tool + " for $" + cost +"!  Using this tool will earn you $" + amountEarned + " each day!");
+    } else {
+      $infoStatus.text("You have purchased " + tool + " for $" + cost +"!  Using this tool will earn you $" + amountEarned + " each day!");
+    }
+  },
+  alertWinner() {
+    $infoStatus.text("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
+    $question.empty();
+    $buttonRowPlay.empty();
+  }
 };
 
-const resetGame = () => {
-  $scoreStats.empty();
-  $question.empty();
-  $infoStatus.empty();
-  $buttonRowPlay.empty();
-  $startButton.show();
-  loadGame();
-  $landscapeButton.on('click', runLandscape);
-  $buyToolsButton.on('click', checkForEnoughMoney);
-}
+//EVENT LISTENERS
+// const eventListeners = {
+//
+// }
+$startButton.on('click', gameSetup.startGame);
+$restartButton.on('click', gameSetup.resetGame);
 
-//Listeners
-
-$startButton.on('click', startGame);
-$restartButton.on('click', resetGame);
-
-$landscapeButton.on('click', runLandscape);
-$buyToolsButton.on('click', checkForEnoughMoney);
+$landscapeButton.on('click', gamePlay.runLandscape);
+$buyToolsButton.on('click', gamePlay.checkForEnoughMoney);
 
 
 
