@@ -39,7 +39,7 @@ const initializeLevel = () => {
 };
 
 const startGame = () => {
-  $startButton.empty();
+  $startButton.hide();
   initializeLevel();
   showStatus();
   scoreBoxInfo();
@@ -160,7 +160,7 @@ const resetGame = () => {
   $question.empty();
   $infoStatus.empty();
   $buttonRowPlay.empty();
-  $startButton.text('Start')
+  $startButton.show();
   loadGame();
   $landscapeButton.on('click', runLandscape);
   $buyToolsButton.on('click', checkForEnoughMoney);

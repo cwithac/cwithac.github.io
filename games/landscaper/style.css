@@ -16,14 +16,16 @@ h1 {
   font-family: 'Joti One', cursive;
 }
 
+#container {
+  width: 60%;
+  margin: auto;
+}
+
 #buttonRowInfo, #buttonRowPlay, #infoStatus, #questionBox, #scoreBox {
-  width: 80%;
-  margin: 0 auto;
   text-align: center;
 }
 
-.button {
-  display: inline;
-  padding-right: 5%;
-  padding-left: 5%;
+#buttonRowInfo, #buttonRowPlay {
+  display: flex;
+  justify-content: space-around;
 }
