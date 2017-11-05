@@ -34,13 +34,13 @@ const toolOptions = {
   },
   rustyScissors: {
     tool: "a pair of rusty scissors",
-    moneyChange: 5,
+    moneyChange: 2,
     cost: 5
   },
   oldTimey: {
     tool: "an old-timey push lawnmower",
-    moneyChange: 50,
-    cost: 25
+    moneyChange: 25,
+    cost: 50
   },
   fancyBattery: {
     tool: "a fancy battery-powered lawnmower",
@@ -128,13 +128,13 @@ const gamePlay = {
     gameSetup.showStatus();
   },
   checkForEnoughMoney() {
-    if (money >= toolOptions.studentTeam.cost) {
+    if ((money >= toolOptions.studentTeam.cost) && (tool === toolOptions.fancyBattery.tool)) {
         gamePlay.buyOptions.buyTeamOfStudents();
-    } else if ((money >= toolOptions.fancyBattery.cost) && (tool !== toolOptions.fancyBattery.tool)){
+    } else if ((money >= toolOptions.fancyBattery.cost) && (tool === toolOptions.oldTimey.tool)){
         gamePlay.buyOptions.buyFancyBattery();
-    } else if ((money >= toolOptions.oldTimey.cost) && (tool !== toolOptions.oldTimey.tool)){
+    } else if ((money >= toolOptions.oldTimey.cost) && (tool === toolOptions.rustyScissors.tool)){
         gamePlay.buyOptions.buyOldTimey();
-    } else if ((money >= toolOptions.rustyScissors.cost) && (tool !== toolOptions.rustyScissors.tool)) {
+    } else if ((money >= toolOptions.rustyScissors.cost) && (tool === toolOptions.yourTeeth.tool)) {
         gamePlay.buyOptions.buyScissors();
     } else {
       $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
