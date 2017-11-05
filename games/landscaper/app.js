@@ -11,6 +11,7 @@ $( () => {
 let tool;
 let money;
 let cost;
+let amountEarned;
 let choice;
 
 const $container = $('<div>').attr('id', 'container');
@@ -34,6 +35,7 @@ const loadGame = () => {
 const initializeLevel = () => {
   tool = "your teeth";
   money = 1;
+  amountEarned = 1;
 };
 
 const startGame = () => {
@@ -45,7 +47,7 @@ const startGame = () => {
 
 const scoreBoxInfo = () => {
   $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
-  $container.prepend($scoreStats);
+  $scoreStats.insertAfter($buttonRowInfo);
 }
 
 const updateScoreStats = () => {
@@ -53,7 +55,8 @@ const updateScoreStats = () => {
 };
 
 const showStatus = () => {
-  $infoStatus.text("You have $" + money + ".  Your tool is " + tool + ".");
+  $infoStatus.empty();
+  $infoStatus.text("Using " + tool + " will earn you $" + amountEarned + " each day!");
   $buttonRowPlay.append($landscapeButton, $buyToolsButton);
   $infoStatus.insertBefore($buttonRowPlay);
   questionPrompt();
@@ -65,26 +68,28 @@ const questionPrompt = () => {
 };
 
 const runLandscape = () => {
+
   if (tool === "your teeth") {
-    $infoStatus.text("Using " + tool + " will earn you $1 each day!");
     money += 1;
-    updateScoreStats();
+    amountEarned = 1;
   } else if (tool === "a pair of rusty scissors") {
     money += 5;
-    updateScoreStats();
+    amountEarned = 5;
   } else if (tool === "an old-timey push lawnmower") {
     money += 50;
-    updateScoreStats();
+    amountEarned = 50;
   } else if (tool === "a fancy battery-powered lawnmower") {
     money += 100;
-    updateScoreStats();
+    amountEarned = 100;
   } else if (tool === "a team of students") {
     money += 250;
-    updateScoreStats();
+    amountEarned = 250;
       if (money >= 1000 ) {
         alertWinner();
       }
   }
+  updateScoreStats();
+  showStatus();
 };
 
 const checkForEnoughMoney = () => {

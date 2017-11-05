@@ -16,8 +16,8 @@ h1 {
   font-family: 'Joti One', cursive;
 }
 
-#buttonRowInfo, #buttonRowPlay {
-  width: 40%;
+#buttonRowInfo, #buttonRowPlay, #infoStatus, #questionBox, #scoreBox {
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
@@ -25,10 +25,5 @@ h1 {
 .button {
   display: inline;
   padding-right: 5%;
-}
-
-#infoStatus, #questionBox {
-  width: 80%;
-  margin: auto;
-  text-align: center;
+  padding-left: 5%;
 }
