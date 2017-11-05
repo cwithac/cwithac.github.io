@@ -97,8 +97,9 @@ const gameSetup = {
     $buttonRowPlay.empty();
     $startButton.show();
     gameSetup.loadGame();
-    $landscapeButton.on('click', runLandscape);
-    $buyToolsButton.on('click', checkForEnoughMoney);
+    $buyToolsButton.show();
+    $landscapeButton.on('click', gamePlay.runLandscape);
+    $buyToolsButton.on('click', gamePlay.checkForEnoughMoney);
   }
 };
 
@@ -108,24 +109,32 @@ const gamePlay = {
     if (tool === toolOptions.yourTeeth.tool) {
       money += toolOptions.yourTeeth.moneyChange;
       amountEarned = toolOptions.yourTeeth.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
     } else if (tool === toolOptions.rustyScissors.tool) {
       money += toolOptions.rustyScissors.moneyChange;
       amountEarned = toolOptions.rustyScissors.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
     } else if (tool === toolOptions.oldTimey.tool) {
       money += toolOptions.oldTimey.moneyChange;
       amountEarned = toolOptions.oldTimey.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
     } else if (tool === toolOptions.fancyBattery.tool) {
       money += toolOptions.fancyBattery.moneyChange;
       amountEarned = toolOptions.fancyBattery.moneyChange;
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
     } else if (tool === toolOptions.studentTeam.tool) {
       money += toolOptions.studentTeam.moneyChange;
       amountEarned = toolOptions.studentTeam.moneyChange;
-        if (money >= 1000 ) {
-          alertWinner();
+      gameSetup.updateScoreStats();
+      gameSetup.showStatus();
+        if (money >= 1000) {
+          gameInfo.alertWinner();
         }
     }
-    gameSetup.updateScoreStats();
-    gameSetup.showStatus();
   },
   checkForEnoughMoney() {
     if ((money >= toolOptions.studentTeam.cost) && (tool === toolOptions.fancyBattery.tool)) {
@@ -176,7 +185,7 @@ const gamePlay = {
       gameSetup.updateScoreStats();
       gameSetup.showStatus();
       gameInfo.alertText();
-      $buyToolsButton.empty();
+      $buyToolsButton.hide();
     }
   }
 };
