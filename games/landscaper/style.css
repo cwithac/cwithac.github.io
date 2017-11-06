@@ -30,6 +30,9 @@ h1 {
   justify-content: space-around;
 }
 
+#buttonRowInfo:hover, #buttonRowPlay:hover {
+  cursor: pointer;
+}
 
 #landscape, #buy {
   display: flex;
