@@ -8,13 +8,14 @@ $( () => {
 // console.log('Landscaper Game app.js is attached to index.html');
 
 //HTML CONTENT
+const $h1Title = $('<h1>The Landscaper</h1>');
 const $modal = $('<div></div>').attr('id', 'modal');
 const $modalText = $('<div><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p></div>').attr('id', 'modal-textbox');
 const $closeButton = $('<div>X</div>').attr('id', 'close');
 
 const htmlContent = {
     loadContent() {
-      $('body').append($('<h1>The Landscaper</h1>'));
+      $('body').append($h1Title);
       $('body').append($modal);
       $modal.append($modalText);
       $modalText.prepend($closeButton);
@@ -110,6 +111,7 @@ const gameSetup = {
     $infoStatus.empty();
     $buttonRowPlay.empty();
     $startButton.show();
+    $h1Title.remove();
     gameSetup.loadGame();
     $buyToolsButton.show();
     $landscapeButton.on('click', gamePlay.runLandscape);
