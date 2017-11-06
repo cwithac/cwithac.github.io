@@ -48,7 +48,7 @@ const gameSetup = {
   loadGame() {
     $('body').append($container);
     $container.append($buttonRowInfo, $buttonRowPlay);
-    $buttonRowInfo.append($startButton, $howToPlayButton, $restartButton);
+    $buttonRowInfo.append($startButton, $howToPlayButton);
   },
   initializeLevel() {
     tool = yourTeeth.type;
@@ -61,6 +61,7 @@ const gameSetup = {
     gameSetup.initializeLevel();
     gameSetup.showStatus();
     gameSetup.scoreBoxInfo();
+    $buttonRowInfo.append($restartButton)
     $landscapeButton.append($mowerIcon);
     $buyToolsButton.append($buyIcon);
   },
