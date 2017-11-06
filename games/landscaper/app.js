@@ -17,13 +17,16 @@ const $container = $('<div>').attr('id', 'container');
 const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
 const $buttonRowPlay = $('<div>').attr('id', 'buttonRowPlay');
 const $startButton = $('<div>Start</div>').attr('class', 'button');
-const $landscapeButton = $('<div>Landscape</div>').attr('class', 'button');
-const $buyToolsButton = $('<div>Buy Tools</div>').attr('class', 'button');
+const $landscapeButton = $('<div></div>').attr('class', 'button').attr('id', 'landscape');
+const $buyToolsButton = $('<div></div>').attr('class', 'button').attr('id', 'buy');
 const $restartButton = $('<div>Restart</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
 const $infoStatus = $('<div>').attr('id', 'infoStatus');
 const $question = $('<div>').attr('id', 'questionBox');
 const $scoreStats = $('<div>').attr('id', 'scoreBox');
+
+const $mowerIcon = $('<img src="images/mower.png">Landscape</img>');
+const $buyIcon = $('<img src="images/moneybag.png">Buy Tools</img>');
 
 class ToolOption {
   constructor(type, moneyChange, cost) {
@@ -56,6 +59,8 @@ const gameSetup = {
     gameSetup.initializeLevel();
     gameSetup.showStatus();
     gameSetup.scoreBoxInfo();
+    $landscapeButton.append($mowerIcon);
+    $buyToolsButton.append($buyIcon);
   },
   scoreBoxInfo() {
     $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
