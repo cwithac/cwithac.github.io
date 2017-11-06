@@ -7,6 +7,26 @@ $( () => {
 
 // console.log('Landscaper Game app.js is attached to index.html');
 
+//HTML CONTENT
+const $modal = $('<div></div>').attr('id', 'modal');
+const $modalText = $('<div><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p></div>').attr('id', 'modal-textbox');
+const $closeButton = $('<div>X</div>').attr('id', 'close');
+
+const htmlContent = {
+    loadContent() {
+      $('body').append($('<h1>The Landscaper</h1>'));
+      $('body').append($modal);
+      $modal.append($modalText);
+      $modalText.prepend($closeButton);
+    },
+    openModal() {
+      $modal.css('display', 'block');
+    },
+    closeModal() {
+      $modal.css('display', 'none');
+    }
+};
+
 //INITIALIZE & GLOBAL VARIABLES
 let tool;
 let money;
@@ -46,6 +66,7 @@ const studentTeam = new ToolOption('a team of students', 100, 500);
 //GAME SETUP
 const gameSetup = {
   loadGame() {
+    htmlContent.loadContent();
     $('body').append($container);
     $container.append($buttonRowInfo, $buttonRowPlay);
     $buttonRowInfo.append($startButton, $howToPlayButton);
@@ -213,32 +234,5 @@ $restartButton.on('click', gameSetup.resetGame);
 
 $landscapeButton.on('click', gamePlay.runLandscape);
 $buyToolsButton.on('click', gamePlay.checkForEnoughMoney);
-
-
-
-
-
-//==============================================================================
-
-// const instructions = () => {
-//   alert("Welcome to the game!  You are starting a landscaping business.  Use your tools to earn more money!")
-//   alert("You win the game when you have a team of starving students helping and $1000.")
-//   alert("To start, the only tool you have are your teeth. Using just " + tool + ", you can spend the day cutting lawns and make $" + money + ".  You can do this as much as you want.");
-// };
-
-
-// How to Play
-//
-// Reload the page to launch the game.
-//
-// You are starting a landscaping business, but all you have are your teeth. Using just your teeth, you can spend the day cutting lawns and make $1. You can do this as much as you want.
-//
-// At any point, if you are currently using your teeth, you can buy a pair of rusty scissors for $5. You can do this once, assuming you have enough money. Using the rusty scissors, you can spend the day cutting lawns and make $5. You can do this as much as you want.
-//
-// At any point, if you are currently using rusty scissors, you can buy an old-timey push lawnmower for $25. You can do this once, assuming you have enough money. Using the old-timey push lawnmower, you can spend the day cutting lawns and make $50. You can do this as much as you want.
-//
-// At any point, if you are currently using the old-timey push lawnmower, you can buy a fancy battery-powered lawnmower for $250. You can do this once, assuming you have enough money. Using the the fancy battery-powered lawnmower, you can spend the day cutting lawns and make $100. You can do this as much as you want.
-//
-// At any point, if you are currently using the fancy battery-powered lawnmower, you can hire a team of starving students for $500. You can do this once, assuming you have enough money. Using the the team of starving students, you can spend the day cutting lawns and make $250. You can do this as much as you want.
-//
-// You win the game when you have a team of starving students and $1000.
+$howToPlayButton.on('click', htmlContent.openModal);
+$closeButton.on('click', htmlContent.closeModal);
