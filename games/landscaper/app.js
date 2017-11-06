@@ -226,9 +226,6 @@ const gameInfo = {
 };
 
 //EVENT LISTENERS
-// const eventListeners = {
-//
-// }
 $startButton.on('click', gameSetup.startGame);
 $restartButton.on('click', gameSetup.resetGame);
 
