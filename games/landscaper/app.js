@@ -12,6 +12,7 @@ let tool;
 let money;
 let cost;
 let amountEarned;
+let days;
 
 const $container = $('<div>').attr('id', 'container');
 const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
@@ -52,6 +53,7 @@ const gameSetup = {
   initializeLevel() {
     tool = yourTeeth.type;
     money = 0;
+    days = 0;
     amountEarned = yourTeeth.moneyChange;
   },
   startGame() {
@@ -63,11 +65,11 @@ const gameSetup = {
     $buyToolsButton.append($buyIcon);
   },
   scoreBoxInfo() {
-    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div><div>Days Passed: ' + days + '</div>');
     $scoreStats.insertAfter($buttonRowInfo);
   },
   updateScoreStats() {
-    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div>');
+    $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div><div>Days Passed: ' + days + '</div>');
   },
   showStatus() {
     $infoStatus.empty();
@@ -112,6 +114,7 @@ const gameSetup = {
 //GAME PLAY
 const gamePlay = {
   runLandscape() {
+    days ++;
     if (money < 1000) {
       if (tool === yourTeeth.type) {
         money += yourTeeth.moneyChange;
@@ -194,7 +197,7 @@ const gameInfo = {
     }
   },
   alertWinner() {
-    $infoStatus.text("Congratulations!  You have made $" + money + " with the help of your tools!  You have won the game!");
+    $infoStatus.text("Congratulations!  In " + days + " days you have made $" + money + " with the help of your tools!  You have won the game!");
     $question.empty();
     $buttonRowPlay.empty();
   }
