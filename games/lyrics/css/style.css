@@ -184,6 +184,10 @@ button {
   font-size: 1em;
 }
 
+.answer:hover {
+  cursor: pointer;
+}
+
 .scoreNum {
   animation-name: blackgold;
   animation-duration: 3s;
