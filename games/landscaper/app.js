@@ -140,26 +140,32 @@ const gamePlay = {
   runLandscape() {
     days ++;
     if (money < 1000) {
-      if (tool === yourTeeth.type) {
-        money += yourTeeth.moneyChange;
-        amountEarned = yourTeeth.moneyChange;
-        gameSetup.updateShowCheckFunction();
-      } else if (tool === rustyScissors.type) {
-        money += rustyScissors.moneyChange;
-        amountEarned = rustyScissors.moneyChange;
-        gameSetup.updateShowCheckFunction();
-      } else if (tool === oldTimey.type) {
-        money += oldTimey.moneyChange;
-        amountEarned = oldTimey.moneyChange;
-        gameSetup.updateShowCheckFunction();
-      } else if (tool === fancyBattery.type) {
-        money += fancyBattery.moneyChange;
-        amountEarned = fancyBattery.moneyChange;
-        gameSetup.updateShowCheckFunction();
-      } else if (tool === studentTeam.type) {
-        money += studentTeam.moneyChange;
-        amountEarned = studentTeam.moneyChange;
-        gameSetup.updateShowCheckFunction();
+      switch (tool) {
+        case yourTeeth.type:
+          money += yourTeeth.moneyChange;
+          amountEarned = yourTeeth.moneyChange;
+          gameSetup.updateShowCheckFunction();
+          break;
+        case rustyScissors.type:
+          money += rustyScissors.moneyChange;
+          amountEarned = rustyScissors.moneyChange;
+          gameSetup.updateShowCheckFunction();
+          break;
+        case oldTimey.type:
+          money += oldTimey.moneyChange;
+          amountEarned = oldTimey.moneyChange;
+          gameSetup.updateShowCheckFunction();
+          break;
+        case fancyBattery.type:
+          money += fancyBattery.moneyChange;
+          amountEarned = fancyBattery.moneyChange;
+          gameSetup.updateShowCheckFunction();
+          break;
+        case studentTeam.type:
+          money += studentTeam.moneyChange;
+          amountEarned = studentTeam.moneyChange;
+          gameSetup.updateShowCheckFunction();
+          break;
       }
     } else {
       gameInfo.alertWinner();
