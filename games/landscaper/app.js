@@ -7,29 +7,6 @@ $( () => {
 
 // console.log('Landscaper Game app.js is attached to index.html');
 
-//HTML CONTENT
-const $container = $('<div/>').attr('id', 'container');
-const $h1Title = $('<h1>The Landscaper</h1>');
-  //MODAL
-  const $modal = $('<div/>').attr('id', 'modal');
-  const $modalText = $('<div><h2>How to Play</h2><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p><hr><h3>Tools</h3><p>A pair of rusty scissors costs: $5</p><p>An old-timey push lawnmower costs: $50</p><p>A fancy battery-powered lawnmower costs: $250</p><p>A team of students costs: $500</p></div>').attr('id', 'modal-textbox');
-  const $closeButton = $('<div>X</div>').attr('id', 'close');
-
-const htmlContent = {
-    loadContent() {
-      $('body').append($h1Title);
-      $('body').append($modal);
-      $modal.append($modalText);
-      $modalText.prepend($closeButton);
-    },
-    openModal() {
-      $modal.css('display', 'block');
-    },
-    closeModal() {
-      $modal.css('display', 'none');
-    }
-};
-
 //INITIALIZE & GLOBAL VARIABLES
 let tool;
 let money;
@@ -74,6 +51,30 @@ const studentTeam = new ToolOption('a team of students', 100, 500);
 
 //WINNING MONEY VALUE
 const winningMoney = 1000;
+const winningMoneyString = '$' + winningMoney.toString().substring(0,1) + ',' + winningMoney.toString().substring(1);
+
+//HTML CONTENT
+const $container = $('<div/>').attr('id', 'container');
+const $h1Title = $('<h1>The Landscaper</h1>');
+  //MODAL
+  const $modal = $('<div/>').attr('id', 'modal');
+  const $modalText = $('<div><h2>How to Play</h2><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made ' + winningMoneyString + '!</p><hr><h3>Tools Cost:</h3><ul><li>' + rustyScissors.type + ' - $' + rustyScissors.cost + '</li><li>' + oldTimey.type + ' - $' + oldTimey.cost + '</li><li>' + fancyBattery.type + ' - $' + fancyBattery.cost + '</li><li>' + studentTeam.type + ' - $' + studentTeam.cost + '</li></ul></div>').attr('id', 'modal-textbox');
+  const $closeButton = $('<div>X</div>').attr('id', 'close');
+
+const htmlContent = {
+    loadContent() {
+      $('body').append($h1Title);
+      $('body').append($modal);
+      $modal.append($modalText);
+      $modalText.prepend($closeButton);
+    },
+    openModal() {
+      $modal.css('display', 'block');
+    },
+    closeModal() {
+      $modal.css('display', 'none');
+    }
+};
 
 //GAME SETUP
 const gameSetup = {
