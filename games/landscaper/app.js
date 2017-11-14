@@ -11,7 +11,7 @@ $( () => {
 const $container = $('<div>').attr('id', 'container');
 const $h1Title = $('<h1>The Landscaper</h1>');
 const $modal = $('<div></div>').attr('id', 'modal');
-const $modalText = $('<div><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p></div>').attr('id', 'modal-textbox');
+const $modalText = $('<div><h2>How to Play</h2><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p><hr><h3>Tools</h3><p>A pair of rusty scissors costs: $5</p><p>An old-timey push lawnmower costs: $50</p><p>A fancy battery-powered lawnmower costs: $250</p><p>A team of students costs: $500</p></div>').attr('id', 'modal-textbox');
 const $closeButton = $('<div>X</div>').attr('id', 'close');
 
 const htmlContent = {
