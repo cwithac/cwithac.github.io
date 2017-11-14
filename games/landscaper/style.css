@@ -34,7 +34,7 @@ h1 {
 
 #scoreBox {
   border: 5px solid #111111;
-  width: 20%;
+  max-width: 55%;
   margin: 0% auto 2% auto;
   padding: 2%;
 }
