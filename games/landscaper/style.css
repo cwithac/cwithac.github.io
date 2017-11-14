@@ -121,3 +121,29 @@ h1 {
 #close:hover {
   cursor: pointer;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width: 730px) {
+  h1 {
+    font-size: 3em;
+  }
+  #modal-textbox {
+    width: 60%;
+    margin: 20% auto;
+    padding: 5%;
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 2em;
+  }
+  #modal-textbox {
+    width: 80%;
+    margin: 15% auto;
+  }
+  #modal-textbox li {
+    font-size: .5em;
+  }
+}
