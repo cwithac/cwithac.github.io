@@ -8,9 +8,9 @@ $( () => {
 // console.log('Landscaper Game app.js is attached to index.html');
 
 //HTML CONTENT
-const $container = $('<div>').attr('id', 'container');
+const $container = $('<div/>').attr('id', 'container');
 const $h1Title = $('<h1>The Landscaper</h1>');
-const $modal = $('<div></div>').attr('id', 'modal');
+const $modal = $('<div/>').attr('id', 'modal');
 const $modalText = $('<div><h2>How to Play</h2><p>Spend your days landscaping lawns!  Different tools will help you landscape faster, but you can only upgrade when you\'ve earned enough money.</p><p>Win the game when you have made $1,000!</p><hr><h3>Tools</h3><p>A pair of rusty scissors costs: $5</p><p>An old-timey push lawnmower costs: $50</p><p>A fancy battery-powered lawnmower costs: $250</p><p>A team of students costs: $500</p></div>').attr('id', 'modal-textbox');
 const $closeButton = $('<div>X</div>').attr('id', 'close');
 
@@ -37,16 +37,16 @@ let amountEarned;
 let days;
 
 
-const $buttonRowInfo = $('<div>').attr('id', 'buttonRowInfo');
-const $buttonRowPlay = $('<div>').attr('id', 'buttonRowPlay');
+const $buttonRowInfo = $('<div/>').attr('id', 'buttonRowInfo');
+const $buttonRowPlay = $('<div/>').attr('id', 'buttonRowPlay');
 const $startButton = $('<div>Start</div>').attr('class', 'button');
-const $landscapeButton = $('<div></div>').attr('class', 'button').attr('id', 'landscape');
-const $buyToolsButton = $('<div></div>').attr('class', 'button').attr('id', 'buy');
+const $landscapeButton = $('<div/>').attr('class', 'button').attr('id', 'landscape');
+const $buyToolsButton = $('<div/>').attr('class', 'button').attr('id', 'buy');
 const $restartButton = $('<div>Restart</div>').attr('class', 'button');
 const $howToPlayButton = $('<div>How To Play</div>').attr('class', 'button');
-const $infoStatus = $('<div>').attr('id', 'infoStatus');
-const $question = $('<div>').attr('id', 'questionBox');
-const $scoreStats = $('<div>').attr('id', 'scoreBox');
+const $infoStatus = $('<div/>').attr('id', 'infoStatus');
+const $question = $('<div/>').attr('id', 'questionBox');
+const $scoreStats = $('<div/>').attr('id', 'scoreBox');
 
 const $mowerIcon = $('<img src="images/mower.png">Landscape</img>');
 const $buyIcon = $('<img src="images/moneybag.png">Buy Tools</img>');
