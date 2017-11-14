@@ -13,6 +13,7 @@
 + CSS
 + Javascript
 + jQuery
++ OOP
 ```
 
 ### How To Play
