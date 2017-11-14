@@ -19,8 +19,8 @@ h1 {
   width: 60%;
   margin: 1% auto;
   background: rgba(255,255,255,0.7);
-  height: 300px;
-  padding: 5%;
+  min-height: 445px;
+  padding: 2% 0 5% 0px;
 }
 
 #buttonRowInfo, #buttonRowPlay, #infoStatus, #questionBox, #scoreBox {
@@ -33,11 +33,20 @@ h1 {
 }
 
 #scoreBox {
-  padding-bottom: 5%;
+  border: 5px solid #111111;
+  width: 20%;
+  margin: 0% auto 2% auto;
+  padding: 2%;
+}
+
+#infoStatus {
+  width: 60%;
+  margin: 0% auto 5% auto;
 }
 
 #questionBox {
   padding-bottom: 5%;
+  font-size: 2em;
 }
 
 .button:hover {
