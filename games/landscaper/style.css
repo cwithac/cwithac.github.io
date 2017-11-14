@@ -12,14 +12,15 @@ h1 {
   font-size: 5em;
   text-align: center;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: #111111;
 }
 
 #container {
   width: 60%;
   margin: 5% auto;
   background: rgba(255,255,255,0.7);
-  min-height: 200px;
+  /*min-height: 200px;*/
+  max-height: 500px;
   padding: 5%;
 }
 
@@ -32,8 +33,19 @@ h1 {
   justify-content: space-around;
 }
 
-#buttonRowInfo:hover, #buttonRowPlay:hover {
+#scoreBox {
+  padding-top: 5%;
+}
+
+#questionBox {
+  padding-bottom: 5%;
+}
+
+.button:hover {
   cursor: pointer;
+  color: #365816;
+  font-size: 1.25em;
+  transition: all ease 0.5s;
 }
 
 #landscape, #buy {
