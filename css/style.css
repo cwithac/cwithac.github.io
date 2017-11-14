@@ -307,7 +307,7 @@ p {
 }
 
 @media (max-width: 667px) {
-  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header {
+  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header  {
     animation: none !important;
     display: inherit !important;
   }
