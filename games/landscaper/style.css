@@ -17,10 +17,9 @@ h1 {
 
 #container {
   width: 60%;
-  margin: 5% auto;
+  margin: 1% auto;
   background: rgba(255,255,255,0.7);
-  /*min-height: 200px;*/
-  max-height: 500px;
+  height: 300px;
   padding: 5%;
 }
 
@@ -34,7 +33,7 @@ h1 {
 }
 
 #scoreBox {
-  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #questionBox {
@@ -43,8 +42,8 @@ h1 {
 
 .button:hover {
   cursor: pointer;
-  color: #365816;
-  font-size: 1.25em;
+  color: #FFFFFF;
+  font-size: 1.1em;
   transition: all ease 0.5s;
 }
 
@@ -52,6 +51,18 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: rgba(255,255,255,0);
+}
+
+#landscape:hover, #buy:hover {
+  color: #111111;
+  font-size: 1em;
+}
+
+#landscape:active, #buy:active {
+  color: #DDDDDD;
+  opacity: .1;
+  margin-top: 5px;
 }
 
 #landscape img, #buy img {

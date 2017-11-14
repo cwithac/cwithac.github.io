@@ -17,7 +17,7 @@ const $closeButton = $('<div>X</div>').attr('id', 'close');
 const htmlContent = {
     loadContent() {
       $('body').append($h1Title);
-      $container.append($modal);
+      $('body').append($modal);
       $modal.append($modalText);
       $modalText.prepend($closeButton);
     },
@@ -69,8 +69,7 @@ const studentTeam = new ToolOption('a team of students', 100, 500);
 const gameSetup = {
   loadGame() {
     htmlContent.loadContent();
-    $('body').append($container);
-    $container.append($buttonRowInfo, $buttonRowPlay);
+    $('body').append($buttonRowInfo);
     $buttonRowInfo.append($startButton, $howToPlayButton);
   },
   initializeLevel() {
@@ -80,6 +79,8 @@ const gameSetup = {
     amountEarned = yourTeeth.moneyChange;
   },
   startGame() {
+    $('body').append($container);
+    $container.append($buttonRowPlay);
     $startButton.hide();
     gameSetup.initializeLevel();
     gameSetup.showStatus();
@@ -90,7 +91,7 @@ const gameSetup = {
   },
   scoreBoxInfo() {
     $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div><div>Days Passed: ' + days + '</div>');
-    $scoreStats.insertAfter($buttonRowInfo);
+    $container.prepend($scoreStats)
   },
   updateScoreStats() {
     $scoreStats.html('<div>Money: $' + money + '</div><div>Tool: ' + tool + '</div><div>Days Passed: ' + days + '</div>');
@@ -182,7 +183,7 @@ const gamePlay = {
     } else if ((money >= rustyScissors.cost) && (tool === yourTeeth.type)) {
         gamePlay.buyOptions.buyScissors();
     } else {
-      $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet.  Keep landscaping!");
+      $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet!");
     }
   },
   buyOptions: {
