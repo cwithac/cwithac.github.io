@@ -105,6 +105,15 @@ h1 {
   text-align: center;
 }
 
+#modal-textbox ul {
+  padding-left: 3%;
+}
+
+#modal-textbox li, #modal-textbox h3 {
+  text-align: left;
+  /*list-style: none;*/
+}
+
 #close {
   text-align: right;
 }
