@@ -4,7 +4,7 @@
 
 #### [LIVE LINK](https://cwithac.github.io/games/landscaper/) + [REPO](https://github.com/cwithac/cwithac.github.io/tree/master/games/landscaper)
 
-IMAGE
+![landscaper](https://i.imgur.com/KEUG69J.png)
 
 ### Technologies Used
 
