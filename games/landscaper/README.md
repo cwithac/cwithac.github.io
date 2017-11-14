@@ -28,7 +28,10 @@ _Original concept by [Matt Huntington](https://github.com/mahuntington) for Gene
 
 ### Upcoming Features
 
-- Ability to use more than one tool at a time.
+
+- Additional levels/complexity such as:
+   - User can have more than one tool at a time
+   - User can sell tools to earn more money
 - High Score Tracking
 
 ### Resources
