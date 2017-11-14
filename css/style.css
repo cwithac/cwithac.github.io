@@ -194,7 +194,7 @@ p {
   to { width: 100% }
 }
 
-#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header {
+#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header {
   animation: typing 7s steps(80, end);
   width: 0;
   animation-fill-mode: forwards;
@@ -229,6 +229,10 @@ p {
 /*GAMES*/
 #connectfour-header {
   animation-delay: 1s;
+}
+
+#landscaper-header {
+  animation-delay: 1.5s;
 }
 
 #lyrics-header {
