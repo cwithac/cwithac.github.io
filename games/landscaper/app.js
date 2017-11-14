@@ -52,6 +52,8 @@ const $mowerIcon = $('<img src="images/mower.png">Landscape</img>');
 const $buyIcon = $('<img src="images/moneybag.png">Buy Tools</img>');
 const $cash = $('<audio/>').attr('src', 'audio/cash-register.mp3');
 const $click = $('<audio/>').attr('src', 'audio/click.wav');
+const $stop = $('<audio/>').attr('src', 'audio/stop.mp3');
+const $winner = $('<audio/>').attr('src', 'audio/winner.mp3');
 
 class ToolOption {
   constructor(type, moneyChange, cost) {
@@ -142,9 +144,9 @@ const gameSetup = {
 //GAME PLAY
 const gamePlay = {
   runLandscape() {
-    $click.get(0).play();
     days ++;
     if (money < 1000) {
+      $click.get(0).play();
       switch (tool) {
         case yourTeeth.type:
           money += yourTeeth.moneyChange;
@@ -186,7 +188,9 @@ const gamePlay = {
     } else if ((money >= rustyScissors.cost) && (tool === yourTeeth.type)) {
         gamePlay.buyOptions.buyScissors();
     } else {
+      $stop.get(0).play();
       $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet!");
+
     }
   },
   buyOptions: {
@@ -236,6 +240,7 @@ const gameInfo = {
     }
   },
   alertWinner() {
+    $winner.get(0).play();
     $infoStatus.text("Congratulations!  In " + days + " days you have made $" + money + " with the help of your tools!  You have won the game!");
     $question.empty();
     $buttonRowPlay.empty();

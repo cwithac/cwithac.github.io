@@ -31,3 +31,5 @@ _Original concept by [Matt Huntington](https://github.com/mahuntington) for Gene
 - [Money Icon](https://pixabay.com/en/bag-money-wealth-revenue-finance-147782/)
 - [Buy Audio File](https://freesound.org/s/201159/)
 - [Landscape Audio File](https://freesound.org/s/171148/)
+- [Winner Audio File](https://freesound.org/s/352669/)
+- [Can't Buy Audio File](https://freesound.org/s/407466/)
