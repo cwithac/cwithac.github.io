@@ -28,7 +28,7 @@ _Original concept by [Matt Huntington](https://github.com/mahuntington) for Gene
 
 ### Upcoming Features
 
-
+- Lose game scenario
 - Additional levels/complexity such as:
    - User can have more than one tool at a time
    - User can sell tools to earn more money
