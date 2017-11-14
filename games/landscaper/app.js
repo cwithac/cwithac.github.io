@@ -50,6 +50,7 @@ const $scoreStats = $('<div>').attr('id', 'scoreBox');
 
 const $mowerIcon = $('<img src="images/mower.png">Landscape</img>');
 const $buyIcon = $('<img src="images/moneybag.png">Buy Tools</img>');
+const $audio = $('<audio/>').attr('src', 'audio/cash-register.mp3');
 
 class ToolOption {
   constructor(type, moneyChange, cost) {
@@ -188,6 +189,7 @@ const gamePlay = {
   },
   buyOptions: {
     buyScissors() {
+      $audio.get(0).play();
       cost = rustyScissors.cost;
       money -= cost;
       tool = rustyScissors.type;
@@ -195,6 +197,7 @@ const gamePlay = {
       gameSetup.updateShowAlertFunction();
     },
     buyOldTimey() {
+      $audio.get(0).play();
       cost = oldTimey.cost;
       money -= cost;
       tool = oldTimey.type;
@@ -202,6 +205,7 @@ const gamePlay = {
       gameSetup.updateShowAlertFunction();
     },
     buyFancyBattery() {
+      $audio.get(0).play();
       cost = fancyBattery.cost;
       money -= cost;
       tool = fancyBattery.type;
@@ -209,6 +213,7 @@ const gamePlay = {
       gameSetup.updateShowAlertFunction();
     },
     buyTeamOfStudents() {
+      $audio.get(0).play();
       cost = studentTeam.cost;
       money -= cost;
       tool = studentTeam.type;
