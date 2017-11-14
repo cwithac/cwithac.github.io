@@ -1,22 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Joti+One');
+@import url('https://fonts.googleapis.com/css?family=Peralta');
 
 body {
   background: url(images/grass.jpg) no-repeat center center fixed;
   background-size: cover;
+  font-family: 'Peralta', cursive;
 }
+
 
 h1 {
   color: white;
-  /*font-size: 8em;*/
+  font-size: 5em;
   text-align: center;
-  /*margin-top: 20%;*/
-  text-shadow: 5px 2px #000000;
-  font-family: 'Joti One', cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 #container {
   width: 60%;
-  margin: auto;
+  margin: 5% auto;
+  background: rgba(255,255,255,0.7);
+  min-height: 200px;
+  padding: 5%;
 }
 
 #buttonRowInfo, #buttonRowPlay, #infoStatus, #questionBox, #scoreBox {
