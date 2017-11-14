@@ -69,6 +69,8 @@ const oldTimey = new ToolOption('an old-timey push lawnmower', 25, 50);
 const fancyBattery = new ToolOption('a fancy battery-powered lawnmower', 50, 250);
 const studentTeam = new ToolOption('a team of students', 100, 500);
 
+const winningMoney = 1000;
+
 //GAME SETUP
 const gameSetup = {
   loadGame() {
@@ -125,7 +127,7 @@ const gameSetup = {
     gameSetup.startGame();
   },
   checkForWinner() {
-    if (money > 1000) {
+    if (money > winningMoney) {
       gameInfo.alertWinner();
     }
   },
@@ -145,7 +147,7 @@ const gameSetup = {
 const gamePlay = {
   runLandscape() {
     days ++;
-    if (money < 1000) {
+    if (money < winningMoney) {
       $click.get(0).play();
       switch (tool) {
         case yourTeeth.type:
@@ -190,7 +192,6 @@ const gamePlay = {
     } else {
       $stop.get(0).play();
       $infoStatus.text("Sorry, you don't have enough money to buy a new tool yet!");
-
     }
   },
   buyOptions: {
