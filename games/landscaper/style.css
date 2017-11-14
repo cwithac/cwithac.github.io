@@ -142,6 +142,12 @@ h1 {
     border: 3px solid #111111;
     background: rgba(255,255,255,.9);
   }
+  #infoStatus {
+    width: 90%;
+  }
+  #questionBox {
+    font-size: 1.5em;
+  }
 }
 
 @media (max-width: 450px) {
