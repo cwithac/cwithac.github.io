@@ -6,7 +6,7 @@
 [Repository](https://github.com/cwithac/cwithac.github.io)
 
 ```
-Technologies Used
+Technologies
 
 HTML
 CSS
@@ -16,4 +16,4 @@ jQuery
 
 ## Resources
 
-[Background Image](https://pixabay.com/en/types-typewriter-black-white-738846/)
+[Background Image](https://pixabay.com/photo-738846/)
