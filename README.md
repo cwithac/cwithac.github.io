@@ -20,4 +20,4 @@ jQuery
 
 <hr>
 
-![code wars](https://www.codewars.com/users/cwithac/badges/micro)
+Code Wars: ![code wars](https://www.codewars.com/users/cwithac/badges/micro)
