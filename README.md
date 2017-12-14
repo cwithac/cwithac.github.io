@@ -17,3 +17,7 @@ jQuery
 ## Resources
 
 [Background Image](https://pixabay.com/photo-738846/)
+
+<hr>
+
+![code wars](https://www.codewars.com/users/cwithac/badges/micro)
