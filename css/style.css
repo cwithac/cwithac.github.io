@@ -327,10 +327,7 @@ p {
     flex-direction: column;
     align-items: center;
     width: 75%;
-    padding: 5% 0 0 0;
-  }
-  #games-launch, #apps-launch, #pages-launch {
-    padding-bottom: 5%;
+    padding: 5%;
   }
 }
 
