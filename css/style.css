@@ -139,7 +139,7 @@ main a {
   text-decoration: none;
 }
 
-#games-launch:hover, #apps-launch:hover, .fa-reply:hover {
+#games-launch:hover, #apps-launch:hover, #pages-launch:hover, .fa-reply:hover {
   color: dimgray;
   text-decoration: none;
   transition: .5s ease-in;
