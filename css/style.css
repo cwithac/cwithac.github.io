@@ -323,6 +323,15 @@ p {
   .tag {
     padding: 1.1%;
   }
+  .body-box {
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 5% 0 0 0;
+  }
+  #games-launch, #apps-launch, #pages-launch {
+    padding-bottom: 5%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -357,9 +366,6 @@ p {
   }
   main h1 {
     font-size: 16px;
-  }
-  .body-box {
-    padding: 1%;
   }
   .preview {
     margin-bottom: 10%;
