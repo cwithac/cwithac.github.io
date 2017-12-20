@@ -25,18 +25,23 @@ const $gamesSection = $('#games-section');
 const $gamesLaunch = $('#games-launch');
 const $appsSection = $('#apps-section');
 const $appsLaunch = $('#apps-launch');
+const $pagesSection = $('#pages-section');
+const $pagesLaunch = $('#pages-launch');
 const $backArrow = $('.fa-reply');
 
 const windowLoadView = () => {
 	$gamesSection.hide();
 	$appsSection.hide();
+	$pagesSection.hide();
 	$gamesLaunch.show();
 	$appsLaunch.show();
+	$pagesLaunch.show();
 };
 
 const hideLinksView = () => {
 	$gamesLaunch.hide();
 	$appsLaunch.hide();
+	$pagesLaunch.hide();
 	$gamesLaunch.parent().hide();
 };
 
@@ -53,6 +58,11 @@ $gamesLaunch.on('click', () => {
 $appsLaunch.on('click', () => {
 	hideLinksView();
 	$appsSection.show();
+});
+
+$pagesLaunch.on('click', () => {
+	hideLinksView();
+	$pagesSection.show();
 });
 
 windowLoadView();
