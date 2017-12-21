@@ -8,8 +8,8 @@ $( () => {
 
 	if (windowWidth > 667) {
 
-		const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header', '#notable-header', '#landscaper-header', '#vvdc-header'];
-		const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description', '#notable-description', '#landscaper-description', '#vvdc-description'];
+		const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header', '#notable-header', '#landscaper-header', '#vvdc-header', '#pokedex-header'];
+		const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description', '#notable-description', '#landscaper-description', '#vvdc-description', '#pokedex-description'];
 
 			for (let i = 0; i < headers.length; i++){
 				$(headers[i]).on('mouseover', () => {
