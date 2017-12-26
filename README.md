@@ -1,7 +1,7 @@
 ## [Cathleen Wright](https://cwithac.github.io/)
 ### Freelance Front End Web Developer
 
-![portfolio](https://i.imgur.com/RUxeW3S.png)
+![portfolio](https://i.imgur.com/hQtsSva.png)
 
 [Repository](https://github.com/cwithac/cwithac.github.io)
 
