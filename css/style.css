@@ -195,7 +195,7 @@ p {
   to { width: 100% }
 }
 
-#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #pokedex-header {
+#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #pokedex-header, #loremroses-header {
   animation: typing 7s steps(80, end);
   width: 0;
   animation-fill-mode: forwards;
@@ -247,6 +247,10 @@ p {
 /*PAGES*/
 #vvdc-header {
   animation-delay: 1s;
+}
+
+#loremroses-header {
+  animation-delay: 2s;
 }
 
 /*RESPONSIVE*/
@@ -317,7 +321,7 @@ p {
 }
 
 @media (max-width: 667px) {
-  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #pokedex-header  {
+  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #pokedex-header, #loremroses-header  {
     animation: none !important;
     display: inherit !important;
   }
