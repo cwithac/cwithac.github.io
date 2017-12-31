@@ -1,20 +1,21 @@
-## [Cathleen Wright](https://cwithac.github.io/)
-### Freelance Front End Web Developer
 
-![portfolio](https://i.imgur.com/hQtsSva.png)
+## Portfolio
+
+![portfolio](https://i.imgur.com/16Ddnen.png)
 
 [Repository](https://github.com/cwithac/cwithac.github.io)
+<br>
+[Hosted](https://cwithac.github.io/)
 
+### Technologies
 ```
-Technologies
-
 HTML
-CSS
+CSS - Responsive Design, Animations
 JavaScript
 jQuery
 ```
 
-## Resources
+### Resources
 
 [Background Image](https://pixabay.com/photo-738846/)
 
