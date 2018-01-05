@@ -8,8 +8,8 @@ $( () => {
 
 	if (windowWidth > 667) {
 
-		const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header', '#notable-header', '#landscaper-header', '#vvdc-header', '#pokedex-header', '#loremroses-header'];
-		const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description', '#notable-description', '#landscaper-description', '#vvdc-description', '#pokedex-description', '#loremroses-description'];
+		const headers = ['#creativejuices-header', '#colorthes-header', '#perfectexcuse-header', '#connectfour-header', '#beerswall-header', '#disneyvault-header', '#lyrics-header', '#notable-header', '#landscaper-header', '#vvdc-header', '#pokedex-header', '#loremroses-header', '#rgb-header'];
+		const descriptions = ['#creativejuices-description', '#colorthes-description', '#perfectexcuse-description', '#connectfour-description', '#beerswall-description', '#disneyvault-description', '#lyrics-description', '#notable-description', '#landscaper-description', '#vvdc-description', '#pokedex-description', '#loremroses-description', '#rgb-description'];
 
 			for (let i = 0; i < headers.length; i++){
 				$(headers[i]).on('mouseover', () => {
