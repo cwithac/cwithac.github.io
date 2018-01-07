@@ -195,7 +195,7 @@ p {
   to { width: 100% }
 }
 
-#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #loremroses-header, #rgb-header, #todo-header {
+#creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #loremroses-header, #rgb-header, #todo-header, #patatap-header {
   animation: typing 7s steps(80, end);
   width: 0;
   animation-fill-mode: forwards;
@@ -246,6 +246,10 @@ p {
 
 #rgb-header {
   animation-delay: 2.5s;
+}
+
+#patatap-header {
+  animation-delay: 3s;
 }
 
 /*PAGES*/
@@ -325,7 +329,7 @@ p {
 }
 
 @media (max-width: 667px) {
-  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #loremroses-header, #rgb-header, #todo-header  {
+  #creativejuices-header, #colorthes-header, #connectfour-header, #perfectexcuse-header, #beerswall-header, #disneyvault-header, #lyrics-header, #notable-header, #landscaper-header, #vvdc-header, #loremroses-header, #rgb-header, #todo-header, #patatap-header   {
     animation: none !important;
     display: inherit !important;
   }
