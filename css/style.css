@@ -230,10 +230,6 @@ p {
   animation-delay: 5s;
 }
 
-#slotify-header {
-  animation-delay: 5.5s;
-}
-
 
 /*GAMES*/
 #connectfour-header {
@@ -271,6 +267,11 @@ p {
 
 #rogers-header {
   animation-delay: .5s;
+}
+
+
+#slotify-header {
+  animation-delay: 1.5s;
 }
 
 /*RESPONSIVE*/
