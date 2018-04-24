@@ -19,6 +19,4 @@ jQuery
 
 [Background Image](https://pixabay.com/photo-738846/)
 
-<hr>
 
-[Code Wars](www.codewars.com/): ![code wars](https://www.codewars.com/users/cwithac/badges/micro)
