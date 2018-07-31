@@ -3,7 +3,6 @@
 
 * {
 box-sizing: border-box;
-/*border: 1px dotted red;*/
 }
 
 body {
@@ -201,85 +200,68 @@ p {
   animation-fill-mode: forwards;
 }
 
-/*APPS*/
-#creativejuices-header {
-  animation-delay: 1s;
-}
-
-#notable-header {
-  animation-delay: 2s;
-}
-
-#colorthes-header {
-  animation-delay: 3s;
-}
-
-#perfectexcuse-header {
-  animation-delay: 3.5s;
-}
-
-#beerswall-header {
-  animation-delay: 4s;
-}
-
-#disneyvault-header {
-  animation-delay: 4.5s;
-}
-
-#yelpcamp-header {
-  animation-delay: 5s;
-}
-
-
-/*GAMES*/
-#connectfour-header {
-  animation-delay: 1s;
-}
-
-#landscaper-header {
-  animation-delay: 1.5s;
-}
-
-#lyrics-header {
-  animation-delay: 2s;
-}
-
-#rgb-header {
-  animation-delay: 2.5s;
-}
-
-#patatap-header {
-  animation-delay: 3s;
-}
-
-/*PAGES*/
-#vvdc-header {
-  animation-delay: 4s;
-}
-
-#loremroses-header {
-  animation-delay: 3s;
-}
-
-#wonderland-header {
-  animation-delay: 1s;
-}
-
+/*PROFESSIONAL*/
 #rogers-header {
   animation-delay: .5s;
 }
 
-#slotify-header {
+/*EDUCATIONAL*/
+#lyrics-header {
+  animation-delay: .25s;
+}
+#connectfour-header {
+  animation-delay: .5s;
+}
+#landscaper-header {
+  animation-delay: .75s;
+}
+#disneyvault-header {
+  animation-delay: 1s;
+}
+#colorthes-header {
+  animation-delay: 1.25s;
+}
+#yelpcamp-header {
   animation-delay: 1.5s;
 }
-
-#social-header {
+#beerswall-header {
+  animation-delay: 1.75s;
+}
+#notable-header {
   animation-delay: 2s;
 }
-
-#warbler-header {
+#perfectexcuse-header {
+  animation-delay: 2.25s;
+}
+#creativejuices-header {
   animation-delay: 2.5s;
 }
+#rgb-header {
+  animation-delay: 2.75s;
+}
+#patatap-header {
+  animation-delay: 3s;
+}
+#wonderland-header {
+  animation-delay: 3.25s;
+}
+#slotify-header {
+  animation-delay: 3.5s;
+}
+#social-header {
+  animation-delay: 3.75s;
+}
+#warbler-header {
+  animation-delay: 4s;
+}
+#loremroses-header {
+  animation-delay: 4.25s;
+}
+#vvdc-header {
+  animation-delay: 4.5s;
+}
+
+
 
 /*RESPONSIVE*/
 
