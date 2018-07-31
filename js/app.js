@@ -22,48 +22,38 @@ $( () => {
 			};
 	};
 
-const $gamesSection = $('#games-section');
-const $gamesLaunch = $('#games-launch');
-const $appsSection = $('#apps-section');
-const $appsLaunch = $('#apps-launch');
-const $pagesSection = $('#pages-section');
-const $pagesLaunch = $('#pages-launch');
+const $professionalSection = $('#professional-section');
+const $professionalLaunch = $('#professional-launch');
+const $educationalSection = $('#educational-section');
+const $educationalLaunch = $('#educational-launch');
 const $backArrow = $('.fa-reply');
 
 const windowLoadView = () => {
-	$gamesSection.hide();
-	$appsSection.hide();
-	$pagesSection.hide();
-	$gamesLaunch.show();
-	$appsLaunch.show();
-	$pagesLaunch.show();
+	$professionalSection.hide();
+	$educationalSection.hide();
+	$professionalLaunch.show();
+	$educationalLaunch.show();
 };
 
 const hideLinksView = () => {
-	$gamesLaunch.hide();
-	$appsLaunch.hide();
-	$pagesLaunch.hide();
-	$gamesLaunch.parent().hide();
+	$professionalLaunch.hide();
+	$educationalLaunch.hide();
+	$professionalLaunch.parent().hide();
 };
 
 $backArrow.on('click', () => {
-	$gamesLaunch.parent().show();
+	$professionalLaunch.parent().show();
 	windowLoadView();
 });
 
-$gamesLaunch.on('click', () => {
+$professionalLaunch.on('click', () => {
 	hideLinksView();
-	$gamesSection.show();
+	$professionalSection.show();
 });
 
-$appsLaunch.on('click', () => {
+$educationalLaunch.on('click', () => {
 	hideLinksView();
-	$appsSection.show();
-});
-
-$pagesLaunch.on('click', () => {
-	hideLinksView();
-	$pagesSection.show();
+	$educationalSection.show();
 });
 
 windowLoadView();
