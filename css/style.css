@@ -182,6 +182,12 @@ p {
   opacity: 1;
 }
 
+#education-note {
+  font-size: 50%;
+  text-align: center;
+  margin-top: 5%;
+}
+
 /*ANIMATIONS*/
 
 @keyframes fade {
