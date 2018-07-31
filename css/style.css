@@ -59,6 +59,10 @@ nav a {
   text-decoration: none;
 }
 
+#professional-launch, #educational-launch {
+  margin: 0 5%;
+}
+
 .preview {
   max-width: 80%;
   max-height: 40%;
