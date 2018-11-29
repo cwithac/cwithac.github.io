@@ -59,7 +59,12 @@ nav a {
   text-decoration: none;
 }
 
-#professional-launch, #educational-launch {
+/* #professional-launch, #educational-launch {
+  margin: 0 5%;
+  cursor: pointer;
+} */
+
+#educational-launch {
   margin: 0 5%;
   cursor: pointer;
 }

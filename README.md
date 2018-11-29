@@ -1,7 +1,7 @@
 
 ## Cathleen Wright: Portfolio
 
-![portfolio](https://i.imgur.com/738Metd.png)
+![portfolio](https://i.imgur.com/rlQWi2L.png)
 
 [Repository](https://github.com/cwithac/cwithac.github.io)
 <br>
