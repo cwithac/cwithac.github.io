@@ -28,7 +28,7 @@ body {
 
 .index-bb {
   display: flex;
-  flex-direction: row;
+  flex-direction: center;
   justify-content: space-around;
   font-size: 2em;
 }
