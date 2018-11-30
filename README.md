@@ -1,11 +1,6 @@
-
-## Cathleen Wright: Portfolio
-
 ![portfolio](https://i.imgur.com/rlQWi2L.png)
 
-[Repository](https://github.com/cwithac/cwithac.github.io)
-<br>
-[Hosted](https://cwithac.github.io/)
+### [cwithac.github.io](https://cwithac.github.io/)
 
 ### Technologies
 ```
@@ -18,5 +13,3 @@ jQuery
 ### Resources
 
 [Background Image](https://pixabay.com/photo-738846/)
-
-
