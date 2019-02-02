@@ -10,4 +10,6 @@ JavaScript
 jQuery
 ```
 
-[Background Image Resource](https://pixabay.com/photo-738846/)
+### Resources
+
+[Background Image](https://pixabay.com/photo-738846/)
