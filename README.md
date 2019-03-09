@@ -4,10 +4,10 @@
 
 ### Technologies
 ```
-HTML
-CSS - Responsive Design, Animations
-JavaScript
-jQuery
+- HTML
+- CSS - Responsive Design, Animations
+- JavaScript
+- jQuery
 ```
 
 ### Resources
